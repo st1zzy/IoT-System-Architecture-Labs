@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Рабочие данные брокера (создаются при запуске стенда)
+*/mosquitto/data/*
+!*/mosquitto/data/.gitkeep
+*/mosquitto/log/*
+!*/mosquitto/log/.gitkeep
+
+# Временные файлы Word
+~$*.docx

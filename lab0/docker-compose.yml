@@ -1,0 +1,35 @@
+# Course Lab Stack — единый стенд курса (§8.2). Наращивается от лабы к лабе.
+name: iot-lab
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    container_name: mosquitto
+    ports:
+      - "1883:1883"   # MQTT/TCP
+      - "9001:9001"   # MQTT/WebSocket
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    healthcheck:
+      test: ["CMD", "mosquitto_sub", "-t", "$$SYS/broker/version", "-C", "1", "-W", "3"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  simulator:
+    build: ./simulator
+    container_name: simulator
+    environment:
+      MQTT_HOST: mosquitto
+      DEVICES: "1"
+      INTERVAL: "5"
+      METRICS: "temperature"
+      QOS: "1"
+      KEEPALIVE: "15"
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped

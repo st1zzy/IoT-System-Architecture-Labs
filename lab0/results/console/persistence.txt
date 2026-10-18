@@ -1,0 +1,2 @@
+{"broker": "mosquitto:1883", "queued_published": 5, "queued_received_after_restart": 5, "retained_after_restart": "state=42"}
+{"broker": "mq-nopersist:1884", "queued_published": 5, "queued_received_after_restart": 0, "retained_after_restart": null}

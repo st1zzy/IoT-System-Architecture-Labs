@@ -1,0 +1,24 @@
+2026-10-18 05:02:30,105 INFO dev-000000 pub seq=93 bytes=126 buffered=0 dropped=0
+2026-10-18 05:02:35,105 INFO dev-000000 pub seq=94 bytes=126 buffered=0 dropped=0
+2026-10-18 05:02:40,106 INFO dev-000000 pub seq=95 bytes=126 buffered=0 dropped=0
+2026-10-18 05:02:45,106 INFO dev-000000 pub seq=96 bytes=126 buffered=0 dropped=0
+2026-10-18 05:02:50,109 WARNING dev-000000 disconnected: [code:128] Unspecified error; retry in 1s (buffered=1)
+2026-10-18 05:02:55,577 WARNING dev-000000 disconnected: [Errno -5] No address associated with hostname; retry in 2s (buffered=2)
+2026-10-18 05:03:01,779 WARNING dev-000000 disconnected: [Errno -2] Name or service not known; retry in 4s (buffered=3)
+2026-10-18 05:03:09,994 WARNING dev-000000 disconnected: [Errno -5] No address associated with hostname; retry in 8s (buffered=4)
+2026-10-18 05:03:18,516 INFO dev-000000 connected to mosquitto:1883 (buffered=6)
+2026-10-18 05:03:18,519 INFO dev-000000 pub seq=97 bytes=126 buffered=5 dropped=0
+2026-10-18 05:03:18,520 INFO dev-000000 pub seq=98 bytes=126 buffered=4 dropped=0
+2026-10-18 05:03:18,522 INFO dev-000000 pub seq=99 bytes=124 buffered=3 dropped=0
+2026-10-18 05:03:18,524 INFO dev-000000 pub seq=100 bytes=127 buffered=2 dropped=0
+2026-10-18 05:03:18,526 INFO dev-000000 pub seq=101 bytes=127 buffered=1 dropped=0
+2026-10-18 05:03:18,527 INFO dev-000000 pub seq=102 bytes=127 buffered=0 dropped=0
+2026-10-18 05:03:20,107 INFO dev-000000 pub seq=103 bytes=127 buffered=0 dropped=0
+2026-10-18 05:03:25,106 INFO dev-000000 pub seq=104 bytes=127 buffered=0 dropped=0
+2026-10-18 05:03:30,108 INFO dev-000000 pub seq=105 bytes=127 buffered=0 dropped=0
+2026-10-18 05:03:35,106 INFO dev-000000 pub seq=106 bytes=127 buffered=0 dropped=0
+2026-10-18 05:03:40,105 INFO dev-000000 pub seq=107 bytes=127 buffered=0 dropped=0
+2026-10-18 05:03:45,106 INFO dev-000000 pub seq=108 bytes=127 buffered=0 dropped=0
+2026-10-18 05:03:50,106 INFO dev-000000 pub seq=109 bytes=127 buffered=0 dropped=0
+2026-10-18 05:03:55,106 INFO dev-000000 pub seq=110 bytes=127 buffered=0 dropped=0
+2026-10-18 05:04:00,108 INFO dev-000000 pub seq=111 bytes=127 buffered=0 dropped=0

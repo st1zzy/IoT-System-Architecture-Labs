@@ -1,0 +1,2 @@
+05:02:45 docker stop mosquitto
+05:03:15 docker start mosquitto

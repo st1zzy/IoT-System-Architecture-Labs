@@ -1,0 +1,14 @@
+2026-10-18T05:02:40: Received PUBLISH from dev-000000 (d0, q1, r0, m96, 'enu/site1/dev-000000/up/telemetry', ... (126 bytes))
+2026-10-18T05:02:45: Received PUBLISH from dev-000000 (d0, q1, r0, m97, 'enu/site1/dev-000000/up/telemetry', ... (126 bytes))
+2026-10-18T05:02:45: mosquitto version 2.0.20 terminating
+2026-10-18T05:02:45: Saving in-memory database to /mosquitto/data//mosquitto.db.
+2026-10-18T05:03:17: mosquitto version 2.0.20 starting
+2026-10-18T05:03:17: mosquitto version 2.0.20 running
+2026-10-18T05:03:18: New client connected from 172.19.0.3:39891 as dev-000000 (p2, c1, k15).
+2026-10-18T05:03:18: Received PUBLISH from dev-000000 (d0, q1, r1, m1, 'enu/site1/dev-000000/status', ... (6 bytes))
+2026-10-18T05:03:18: Received PUBLISH from dev-000000 (d0, q1, r0, m2, 'enu/site1/dev-000000/up/telemetry', ... (126 bytes))
+2026-10-18T05:03:18: Received PUBLISH from dev-000000 (d0, q1, r0, m3, 'enu/site1/dev-000000/up/telemetry', ... (126 bytes))
+2026-10-18T05:03:18: Received PUBLISH from dev-000000 (d0, q1, r0, m4, 'enu/site1/dev-000000/up/telemetry', ... (124 bytes))
+2026-10-18T05:03:18: Received PUBLISH from dev-000000 (d0, q1, r0, m5, 'enu/site1/dev-000000/up/telemetry', ... (127 bytes))
+2026-10-18T05:03:18: Received PUBLISH from dev-000000 (d0, q1, r0, m6, 'enu/site1/dev-000000/up/telemetry', ... (127 bytes))
+2026-10-18T05:03:18: Received PUBLISH from dev-000000 (d0, q1, r0, m7, 'enu/site1/dev-000000/up/telemetry', ... (127 bytes))

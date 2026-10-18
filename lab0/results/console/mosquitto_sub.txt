@@ -1,0 +1,12 @@
+enu/site1/dev-000000/status online
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299325.105,"seq":8,"metrics":{"temperature":27.752}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299330.105,"seq":9,"metrics":{"temperature":27.611}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299335.105,"seq":10,"metrics":{"temperature":27.515}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299340.102,"seq":11,"metrics":{"temperature":27.405}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299345.105,"seq":12,"metrics":{"temperature":27.59}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299350.105,"seq":13,"metrics":{"temperature":27.954}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299355.105,"seq":14,"metrics":{"temperature":28.278}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299360.105,"seq":15,"metrics":{"temperature":28.27}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299365.105,"seq":16,"metrics":{"temperature":27.884}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299370.103,"seq":17,"metrics":{"temperature":27.84}}
+enu/site1/dev-000000/up/telemetry {"schema_version":"1.0","device_id":"dev-000000","site":"site1","ts":1792299375.104,"seq":18,"metrics":{"temperature":28.026}}

@@ -1,0 +1,3 @@
+CONTAINER ID   NAME        CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+110ab59385f3   simulator   0.04%     20.83MiB / 7.606GiB   0.27%     12.6kB / 38.7kB   6.83MB / 0B   2
+c9e3d6b6a2bf   mosquitto   0.05%     18.02MiB / 7.606GiB   0.23%     8.31kB / 6.51kB   848kB / 0B    1
