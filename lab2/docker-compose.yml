@@ -1,0 +1,57 @@
+# Lab 2 — Wi-Fi Communication: эмуляция канала tc netem между устройством и «сервером»
+#
+#  [lab2-client] ──(eth0: netem uplink + ifb0: netem downlink)──▶ [lab2-mosquitto :1883/:8883]
+#   «устройство»                 = эмулируемый Wi-Fi канал                 [lab2-iperf :5201]
+name: lab2
+
+services:
+  certs:
+    # самоподписанный сертификат брокера для замера TLS-рукопожатия (создаётся при первом запуске)
+    image: alpine:3.20
+    container_name: lab2-certs
+    volumes:
+      - ./certs:/certs
+    command: >
+      sh -c "test -f /certs/server.crt || (apk add --no-cache openssl >/dev/null &&
+      openssl req -x509 -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -nodes -days 365
+      -keyout /certs/server.key -out /certs/server.crt -subj /CN=lab2-mosquitto
+      -addext subjectAltName=DNS:lab2-mosquitto,DNS:mosquitto && chmod 644 /certs/server.key)"
+
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab2-mosquitto
+    # MOSQ_CONF=mosquitto-nagle.conf — брокер с настройкой сокетов по умолчанию (для сравнения)
+    command: mosquitto -c /mosquitto/config/${MOSQ_CONF:-mosquitto.conf}
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+      - ./certs:/certs:ro
+    depends_on:
+      certs:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "mosquitto_sub", "-t", "$$SYS/broker/version", "-C", "1", "-W", "3"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  iperf:
+    build: ./iperf
+    container_name: lab2-iperf
+    restart: unless-stopped
+
+  client:
+    build: ./client
+    container_name: lab2-client
+    cap_add: [NET_ADMIN]          # для tc netem и ifb на собственных интерфейсах
+    volumes:
+      - ./tools:/lab/tools:ro
+      - ./results:/lab/results
+      - ./certs:/certs:ro
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+      iperf:
+        condition: service_started

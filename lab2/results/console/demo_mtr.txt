@@ -1,0 +1,3 @@
+Start: 2026-10-18T07:30:33+0000
+HOST: 3b0ccf25a2fe                Loss%   Snt   Last   Avg  Best  Wrst StDev
+  1.|-- lab2-mosquitto.lab2_default 14.0%    50   19.3  16.9   2.9  29.4   5.9

@@ -1,0 +1,1 @@
+netem: d20 delay 8ms 4ms 25% distribution normal loss 5.0% rate 3.25mbit

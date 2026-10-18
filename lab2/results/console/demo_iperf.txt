@@ -1,0 +1,14 @@
+Connecting to host lab2-iperf, port 5201
+[  5] local 172.19.0.4 port 44944 connected to 172.19.0.2 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec   384 KBytes  3.14 Mbits/sec    9   9.90 KBytes       
+[  5]   1.00-2.00   sec   256 KBytes  2.10 Mbits/sec    8   5.66 KBytes       
+[  5]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec   12   2.83 KBytes       
+[  5]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec    9   5.66 KBytes       
+[  5]   4.00-5.00   sec   128 KBytes  1.05 Mbits/sec    9   7.07 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-5.00   sec  1.00 MBytes  1.68 Mbits/sec   47            sender
+[  5]   0.00-5.03   sec   896 KBytes  1.46 Mbits/sec                  receiver
+
+iperf Done.

@@ -1,0 +1,8 @@
+nagle    d01 tls12: TCP 3.3 + TLS 6.3 + MQTT 2.8 мс (p50, n=30, отказов 0)
+nagle    d01 tls13: TCP 3.1 + TLS 4.2 + MQTT 47.6 мс (p50, n=30, отказов 0)
+nagle    d20 tls12: TCP 22.6 + TLS 49.5 + MQTT 19.7 мс (p50, n=30, отказов 0)
+nagle    d20 tls13: TCP 23.4 + TLS 28.6 + MQTT 84.1 мс (p50, n=30, отказов 0)
+nodelay  d01 tls12: TCP 2.8 + TLS 6.3 + MQTT 2.5 мс (p50, n=30, отказов 0)
+nodelay  d01 tls13: TCP 3.2 + TLS 4.1 + MQTT 2.9 мс (p50, n=30, отказов 0)
+nodelay  d20 tls12: TCP 23.3 + TLS 45.6 + MQTT 17.3 мс (p50, n=30, отказов 0)
+nodelay  d20 tls13: TCP 22.4 + TLS 29.3 + MQTT 24.3 мс (p50, n=30, отказов 0)

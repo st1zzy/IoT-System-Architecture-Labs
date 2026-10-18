@@ -1,0 +1,4 @@
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+24a92c43fefd   lab2-mosquitto   0.04%     1.352MiB / 7.606GiB   0.02%     872B / 126B      0B / 0B       1
+3b0ccf25a2fe   lab2-client      0.00%     18.42MiB / 7.606GiB   0.24%     25MB / 216MB     60.3MB / 0B   2
+c8b832769666   lab2-iperf       0.00%     788KiB / 7.606GiB     0.01%     195MB / 2.45MB   36.9kB / 0B   1
