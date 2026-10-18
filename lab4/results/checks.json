@@ -1,0 +1,94 @@
+[
+  {
+    "n": 1,
+    "check": "Аутентификация по password file",
+    "ok": true,
+    "details": [
+      "анонимно: CONNACK Not authorized",
+      "device01 с неверным паролем: CONNACK Not authorized",
+      "device01: CONNACK Success",
+      "gateway01: CONNACK Success",
+      "svc-ingest: CONNACK Success",
+      "dashboard: CONNACK Success"
+    ]
+  },
+  {
+    "n": 2,
+    "check": "ACL: запрет публикации и подписки на чужие топики",
+    "ok": true,
+    "details": [
+      "MQTT 3.1.1, device01 → свой топик: PUBACK получен, ingest получил: True",
+      "MQTT 3.1.1, device01 → топик device02: PUBACK получен (True), ingest получил: False — запрет молчаливый",
+      "MQTT 5, device01 → топик device02: PUBACK с кодом «Not authorized» (135)",
+      "MQTT 5, device01 SUBSCRIBE на down/ device02: SUBACK «Granted QoS 1» — подписка принята, но команду для device02 device01 получил: False (запрет при доставке)",
+      "MQTT 5, dashboard → команда устройству: PUBACK «Not authorized»"
+    ]
+  },
+  {
+    "n": 3,
+    "check": "Persistence: сессия и очередь после рестарта",
+    "ok": true,
+    "details": [
+      "svc-ingest (clean_session=false) подписан и отключён; device01 отправил 20 сообщений QoS 1",
+      "брокер A перезапущен; повторное подключение: session_present=True, получено 20 из 20 (seq 0…19)"
+    ]
+  },
+  {
+    "n": 4,
+    "check": "Лимиты: message_size_limit и max_queued_messages",
+    "ok": true,
+    "details": [
+      "message_size_limit 1024: отправлено 900 и 2048 Б, получено [900]",
+      "max_queued_messages 100: офлайн-подписчику отправлено 150, после подключения получено 100 (seq 0…99) — остальные отброшены брокером"
+    ]
+  },
+  {
+    "n": 5,
+    "check": "Bridge A ⇄ B: передача и отсутствие петель",
+    "ok": true,
+    "details": [
+      "A → B: телеметрия получена в B 1 раз (out), статус: в A 1, в B 1 раз (both)",
+      "B → A: статус device02 в A 1 раз, в B 1 раз — без петли (каждая копия ровно одна)",
+      "B → A (in): команда из B дошла до device02 в A: True"
+    ]
+  },
+  {
+    "n": 6,
+    "check": "$SYS: метрики брокера",
+    "ok": true,
+    "details": [
+      "$SYS/broker/version = mosquitto version 2.0.20",
+      "$SYS/broker/uptime = 24 seconds",
+      "$SYS/broker/clients/connected = 2",
+      "$SYS/broker/clients/total = 4",
+      "$SYS/broker/subscriptions/count = 5",
+      "$SYS/broker/retained messages/count = 52",
+      "$SYS/broker/store/messages/count = 52",
+      "$SYS/broker/messages/received = 465",
+      "$SYS/broker/messages/sent = 541",
+      "$SYS/broker/publish/messages/dropped = 50",
+      "$SYS/broker/load/messages/received/1min = 362.75",
+      "$SYS/broker/load/bytes/received/1min = 10458.62",
+      "$SYS/broker/heap/current = —",
+      "$SYS/broker/connection/bridge-a/state = 1",
+      "всего топиков $SYS: 52"
+    ]
+  },
+  {
+    "n": 7,
+    "check": "EMQX: развёртывание и подключение",
+    "ok": true,
+    "details": [
+      "MQTT-клиент к EMQX 5.8.0: CONNACK Success; состояние узла и статистика — в выводе emqx ctl (run_checks.sh)"
+    ]
+  },
+  {
+    "n": 8,
+    "check": "MQTT 5 shared subscription: распределение нагрузки",
+    "ok": true,
+    "details": [
+      "mosquitto A: 3000 сообщений → consumer'ы [1000, 1000, 1000] = [33.3, 33.3, 33.3] %, сумма 3000",
+      "EMQX: 3000 сообщений → consumer'ы [1000, 1000, 1000] = [33.3, 33.3, 33.3] %, сумма 3000"
+    ]
+  }
+]

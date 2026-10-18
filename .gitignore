@@ -17,3 +17,7 @@ node_modules/
 
 # Сертификаты Lab 2 генерируются при запуске
 */certs/
+
+# Lab 4: пароли генерируются при запуске
+lab4/secrets/
+lab4/broker-a/config/passwd

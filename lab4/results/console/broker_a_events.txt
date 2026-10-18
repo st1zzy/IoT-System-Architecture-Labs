@@ -1,0 +1,5 @@
+2026-10-18T18:40:53: Client auth-аноним disconnected, not authorised.
+2026-10-18T18:40:53: Client auth-device disconnected, not authorised.
+2026-10-18T18:40:58: Saving in-memory database to /mosquitto/data//mosquitto.db.
+2026-10-18T18:40:58: Connecting bridge bridge-a-to-b (mosquitto-b:1883)
+2026-10-18T18:41:08: Outgoing messages are being dropped for client lim-queue.

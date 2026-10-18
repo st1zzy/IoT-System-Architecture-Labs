@@ -1,0 +1,14 @@
+Node 'emqx@172.19.0.2' 5.8.0 is started
+Cluster status: #{running_nodes => ['emqx@172.19.0.2'],stopped_nodes => []}
+tcp:default
+  acceptors       : 16
+  running         : true
+ssl:default
+  acceptors       : 16
+  running         : true
+ws:default
+  acceptors       : 16
+  running         : true
+wss:default
+  acceptors       : 16
+  running         : true

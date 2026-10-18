@@ -1,0 +1,53 @@
+# Lab 4 — MQTT Broker: аутентификация, ACL, persistence, лимиты, bridge, $SYS, EMQX, shared subscriptions
+#
+#  [client] ──▶ [mosquitto-a :1883] ══ bridge ══▶ [mosquitto-b]        [emqx :1883, dashboard :18083]
+#               пароли, ACL, лимиты, persistence
+name: lab4
+
+services:
+  secrets:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab4-secrets
+    entrypoint: ["sh", "/tools/make_secrets.sh"]
+    volumes:
+      - ./tools:/tools:ro
+      - ./broker-a/config:/mosquitto/config
+      - ./secrets:/secrets
+
+  mosquitto-a:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab4-mosquitto-a
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./broker-a/config:/mosquitto/config:ro
+      - ./broker-a/data:/mosquitto/data
+      - ./broker-a/log:/mosquitto/log
+    depends_on:
+      secrets:
+        condition: service_completed_successfully
+      mosquitto-b:
+        condition: service_started
+
+  mosquitto-b:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab4-mosquitto-b
+    volumes:
+      - ./broker-b/config:/mosquitto/config:ro
+
+  emqx:
+    image: emqx/emqx:5.8.0
+    container_name: lab4-emqx
+    ports:
+      - "18083:18083"               # dashboard
+
+  client:
+    build: ./client
+    container_name: lab4-client
+    volumes:
+      - ./secrets:/secrets:ro        # пароли читаются при запуске проверок
+      - ./tools:/lab/tools:ro
+      - ./results:/lab/results
+    depends_on:
+      mosquitto-a:
+        condition: service_started

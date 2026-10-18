@@ -1,0 +1,23 @@
+# ACL брокера A (схема топиков Lab 3: enu/{site}/{device_id}/{up|down}/...)
+
+# Устройство: пишет только в свои up/ и status, читает только свои down/ (%u — имя пользователя)
+pattern write enu/+/%u/up/#
+pattern write enu/+/%u/status
+pattern read enu/+/%u/down/#
+
+# Шлюз площадки site1: публикует от имени устройств site1, получает их команды
+user gateway01
+topic write enu/site1/+/up/#
+topic write enu/site1/+/status
+topic read enu/site1/+/down/#
+
+# Сервис приёма: читает всю телеметрию и статусы (в т.ч. через shared subscription)
+user svc-ingest
+topic read enu/+/+/up/#
+topic read enu/+/+/status
+
+# Дашборд: только чтение статусов, телеметрии и метрик брокера, команды — запрещены
+user dashboard
+topic read enu/+/+/status
+topic read enu/+/+/up/telemetry/#
+topic read $SYS/#

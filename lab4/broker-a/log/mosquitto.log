@@ -1,0 +1,132 @@
+2026-10-18T18:40:49: mosquitto version 2.0.20 starting
+2026-10-18T18:40:49: Config loaded from /mosquitto/config/mosquitto.conf.
+2026-10-18T18:40:49: Warning: File /mosquitto/config/acl has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl`.
+2026-10-18T18:40:49: Warning: File /mosquitto/config/acl owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mosquitto/config/acl`.
+2026-10-18T18:40:49: Warning: File /mosquitto/config/acl group is not mosquitto. Future versions will refuse to load this file.
+2026-10-18T18:40:49: Opening ipv4 listen socket on port 1883.
+2026-10-18T18:40:49: Connecting bridge bridge-a-to-b (mosquitto-b:1883)
+2026-10-18T18:40:49: mosquitto version 2.0.20 running
+2026-10-18T18:40:53: New connection from 172.19.0.5:56019 on port 1883.
+2026-10-18T18:40:53: Client auth-аноним disconnected, not authorised.
+2026-10-18T18:40:53: New connection from 172.19.0.5:54423 on port 1883.
+2026-10-18T18:40:53: Client auth-device disconnected, not authorised.
+2026-10-18T18:40:53: New connection from 172.19.0.5:58399 on port 1883.
+2026-10-18T18:40:53: New client connected from 172.19.0.5:58399 as auth-device01 (p2, c1, k60, u'device01').
+2026-10-18T18:40:53: Client auth-device01 disconnected.
+2026-10-18T18:40:53: New connection from 172.19.0.5:44143 on port 1883.
+2026-10-18T18:40:53: New client connected from 172.19.0.5:44143 as auth-gateway01 (p2, c1, k60, u'gateway01').
+2026-10-18T18:40:53: Client auth-gateway01 disconnected.
+2026-10-18T18:40:53: New connection from 172.19.0.5:53503 on port 1883.
+2026-10-18T18:40:53: New client connected from 172.19.0.5:53503 as auth-svc-ingest (p2, c1, k60, u'svc-ingest').
+2026-10-18T18:40:53: Client auth-svc-ingest disconnected.
+2026-10-18T18:40:53: New connection from 172.19.0.5:39435 on port 1883.
+2026-10-18T18:40:53: New client connected from 172.19.0.5:39435 as auth-dashboard (p2, c1, k60, u'dashboard').
+2026-10-18T18:40:53: Client auth-dashboard disconnected.
+2026-10-18T18:40:53: New connection from 172.19.0.5:48769 on port 1883.
+2026-10-18T18:40:53: New client connected from 172.19.0.5:48769 as acl-ingest (p2, c1, k60, u'svc-ingest').
+2026-10-18T18:40:53: acl-ingest 1 enu/+/+/up/#
+2026-10-18T18:40:53: New connection from 172.19.0.5:38957 on port 1883.
+2026-10-18T18:40:53: New client connected from 172.19.0.5:38957 as acl-dev01 (p2, c1, k60, u'device01').
+2026-10-18T18:40:53: Client acl-dev01 disconnected.
+2026-10-18T18:40:53: New connection from 172.19.0.5:42215 on port 1883.
+2026-10-18T18:40:53: New client connected from 172.19.0.5:42215 as acl-dev01-v5 (p5, c1, k60, u'device01').
+2026-10-18T18:40:54: New connection from 172.19.0.5:34537 on port 1883.
+2026-10-18T18:40:54: Client auth-аноним disconnected, not authorised.
+2026-10-18T18:40:54: New connection from 172.19.0.5:45463 on port 1883.
+2026-10-18T18:40:54: Client auth-device disconnected, not authorised.
+2026-10-18T18:40:54: acl-dev01-v5 1 enu/site1/device02/down/#
+2026-10-18T18:40:55: New connection from 172.19.0.5:48317 on port 1883.
+2026-10-18T18:40:55: New client connected from 172.19.0.5:48317 as acl-gw (p2, c1, k60, u'gateway01').
+2026-10-18T18:40:56: New connection from 172.19.0.5:43177 on port 1883.
+2026-10-18T18:40:56: Client auth-аноним disconnected, not authorised.
+2026-10-18T18:40:56: New connection from 172.19.0.5:38969 on port 1883.
+2026-10-18T18:40:56: Client auth-device disconnected, not authorised.
+2026-10-18T18:40:56: Client acl-gw disconnected.
+2026-10-18T18:40:56: Client acl-dev01-v5 disconnected.
+2026-10-18T18:40:56: New connection from 172.19.0.5:34215 on port 1883.
+2026-10-18T18:40:56: New client connected from 172.19.0.5:34215 as acl-dash-v5 (p5, c1, k60, u'dashboard').
+2026-10-18T18:40:57: Client acl-ingest disconnected.
+2026-10-18T18:40:57: Client acl-dash-v5 disconnected.
+2026-10-18T18:40:57: New connection from 172.19.0.5:49113 on port 1883.
+2026-10-18T18:40:57: New client connected from 172.19.0.5:49113 as persist-ingest (p2, c0, k60, u'svc-ingest').
+2026-10-18T18:40:57: persist-ingest 1 enu/site1/device01/up/telemetry/humidity
+2026-10-18T18:40:58: Client persist-ingest disconnected.
+2026-10-18T18:40:58: New connection from 172.19.0.5:51255 on port 1883.
+2026-10-18T18:40:58: New client connected from 172.19.0.5:51255 as persist-dev01 (p2, c1, k60, u'device01').
+2026-10-18T18:40:58: Client persist-dev01 disconnected.
+2026-10-18T18:40:58: mosquitto version 2.0.20 terminating
+2026-10-18T18:40:58: Saving in-memory database to /mosquitto/data//mosquitto.db.
+2026-10-18T18:40:58: mosquitto version 2.0.20 starting
+2026-10-18T18:40:58: Config loaded from /mosquitto/config/mosquitto.conf.
+2026-10-18T18:40:58: Warning: File /mosquitto/config/acl has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl`.
+2026-10-18T18:40:58: Warning: File /mosquitto/config/acl owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mosquitto/config/acl`.
+2026-10-18T18:40:58: Warning: File /mosquitto/config/acl group is not mosquitto. Future versions will refuse to load this file.
+2026-10-18T18:40:58: Opening ipv4 listen socket on port 1883.
+2026-10-18T18:40:58: Connecting bridge bridge-a-to-b (mosquitto-b:1883)
+2026-10-18T18:40:58: mosquitto version 2.0.20 running
+2026-10-18T18:41:00: New connection from 172.19.0.5:44035 on port 1883.
+2026-10-18T18:41:00: Client auth-аноним disconnected, not authorised.
+2026-10-18T18:41:00: New connection from 172.19.0.5:45325 on port 1883.
+2026-10-18T18:41:00: Client auth-device disconnected, not authorised.
+2026-10-18T18:41:03: New connection from 172.19.0.5:41445 on port 1883.
+2026-10-18T18:41:03: New client connected from 172.19.0.5:41445 as persist-ingest (p2, c0, k60, u'svc-ingest').
+2026-10-18T18:41:06: Client persist-ingest disconnected.
+2026-10-18T18:41:06: New connection from 172.19.0.5:40675 on port 1883.
+2026-10-18T18:41:06: New client connected from 172.19.0.5:40675 as lim-ingest (p2, c1, k60, u'svc-ingest').
+2026-10-18T18:41:06: lim-ingest 1 enu/site1/device01/up/telemetry/pressure
+2026-10-18T18:41:06: New connection from 172.19.0.5:50131 on port 1883.
+2026-10-18T18:41:06: New client connected from 172.19.0.5:50131 as lim-dev01 (p2, c1, k60, u'device01').
+2026-10-18T18:41:07: Client lim-ingest disconnected.
+2026-10-18T18:41:07: New connection from 172.19.0.5:53273 on port 1883.
+2026-10-18T18:41:07: New client connected from 172.19.0.5:53273 as lim-queue (p2, c0, k60, u'svc-ingest').
+2026-10-18T18:41:07: lim-queue 1 enu/site1/device01/up/telemetry/queue
+2026-10-18T18:41:08: New connection from 172.19.0.5:35325 on port 1883.
+2026-10-18T18:41:08: Client auth-аноним disconnected, not authorised.
+2026-10-18T18:41:08: New connection from 172.19.0.5:52361 on port 1883.
+2026-10-18T18:41:08: Client auth-device disconnected, not authorised.
+2026-10-18T18:41:08: Client lim-queue disconnected.
+2026-10-18T18:41:08: Outgoing messages are being dropped for client lim-queue.
+2026-10-18T18:41:08: Client lim-dev01 disconnected.
+2026-10-18T18:41:08: New connection from 172.19.0.5:41687 on port 1883.
+2026-10-18T18:41:08: New client connected from 172.19.0.5:41687 as lim-queue (p2, c0, k60, u'svc-ingest').
+2026-10-18T18:41:11: Client lim-queue disconnected.
+2026-10-18T18:41:11: New connection from 172.19.0.5:33149 on port 1883.
+2026-10-18T18:41:11: New client connected from 172.19.0.5:33149 as br-sub-a (p2, c1, k60, u'svc-ingest').
+2026-10-18T18:41:11: br-sub-a 1 enu/+/+/status
+2026-10-18T18:41:12: New connection from 172.19.0.5:45749 on port 1883.
+2026-10-18T18:41:12: New client connected from 172.19.0.5:45749 as br-dev01 (p2, c1, k60, u'device01').
+2026-10-18T18:41:16: New connection from 172.19.0.5:41677 on port 1883.
+2026-10-18T18:41:16: New client connected from 172.19.0.5:41677 as br-cmd (p2, c1, k60, u'device02').
+2026-10-18T18:41:16: br-cmd 1 enu/site1/device02/down/#
+2026-10-18T18:41:18: Client br-dev01 disconnected.
+2026-10-18T18:41:18: Client br-sub-a disconnected.
+2026-10-18T18:41:18: Client br-cmd disconnected.
+2026-10-18T18:41:18: New connection from 172.19.0.5:50579 on port 1883.
+2026-10-18T18:41:18: New client connected from 172.19.0.5:50579 as sys-dash (p2, c1, k60, u'dashboard').
+2026-10-18T18:41:18: sys-dash 0 $SYS/#
+2026-10-18T18:41:24: New connection from 172.19.0.5:57065 on port 1883.
+2026-10-18T18:41:24: Client auth-аноним disconnected, not authorised.
+2026-10-18T18:41:24: New connection from 172.19.0.5:45039 on port 1883.
+2026-10-18T18:41:24: Client auth-device disconnected, not authorised.
+2026-10-18T18:41:25: Client sys-dash disconnected.
+2026-10-18T18:41:25: New connection from 172.19.0.5:33807 on port 1883.
+2026-10-18T18:41:25: New client connected from 172.19.0.5:33807 as shared-itto-a-0 (p5, c1, k60, u'svc-ingest').
+2026-10-18T18:41:25: shared-itto-a-0 1 $share/g1/enu/+/+/up/telemetry/#
+2026-10-18T18:41:25: New connection from 172.19.0.5:45767 on port 1883.
+2026-10-18T18:41:25: New client connected from 172.19.0.5:45767 as shared-itto-a-1 (p5, c1, k60, u'svc-ingest').
+2026-10-18T18:41:25: shared-itto-a-1 1 $share/g1/enu/+/+/up/telemetry/#
+2026-10-18T18:41:25: New connection from 172.19.0.5:46535 on port 1883.
+2026-10-18T18:41:25: New client connected from 172.19.0.5:46535 as shared-itto-a-2 (p5, c1, k60, u'svc-ingest').
+2026-10-18T18:41:25: shared-itto-a-2 1 $share/g1/enu/+/+/up/telemetry/#
+2026-10-18T18:41:26: New connection from 172.19.0.5:38815 on port 1883.
+2026-10-18T18:41:26: New client connected from 172.19.0.5:38815 as shared-pub-itto-a (p2, c1, k60, u'device01').
+2026-10-18T18:41:29: Saving in-memory database to /mosquitto/data//mosquitto.db.
+2026-10-18T18:41:30: Client shared-itto-a-0 disconnected.
+2026-10-18T18:41:30: Client shared-pub-itto-a disconnected.
+2026-10-18T18:41:30: Client shared-itto-a-2 disconnected.
+2026-10-18T18:41:30: Client shared-itto-a-1 disconnected.
+2026-10-18T18:42:00: Saving in-memory database to /mosquitto/data//mosquitto.db.
+2026-10-18T18:42:31: Saving in-memory database to /mosquitto/data//mosquitto.db.
+2026-10-18T18:43:02: Saving in-memory database to /mosquitto/data//mosquitto.db.
