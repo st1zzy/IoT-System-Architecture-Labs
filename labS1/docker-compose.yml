@@ -1,0 +1,36 @@
+# Lab S1 — LPWAN: симуляция LoRaWAN-сети; принятые кадры уходят в MQTT стенда курса
+#
+#  [N end-devices] → [ALOHA + capture] → [gateway: 8 каналов, 8 демодуляторов]
+#                                                 ↓ ns_bridge.py (Network Server)
+#                          mosquitto: application/lab-s1/device/+/event/up → app_counter.py
+name: labs1
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    container_name: labs1-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    healthcheck:
+      test: ["CMD", "mosquitto_sub", "-t", "$$SYS/broker/version", "-C", "1", "-W", "3"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  sim:
+    # docker compose run --rm sim                              — все эксперименты
+    # docker compose run --rm sim python tools/ns_bridge.py    — час работы соты → MQTT
+    build: ./sim
+    environment:
+      MQTT_HOST: mosquitto
+    volumes:
+      - ./tools:/lab/tools:ro
+      - ./results:/lab/results
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    profiles: ["tools"]

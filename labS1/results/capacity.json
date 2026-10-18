@@ -1,0 +1,65 @@
+[
+  {
+    "sf": 7,
+    "period": 300,
+    "with_capture": 1404,
+    "no_capture": 1075,
+    "aloha_theory": 1087.9516626318682
+  },
+  {
+    "sf": 9,
+    "period": 300,
+    "with_capture": 444,
+    "no_capture": 326,
+    "aloha_theory": 332.0957423227112
+  },
+  {
+    "sf": 12,
+    "period": 300,
+    "with_capture": 61,
+    "no_capture": 46,
+    "aloha_theory": 46.668733975474154
+  },
+  {
+    "sf": 7,
+    "period": 600,
+    "with_capture": 2828,
+    "no_capture": 2181,
+    "aloha_theory": 2175.9033252637364
+  },
+  {
+    "sf": 9,
+    "period": 600,
+    "with_capture": 873,
+    "no_capture": 679,
+    "aloha_theory": 664.1914846454224
+  },
+  {
+    "sf": 12,
+    "period": 600,
+    "with_capture": 122,
+    "no_capture": 91,
+    "aloha_theory": 93.33746795094831
+  },
+  {
+    "sf": 7,
+    "period": 3600,
+    "with_capture": 17176,
+    "no_capture": 13035,
+    "aloha_theory": 13055.41995158242
+  },
+  {
+    "sf": 9,
+    "period": 3600,
+    "with_capture": 5200,
+    "no_capture": 4025,
+    "aloha_theory": 3985.1489078725344
+  },
+  {
+    "sf": 12,
+    "period": 3600,
+    "with_capture": 718,
+    "no_capture": 558,
+    "aloha_theory": 560.0248077056899
+  }
+]
