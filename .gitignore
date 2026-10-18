@@ -10,3 +10,4 @@ __pycache__/
 
 # Временные файлы Word
 ~$*.docx
+node_modules/

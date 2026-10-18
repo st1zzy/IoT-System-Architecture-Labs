@@ -1,0 +1,6 @@
+{
+  "name": "report-gen",
+  "private": true,
+  "description": "Генерация отчётов по лабораторным в Word",
+  "dependencies": { "docx": "9.5.1" }
+}
