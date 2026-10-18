@@ -1,0 +1,5 @@
+Подключение (TCP handshake + CONNECT/CONNACK): 7 кадров, 503 Б
+QoS 0: 2 кадров, 233 Б на проводе; кадр PUBLISH 167 Б = Ethernet 14 + IP 20 + TCP 32 + MQTT 101 (заголовок 2, длина топика 2, топик 42, payload 55); полезная нагрузка 23.6 % (PUBLISH)
+QoS 1: 4 кадров, 371 Б на проводе; кадр PUBLISH 169 Б = Ethernet 14 + IP 20 + TCP 32 + MQTT 103 (заголовок 2, длина топика 2, топик 42, packet id 2, payload 55); полезная нагрузка 14.8 % (PUBLISH PUBACK)
+QoS 2: 6 кадров, 511 Б на проводе; кадр PUBLISH 169 Б = Ethernet 14 + IP 20 + TCP 32 + MQTT 103 (заголовок 2, длина топика 2, топик 42, packet id 2, payload 55); полезная нагрузка 10.8 % (PUBLISH PUBREC PUBREL PUBCOMP)
+Payload 55 Б, топик 42 Б; кадров всего 23, DISCONNECT 1

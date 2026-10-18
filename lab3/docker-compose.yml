@@ -1,0 +1,42 @@
+# Lab 3 — MQTT Publisher/Subscriber: QoS, retained, LWT, разбор пакетов
+#
+#  [lab3-device]  publisher × N, tc netem (потери), tcpdump/tshark ──▶ [lab3-mosquitto] ──▶ [lab3-backend]
+#   «устройство» с плохим каналом                                         брокер              subscriber: + и #
+name: lab3
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab3-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    healthcheck:
+      test: ["CMD", "mosquitto_sub", "-t", "$$SYS/broker/version", "-C", "1", "-W", "3"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  device:
+    build: ./client
+    container_name: lab3-device
+    cap_add: [NET_ADMIN, NET_RAW]     # tc netem и захват пакетов
+    volumes:
+      - ./tools:/lab/tools:ro
+      - ./results:/lab/results
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+
+  backend:
+    build: ./client
+    container_name: lab3-backend
+    volumes:
+      - ./tools:/lab/tools:ro
+      - ./results:/lab/results
+    depends_on:
+      mosquitto:
+        condition: service_healthy

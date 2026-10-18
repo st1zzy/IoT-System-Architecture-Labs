@@ -1,0 +1,1 @@
+{"run": "probe_q2_l5_if50_v311", "qos": 2, "loss": 5.0, "n": 1000, "send_s": 19.980334997177124, "inflight": 50, "outage": 0, "v5": false, "acked": 1000, "connects": 1, "disconnects": 1, "publish_err": 0}

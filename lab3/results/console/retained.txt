@@ -1,0 +1,9 @@
+1) Публикация: config и status с retain=1, телеметрия temperature с retain=0; подписка через 0,5 с
+   enu/site1/dev-001/down/config: получено «{"interval_s":10,"schema_version":"1.0"}» retain=1 через 0.8 мс после SUBSCRIBE
+   enu/site1/dev-001/status: получено «online» retain=1 через 0.6 мс после SUBSCRIBE
+   enu/site1/dev-001/up/telemetry/temperature: ничего — сообщение без retain опоздавшему подписчику недоступно
+2) Пустой payload с retain=1 удаляет сохранённое: новый подписчик на config получил 0 сообщений
+3) Подписка enu/site1/+/status: 3 retained-статусов сразу после подключения —
+   enu/site1/dev-001/status = online (retain=1, 0.5 мс)
+   enu/site1/dev-002/status = online (retain=1, 0.5 мс)
+   enu/site1/dev-003/status = online (retain=1, 0.6 мс)

@@ -1,0 +1,1 @@
+{"run": "win_w20_v311", "qos": 2, "loss": 5.0, "n": 1000, "send_s": 19.980391263961792, "inflight": 20, "outage": 0, "v5": false, "failed_acks": {}, "acked": 1000, "connects": 1, "disconnects": 1, "publish_err": 0}

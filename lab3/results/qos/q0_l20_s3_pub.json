@@ -1,0 +1,1 @@
+{"run": "q0_l20_s3", "qos": 0, "loss": 20.0, "n": 1000, "send_s": 19.98025155067444, "inflight": 20, "acked": 949, "connects": 2, "disconnects": 3, "publish_err": 51}

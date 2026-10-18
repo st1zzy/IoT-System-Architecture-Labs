@@ -1,0 +1,48 @@
+{
+  "connect_bytes": 503,
+  "connect_frames": 7,
+  "exchanges": [
+    {
+      "qos": 0,
+      "frames": 2,
+      "bytes": 233,
+      "publish_frame": 167,
+      "mqtt_publish": 101,
+      "payload": 55,
+      "packets": [
+        "PUBLISH"
+      ],
+      "efficiency_pct": 23.605150214592275
+    },
+    {
+      "qos": 1,
+      "frames": 4,
+      "bytes": 371,
+      "publish_frame": 169,
+      "mqtt_publish": 103,
+      "payload": 55,
+      "packets": [
+        "PUBLISH",
+        "PUBACK"
+      ],
+      "efficiency_pct": 14.824797843665769
+    },
+    {
+      "qos": 2,
+      "frames": 6,
+      "bytes": 511,
+      "publish_frame": 169,
+      "mqtt_publish": 103,
+      "payload": 55,
+      "packets": [
+        "PUBLISH",
+        "PUBREC",
+        "PUBREL",
+        "PUBCOMP"
+      ],
+      "efficiency_pct": 10.76320939334638
+    }
+  ],
+  "payload": 55,
+  "topic_len": 42
+}

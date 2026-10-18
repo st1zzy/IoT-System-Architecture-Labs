@@ -1,0 +1,1 @@
+{"run": "dupc_q2_s3", "qos": 2, "loss": 20.0, "n": 1000, "send_s": 19.98027777671814, "inflight": 20, "outage": 12.0, "acked": 1000, "connects": 3, "disconnects": 5, "publish_err": 0}

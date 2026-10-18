@@ -1,0 +1,78 @@
+Traceback (most recent call last):
+  File "/lab/tools/qos_pub.py", line 88, in <module>
+    main()
+  File "/lab/tools/qos_pub.py", line 69, in main
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lab/tools/qos_pub.py", line 69, in <genexpr>
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paho/mqtt/client.py", line 579, in is_published
+    raise RuntimeError(f'Message publish failed: {error_string(self.rc)}')
+RuntimeError: Message publish failed: The client is not currently connected.
+sink dup_q1_s1: доставлено 1000/1000, дублей 0 (с флагом DUP 0), задержка p50 697 мс, p99 13732 мс, среднее 1535 мс
+Traceback (most recent call last):
+  File "/lab/tools/qos_pub.py", line 88, in <module>
+    main()
+  File "/lab/tools/qos_pub.py", line 69, in main
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lab/tools/qos_pub.py", line 69, in <genexpr>
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paho/mqtt/client.py", line 579, in is_published
+    raise RuntimeError(f'Message publish failed: {error_string(self.rc)}')
+RuntimeError: Message publish failed: The client is not currently connected.
+sink dup_q2_s1: доставлено 154/1000, дублей 0 (с флагом DUP 0), задержка p50 1170 мс, p99 3257 мс, среднее 1402 мс
+Traceback (most recent call last):
+  File "/lab/tools/qos_pub.py", line 88, in <module>
+    main()
+  File "/lab/tools/qos_pub.py", line 69, in main
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lab/tools/qos_pub.py", line 69, in <genexpr>
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paho/mqtt/client.py", line 579, in is_published
+    raise RuntimeError(f'Message publish failed: {error_string(self.rc)}')
+RuntimeError: Message publish failed: The client is not currently connected.
+sink dup_q1_s2: доставлено 1000/1000, дублей 8 (с флагом DUP 0), задержка p50 451 мс, p99 2923 мс, среднее 758 мс
+Traceback (most recent call last):
+  File "/lab/tools/qos_pub.py", line 88, in <module>
+    main()
+  File "/lab/tools/qos_pub.py", line 69, in main
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lab/tools/qos_pub.py", line 69, in <genexpr>
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paho/mqtt/client.py", line 579, in is_published
+    raise RuntimeError(f'Message publish failed: {error_string(self.rc)}')
+RuntimeError: Message publish failed: The client is not currently connected.
+sink dup_q2_s2: доставлено 529/1000, дублей 0 (с флагом DUP 0), задержка p50 1182 мс, p99 17412 мс, среднее 2662 мс
+Traceback (most recent call last):
+  File "/lab/tools/qos_pub.py", line 88, in <module>
+    main()
+  File "/lab/tools/qos_pub.py", line 69, in main
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lab/tools/qos_pub.py", line 69, in <genexpr>
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paho/mqtt/client.py", line 579, in is_published
+    raise RuntimeError(f'Message publish failed: {error_string(self.rc)}')
+RuntimeError: Message publish failed: The client is not currently connected.
+sink dup_q1_s3: доставлено 974/1000, дублей 20 (с флагом DUP 0), задержка p50 406 мс, p99 13555 мс, среднее 1584 мс
+Traceback (most recent call last):
+  File "/lab/tools/qos_pub.py", line 88, in <module>
+    main()
+  File "/lab/tools/qos_pub.py", line 69, in main
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lab/tools/qos_pub.py", line 69, in <genexpr>
+    while time.time() < deadline and not all(i.is_published() for i in pending):
+                                             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paho/mqtt/client.py", line 579, in is_published
+    raise RuntimeError(f'Message publish failed: {error_string(self.rc)}')
+RuntimeError: Message publish failed: The client is not currently connected.
+sink dup_q2_s3: доставлено 618/1000, дублей 0 (с флагом DUP 0), задержка p50 1408 мс, p99 18356 мс, среднее 2157 мс

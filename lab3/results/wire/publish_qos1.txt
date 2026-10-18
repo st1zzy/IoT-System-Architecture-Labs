@@ -1,0 +1,16 @@
+Frame 10: 169 bytes on wire (1352 bits), 169 bytes captured (1352 bits)
+Ethernet II, Src: 5e:88:44:7b:91:9f (5e:88:44:7b:91:9f), Dst: 1a:dd:a0:10:85:7a (1a:dd:a0:10:85:7a)
+Internet Protocol Version 4, Src: 172.19.0.3, Dst: 172.19.0.2
+Transmission Control Protocol, Src Port: 38755, Dst Port: 1883, Seq: 123, Ack: 5, Len: 103
+MQ Telemetry Transport Protocol, Publish Message
+    Header Flags: 0x32, Message Type: Publish Message, QoS Level: At least once delivery (Acknowledged deliver)
+        0011 .... = Message Type: Publish Message (3)
+        .... 0... = DUP Flag: Not set
+        .... .01. = QoS Level: At least once delivery (Acknowledged deliver) (1)
+        .... ...0 = Retain: Not set
+    Msg Len: 101
+    Topic Length: 42
+    Topic: enu/site1/dev-001/up/telemetry/temperature
+    Message Identifier: 2
+    Message: 7b22736571223a312c227473223a313739323331303430303030302c2276616c7565223a32312e35332c22756e6974223a22c2b043227d
+

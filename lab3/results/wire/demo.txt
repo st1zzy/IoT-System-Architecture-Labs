@@ -1,0 +1,1 @@
+topic enu/site1/dev-001/up/telemetry/temperature (42 Б), payload {"seq":1,"ts":1792310400000,"value":21.53,"unit":"°C"} (55 Б)

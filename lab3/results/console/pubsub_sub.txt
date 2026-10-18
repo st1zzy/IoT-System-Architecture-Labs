@@ -1,0 +1,19 @@
+[enu/#] enu/site1/dev-001/status qos=1 retain=1 online
+[enu/#] enu/site1/dev-002/status qos=1 retain=1 online
+[enu/+/+/up/telemetry/temperature] enu/site1/dev-001/up/telemetry/temperature qos=1 retain=0 {"seq":1,"ts":1792346487243,"value":21.01,"unit":"\u00b0C"}
+[enu/+/+/up/telemetry/temperature] enu/site1/dev-002/up/telemetry/temperature qos=1 retain=0 {"seq":1,"ts":1792346487244,"value":20.96,"unit":"\u00b0C"}
+[enu/+/+/up/telemetry/temperature] ПРОПУСК enu/site1/dev-001/up/telemetry/temperature: seq 7..7 (1 шт.)
+[enu/#] ПРОПУСК enu/site1/dev-001/up/telemetry/temperature: seq 7..7 (1 шт.)
+[enu/+/+/up/telemetry/temperature] ПРОПУСК enu/site1/dev-002/up/telemetry/temperature: seq 7..7 (1 шт.)
+[enu/#] ПРОПУСК enu/site1/dev-002/up/telemetry/temperature: seq 7..7 (1 шт.)
+[enu/+/+/up/telemetry/temperature] ПРОПУСК enu/site1/dev-003/up/telemetry/temperature: seq 7..7 (1 шт.)
+[enu/#] ПРОПУСК enu/site1/dev-003/up/telemetry/temperature: seq 7..7 (1 шт.)
+[enu/#] ПРОПУСК enu/site1/dev-002/up/telemetry/temperature: seq 14..14 (1 шт.)
+[enu/+/+/up/telemetry/temperature] ПРОПУСК enu/site1/dev-002/up/telemetry/temperature: seq 14..14 (1 шт.)
+[enu/#] ПРОПУСК enu/site1/dev-003/up/telemetry/temperature: seq 14..14 (1 шт.)
+[enu/+/+/up/telemetry/temperature] ПРОПУСК enu/site1/dev-003/up/telemetry/temperature: seq 14..14 (1 шт.)
+[enu/#] ПРОПУСК enu/site1/dev-001/up/telemetry/temperature: seq 14..14 (1 шт.)
+[enu/+/+/up/telemetry/temperature] ПРОПУСК enu/site1/dev-001/up/telemetry/temperature: seq 14..14 (1 шт.)
+ИТОГ [enu/+/+/up/telemetry/temperature]: сообщений 54, топиков 3, retained 0, пропусков 6 (сообщений 6), дублей 0
+ИТОГ [enu/#]: сообщений 243, топиков 15, retained 3, пропусков 6 (сообщений 6), дублей 0
+  по классам (последний фильтр): status 9, up/event 60, up/telemetry 174

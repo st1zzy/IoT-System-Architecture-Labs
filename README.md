@@ -13,6 +13,7 @@
 | Lab 1 | Device Layer — датчики и модель данных | [lab1](lab1) | [Lab1_Жанайдаров_Амирлан.docx](lab1/Lab1_Жанайдаров_Амирлан.docx) |
 | Lab 2 | Wi-Fi Communication — измерение характеристик канала | [lab2](lab2) | [Lab2_Жанайдаров_Амирлан.docx](lab2/Lab2_Жанайдаров_Амирлан.docx) |
 | Lab S1 | LPWAN — симуляция и энергопрофилирование | [labS1](labS1) | [LabS1_Жанайдаров_Амирлан.docx](labS1/LabS1_Жанайдаров_Амирлан.docx) |
+| Lab 3 | MQTT Publisher/Subscriber | [lab3](lab3) | [Lab3_Жанайдаров_Амирлан.docx](lab3/Lab3_Жанайдаров_Амирлан.docx) |
 
 ## Требования
 

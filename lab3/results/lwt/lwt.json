@@ -1,0 +1,128 @@
+[
+  {
+    "client": "lwt-k5-kill-1",
+    "keepalive": 5,
+    "mode": "kill",
+    "repeat": 1,
+    "detect_s": 0.0021638870239257812
+  },
+  {
+    "client": "lwt-k5-kill-2",
+    "keepalive": 5,
+    "mode": "kill",
+    "repeat": 2,
+    "detect_s": 0.0019462108612060547
+  },
+  {
+    "client": "lwt-k5-kill-3",
+    "keepalive": 5,
+    "mode": "kill",
+    "repeat": 3,
+    "detect_s": 0.002097606658935547
+  },
+  {
+    "client": "lwt-k5-silent-1",
+    "keepalive": 5,
+    "mode": "silent",
+    "repeat": 1,
+    "detect_s": 5.848130941390991
+  },
+  {
+    "client": "lwt-k5-silent-2",
+    "keepalive": 5,
+    "mode": "silent",
+    "repeat": 2,
+    "detect_s": 8.987365245819092
+  },
+  {
+    "client": "lwt-k5-silent-3",
+    "keepalive": 5,
+    "mode": "silent",
+    "repeat": 3,
+    "detect_s": 8.924444913864136
+  },
+  {
+    "client": "lwt-k10-kill-1",
+    "keepalive": 10,
+    "mode": "kill",
+    "repeat": 1,
+    "detect_s": 0.002380847930908203
+  },
+  {
+    "client": "lwt-k10-kill-2",
+    "keepalive": 10,
+    "mode": "kill",
+    "repeat": 2,
+    "detect_s": 0.002304553985595703
+  },
+  {
+    "client": "lwt-k10-kill-3",
+    "keepalive": 10,
+    "mode": "kill",
+    "repeat": 3,
+    "detect_s": 0.0017800331115722656
+  },
+  {
+    "client": "lwt-k10-silent-1",
+    "keepalive": 10,
+    "mode": "silent",
+    "repeat": 1,
+    "detect_s": 18.234938621520996
+  },
+  {
+    "client": "lwt-k10-silent-2",
+    "keepalive": 10,
+    "mode": "silent",
+    "repeat": 2,
+    "detect_s": 14.943148374557495
+  },
+  {
+    "client": "lwt-k10-silent-3",
+    "keepalive": 10,
+    "mode": "silent",
+    "repeat": 3,
+    "detect_s": 15.051084995269775
+  },
+  {
+    "client": "lwt-k20-kill-1",
+    "keepalive": 20,
+    "mode": "kill",
+    "repeat": 1,
+    "detect_s": 0.0024437904357910156
+  },
+  {
+    "client": "lwt-k20-kill-2",
+    "keepalive": 20,
+    "mode": "kill",
+    "repeat": 2,
+    "detect_s": 0.001961946487426758
+  },
+  {
+    "client": "lwt-k20-kill-3",
+    "keepalive": 20,
+    "mode": "kill",
+    "repeat": 3,
+    "detect_s": 0.0022788047790527344
+  },
+  {
+    "client": "lwt-k20-silent-1",
+    "keepalive": 20,
+    "mode": "silent",
+    "repeat": 1,
+    "detect_s": 29.924636602401733
+  },
+  {
+    "client": "lwt-k20-silent-2",
+    "keepalive": 20,
+    "mode": "silent",
+    "repeat": 2,
+    "detect_s": 33.05366826057434
+  },
+  {
+    "client": "lwt-k20-silent-3",
+    "keepalive": 20,
+    "mode": "silent",
+    "repeat": 3,
+    "detect_s": 32.99052882194519
+  }
+]

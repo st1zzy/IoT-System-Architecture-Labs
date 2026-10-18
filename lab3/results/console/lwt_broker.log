@@ -1,0 +1,8 @@
+2026-10-18T17:53:36: New client connected from 172.19.0.3:54119 as lwt-k5-kill-1 (p2, c1, k5).
+2026-10-18T17:53:38: Client lwt-k5-kill-1 closed its connection.
+2026-10-18T17:53:45: New client connected from 172.19.0.3:34965 as lwt-k5-silent-1 (p2, c1, k5).
+2026-10-18T17:53:53: Client lwt-k5-silent-1 has exceeded timeout, disconnecting.
+2026-10-18T17:55:24: New client connected from 172.19.0.3:50713 as lwt-k20-kill-1 (p2, c1, k20).
+2026-10-18T17:55:26: Client lwt-k20-kill-1 closed its connection.
+2026-10-18T17:55:33: New client connected from 172.19.0.3:41767 as lwt-k20-silent-1 (p2, c1, k20).
+2026-10-18T17:56:05: Client lwt-k20-silent-1 has exceeded timeout, disconnecting.

@@ -1,0 +1,3 @@
+lab3-backend 0.01% 28.55MiB / 7.606GiB
+lab3-device 0.00% 97.71MiB / 7.606GiB
+lab3-mosquitto 0.05% 1.594MiB / 7.606GiB
