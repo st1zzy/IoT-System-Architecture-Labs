@@ -1,0 +1,4 @@
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+2c42992404c0   lab1-device      0.02%     21.42MiB / 7.606GiB   0.28%     7kB / 23.8kB      582kB / 0B    2
+62a1ace3ed16   lab1-collector   0.01%     25.37MiB / 7.606GiB   0.33%     23.6kB / 6.14kB   8.18MB / 0B   2
+225c408d580e   lab1-mosquitto   2.54%     18.32MiB / 7.606GiB   0.24%     14.7kB / 13.3kB   856kB / 0B    1

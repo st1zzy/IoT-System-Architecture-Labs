@@ -126,12 +126,13 @@ function Tbl(title, widths, header, rows) {
 // PNG: ширина и высота из заголовка IHDR
 function pngSize(buf) { return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) }; }
 
-function Fig(path, title) {
+function Fig(path, title, maxH = 900) {
   const data = fs.readFileSync(path);
   const { w, h } = pngSize(data);
   const maxW = 605; // ≈ 16 см при 96 dpi — как в образце
-  const width = Math.min(maxW, Math.round(w * 0.75));
-  const height = Math.round(h * width / w);
+  let width = Math.min(maxW, Math.round(w * 0.75));
+  let height = Math.round(h * width / w);
+  if (height > maxH) { width = Math.round(width * maxH / height); height = maxH; }
   return [
     new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120, after: 60 }, keepNext: true,
       children: [new ImageRun({ type: "png", data, transformation: { width, height } })] }),

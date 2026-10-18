@@ -1,0 +1,76 @@
+{
+  "n": 2000,
+  "interval_s": 5.0,
+  "rows": [
+    {
+      "format": "JSON (с пробелами)",
+      "payload_mean": 209.6345,
+      "payload_min": 206,
+      "payload_max": 255,
+      "mqtt_packet": 258.6345,
+      "wire": 366.6345,
+      "mb_day": 3.62248416,
+      "wire_mb_day": 6.33544416,
+      "saving_payload_pct": -10.564095261452122,
+      "saving_wire_pct": -5.778920931493947,
+      "fleet1000_gb_day": 3.62248416,
+      "fleet10000_gb_month": 1086.745248
+    },
+    {
+      "format": "JSON компактный",
+      "payload_mean": 189.6045,
+      "payload_min": 186,
+      "payload_max": 232,
+      "mqtt_packet": 238.6045,
+      "wire": 346.60450000000003,
+      "mb_day": 3.2763657600000005,
+      "wire_mb_day": 5.989325760000001,
+      "saving_payload_pct": 0.0,
+      "saving_wire_pct": 0.0,
+      "fleet1000_gb_day": 3.2763657600000005,
+      "fleet10000_gb_month": 982.9097280000001
+    },
+    {
+      "format": "CBOR",
+      "payload_mean": 162.1225,
+      "payload_min": 160,
+      "payload_max": 190,
+      "mqtt_packet": 211.1225,
+      "wire": 319.1225,
+      "mb_day": 2.8014767999999997,
+      "wire_mb_day": 5.5144367999999995,
+      "saving_payload_pct": 14.494381726172112,
+      "saving_wire_pct": 7.92892186916212,
+      "fleet1000_gb_day": 2.8014767999999997,
+      "fleet10000_gb_month": 840.4430399999999
+    },
+    {
+      "format": "CBOR компактный",
+      "payload_mean": 56.896,
+      "payload_min": 55,
+      "payload_max": 61,
+      "mqtt_packet": 104.896,
+      "wire": 212.89600000000002,
+      "mb_day": 0.98316288,
+      "wire_mb_day": 3.6788428800000004,
+      "saving_payload_pct": 69.99227339013578,
+      "saving_wire_pct": 38.57667745225466,
+      "fleet1000_gb_day": 0.98316288,
+      "fleet10000_gb_month": 294.94886399999996
+    }
+  ],
+  "example": {
+    "schema_version": "1.0",
+    "device_id": "room-sensor-01",
+    "ts": 1792281600000,
+    "seq": 1,
+    "metrics": {
+      "temperature": 17.53,
+      "humidity": 54.2,
+      "pressure": 972.8,
+      "motion": false
+    },
+    "battery": 87.0,
+    "rssi": -73
+  }
+}

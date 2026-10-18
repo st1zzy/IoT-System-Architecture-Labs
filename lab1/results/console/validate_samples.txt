@@ -1,0 +1,19 @@
+Сгенерировано 20000 сообщений (вероятности сбоев ×10)
+  не прошли схему: 0
+  с флагами quality: 4769 (23.8 %)
+  канал          nan  out_of_range   spike   stuck
+  temperature     86            77     167    1592
+  humidity        96           108     175    1461
+  pressure        99           101     157    1053
+Негативные тесты (ожидается отклонение):
+  ОТКЛОНЕНО  нет поля seq                 'seq' is a required property
+  ОТКЛОНЕНО  seq отрицательный            -1 is less than the minimum of 0
+  ОТКЛОНЕНО  ts строкой (ISO 8601)        '2026-10-18T00:00:00Z' is not of type 'integer'
+  ОТКЛОНЕНО  temperature строкой          '21.5' is not of type 'number', 'null'
+  ОТКЛОНЕНО  humidity = 150 %             150.0 is greater than the maximum of 100
+  ОТКЛОНЕНО  нет канала motion            'motion' is a required property
+  ОТКЛОНЕНО  неизвестное поле firmware    Additional properties are not allowed ('firmware' was unexpected)
+  ОТКЛОНЕНО  schema_version = 2.0         '2.0' does not match '^1\\.[0-9]+$'
+  ОТКЛОНЕНО  device_id с пробелом         'room sensor' does not match '^[a-z0-9-]{3,32}$'
+  ОТКЛОНЕНО  неизвестный флаг quality     'broken' is not one of ['nan', 'out_of_range', 'spike', 'stuck']
+Итог: 20000/20000 корректных приняты, 10/10 неверных отклонены

@@ -1,0 +1,72 @@
+2026-10-18 05:42:07,564 INFO device room-sensor-01: interval=5s qos=1 encoding=json buffer=500 (drop_oldest)
+2026-10-18 05:42:07,592 INFO connected to mosquitto:1883, buffered=1
+2026-10-18 05:42:07,597 INFO pub seq=1 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:12,566 INFO pub seq=2 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:17,569 INFO pub seq=3 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:22,569 INFO pub seq=4 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:27,571 INFO pub seq=5 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:32,571 INFO pub seq=6 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:37,570 INFO pub seq=7 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:42,567 INFO pub seq=8 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:47,569 INFO pub seq=9 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:52,569 INFO pub seq=10 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:42:57,569 INFO pub seq=11 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:02,569 INFO pub seq=12 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:07,569 INFO pub seq=13 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:12,567 INFO pub seq=14 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:17,569 INFO pub seq=15 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:22,568 INFO pub seq=16 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:27,568 INFO pub seq=17 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:32,569 INFO pub seq=18 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:43:37,569 INFO pub seq=19 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:42,567 INFO pub seq=20 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:47,569 INFO pub seq=21 enc=json bytes=187 (json=187 cbor=160) buf=0/500
+2026-10-18 05:43:52,568 INFO pub seq=22 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:43:57,569 INFO pub seq=23 enc=json bytes=188 (json=188 cbor=160) buf=0/500
+2026-10-18 05:44:02,569 INFO pub seq=24 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:44:07,570 INFO pub seq=25 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:44:12,568 INFO pub seq=26 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:44:17,568 INFO pub seq=27 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:44:22,569 INFO pub seq=28 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:44:27,569 INFO pub seq=29 enc=json bytes=187 (json=187 cbor=161) buf=0/500
+2026-10-18 05:44:32,569 INFO pub seq=30 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:44:37,567 INFO validation seq=31 flags={'humidity': ['spike']}
+2026-10-18 05:44:37,567 WARNING disconnected: [code:128] Unspecified error; retry in 1s, buffered=1/500
+2026-10-18 05:44:42,416 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s, buffered=1/500
+2026-10-18 05:44:48,057 WARNING disconnected: [Errno -2] Name or service not known; retry in 4s, buffered=3/500
+2026-10-18 05:44:56,276 WARNING disconnected: [Errno -2] Name or service not known; retry in 8s, buffered=4/500
+2026-10-18 05:45:09,046 WARNING disconnected: [Errno -2] Name or service not known; retry in 16s, buffered=7/500
+2026-10-18 05:45:29,026 WARNING disconnected: [Errno -2] Name or service not known; retry in 30s, buffered=11/500
+2026-10-18 05:45:59,712 WARNING disconnected: [Errno -2] Name or service not known; retry in 30s, buffered=17/500
+2026-10-18 05:46:27,103 INFO connected to mosquitto:1883, buffered=22
+2026-10-18 05:46:27,105 INFO pub seq=31 enc=json bytes=220 (json=220 cbor=186) buf=21/500
+2026-10-18 05:46:27,107 INFO pub seq=32 enc=json bytes=188 (json=188 cbor=161) buf=20/500
+2026-10-18 05:46:27,109 INFO pub seq=33 enc=json bytes=187 (json=187 cbor=161) buf=19/500
+2026-10-18 05:46:27,110 INFO pub seq=34 enc=json bytes=188 (json=188 cbor=161) buf=18/500
+2026-10-18 05:46:27,112 INFO pub seq=35 enc=json bytes=188 (json=188 cbor=161) buf=17/500
+2026-10-18 05:46:27,114 INFO pub seq=36 enc=json bytes=188 (json=188 cbor=161) buf=16/500
+2026-10-18 05:46:27,115 INFO pub seq=37 enc=json bytes=188 (json=188 cbor=161) buf=15/500
+2026-10-18 05:46:27,116 INFO pub seq=38 enc=json bytes=188 (json=188 cbor=161) buf=14/500
+2026-10-18 05:46:27,118 INFO pub seq=39 enc=json bytes=187 (json=187 cbor=161) buf=13/500
+2026-10-18 05:46:27,119 INFO pub seq=40 enc=json bytes=188 (json=188 cbor=161) buf=12/500
+2026-10-18 05:46:27,121 INFO pub seq=41 enc=json bytes=188 (json=188 cbor=161) buf=11/500
+2026-10-18 05:46:27,123 INFO pub seq=42 enc=json bytes=188 (json=188 cbor=161) buf=10/500
+2026-10-18 05:46:27,124 INFO pub seq=43 enc=json bytes=188 (json=188 cbor=161) buf=9/500
+2026-10-18 05:46:27,126 INFO pub seq=44 enc=json bytes=188 (json=188 cbor=161) buf=8/500
+2026-10-18 05:46:27,128 INFO pub seq=45 enc=json bytes=188 (json=188 cbor=161) buf=7/500
+2026-10-18 05:46:27,129 INFO pub seq=46 enc=json bytes=188 (json=188 cbor=161) buf=6/500
+2026-10-18 05:46:27,131 INFO pub seq=47 enc=json bytes=188 (json=188 cbor=161) buf=5/500
+2026-10-18 05:46:27,132 INFO pub seq=48 enc=json bytes=188 (json=188 cbor=161) buf=4/500
+2026-10-18 05:46:27,134 INFO pub seq=49 enc=json bytes=188 (json=188 cbor=161) buf=3/500
+2026-10-18 05:46:27,135 INFO pub seq=50 enc=json bytes=188 (json=188 cbor=161) buf=2/500
+2026-10-18 05:46:27,137 INFO pub seq=51 enc=json bytes=188 (json=188 cbor=161) buf=1/500
+2026-10-18 05:46:27,139 INFO pub seq=52 enc=json bytes=187 (json=187 cbor=161) buf=0/500
+2026-10-18 05:46:27,569 INFO pub seq=53 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:46:32,568 INFO pub seq=54 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:46:37,568 INFO pub seq=55 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:46:42,566 INFO pub seq=56 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:46:47,568 INFO pub seq=57 enc=json bytes=187 (json=187 cbor=161) buf=0/500
+2026-10-18 05:46:52,568 INFO pub seq=58 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:46:57,568 INFO pub seq=59 enc=json bytes=186 (json=186 cbor=161) buf=0/500
+2026-10-18 05:47:02,568 INFO pub seq=60 enc=json bytes=188 (json=188 cbor=161) buf=0/500
+2026-10-18 05:47:07,570 INFO pub seq=61 enc=json bytes=187 (json=187 cbor=161) buf=0/500

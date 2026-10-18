@@ -1,0 +1,2 @@
+05:44:37 docker stop lab1-mosquitto
+05:46:07 docker start lab1-mosquitto

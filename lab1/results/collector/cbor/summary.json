@@ -1,0 +1,16 @@
+{
+  "rx": 12,
+  "valid": 12,
+  "invalid": 0,
+  "dup": 0,
+  "late": 0,
+  "max_delay_s": 0.022,
+  "devices": {
+    "room-sensor-01": {
+      "seq_min": 1,
+      "seq_max": 12,
+      "unique": 12,
+      "missing": 0
+    }
+  }
+}

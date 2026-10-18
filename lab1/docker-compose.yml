@@ -1,0 +1,52 @@
+# Lab 1 — Device Layer: виртуальное устройство с 4 каналами, валидацией, JSON/CBOR и буфером
+name: lab1
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab1-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    healthcheck:
+      test: ["CMD", "mosquitto_sub", "-t", "$$SYS/broker/version", "-C", "1", "-W", "3"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  device:
+    build: ./simulator
+    container_name: lab1-device
+    environment:
+      MQTT_HOST: mosquitto
+      DEVICE_ID: room-sensor-01
+      INTERVAL: "5"
+      QOS: "1"
+      ENCODING: ${ENCODING:-json}        # json | cbor
+      BUFFER_SIZE: ${BUFFER_SIZE:-500}   # для теста переполнения: BUFFER_SIZE=10
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+      collector:
+        condition: service_started     # коллектор подписывается до первого сообщения
+    restart: unless-stopped
+
+  collector:
+    build: ./collector
+    container_name: lab1-collector
+    environment:
+      MQTT_HOST: mosquitto
+      SUMMARY_EVERY: "60"
+      RUN: ${RUN:-main}                  # сценарий: результаты в results/collector/<RUN>
+    volumes:
+      - ./schema:/schema:ro
+      - ./results/collector:/data
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped

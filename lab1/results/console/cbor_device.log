@@ -1,0 +1,15 @@
+2026-10-18 05:47:17,152 INFO device room-sensor-01: interval=5s qos=1 encoding=cbor buffer=500 (drop_oldest)
+2026-10-18 05:47:17,176 INFO connected to mosquitto:1883, buffered=1
+2026-10-18 05:47:17,180 INFO pub seq=1 enc=cbor bytes=160 (json=186 cbor=160) buf=0/500
+2026-10-18 05:47:22,157 INFO pub seq=2 enc=cbor bytes=160 (json=186 cbor=160) buf=0/500
+2026-10-18 05:47:27,157 INFO pub seq=3 enc=cbor bytes=160 (json=186 cbor=160) buf=0/500
+2026-10-18 05:47:32,158 INFO pub seq=4 enc=cbor bytes=160 (json=187 cbor=160) buf=0/500
+2026-10-18 05:47:37,157 INFO pub seq=5 enc=cbor bytes=160 (json=187 cbor=160) buf=0/500
+2026-10-18 05:47:42,155 INFO pub seq=6 enc=cbor bytes=160 (json=187 cbor=160) buf=0/500
+2026-10-18 05:47:47,157 INFO pub seq=7 enc=cbor bytes=160 (json=187 cbor=160) buf=0/500
+2026-10-18 05:47:52,156 INFO pub seq=8 enc=cbor bytes=160 (json=187 cbor=160) buf=0/500
+2026-10-18 05:47:57,156 INFO pub seq=9 enc=cbor bytes=160 (json=186 cbor=160) buf=0/500
+2026-10-18 05:48:02,156 INFO pub seq=10 enc=cbor bytes=160 (json=188 cbor=160) buf=0/500
+2026-10-18 05:48:07,156 INFO pub seq=11 enc=cbor bytes=160 (json=188 cbor=160) buf=0/500
+2026-10-18 05:48:12,155 INFO pub seq=12 enc=cbor bytes=160 (json=187 cbor=160) buf=0/500
+2026-10-18 05:48:17,155 INFO pub seq=13 enc=cbor bytes=160 (json=188 cbor=160) buf=0/500

@@ -1,0 +1,40 @@
+2026-10-18 05:48:22,257 INFO subscribed enu/+/+/up/telemetry/+
+2026-10-18 05:48:22,734 INFO rx room-sensor-01 seq=1 enc=json bytes=186 delay=0.021s schema=ok seq_check=ok
+2026-10-18 05:48:27,712 INFO rx room-sensor-01 seq=2 enc=json bytes=186 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:48:32,712 INFO rx room-sensor-01 seq=3 enc=json bytes=186 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:48:37,713 INFO rx room-sensor-01 seq=4 enc=json bytes=220 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:48:42,712 INFO rx room-sensor-01 seq=5 enc=json bytes=186 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:48:47,714 INFO rx room-sensor-01 seq=6 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:48:52,496 WARNING disconnected: [code:128] Unspecified error; retry in 2s
+2026-10-18 05:48:58,481 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:49:04,325 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:49:10,322 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:49:16,193 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:49:22,198 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:49:22,224 INFO summary(periodic) room-sensor-01: rx=6 valid=6 invalid=0 seq=1..6 missing=0 dup=0 late=0 max_delay=0.0s
+2026-10-18 05:49:28,077 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:49:34,082 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:49:39,939 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:49:45,943 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:49:51,812 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:49:57,816 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:50:03,794 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:50:09,785 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:50:15,780 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:50:21,785 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:50:22,225 INFO summary(periodic) room-sensor-01: rx=6 valid=6 invalid=0 seq=1..6 missing=0 dup=0 late=0 max_delay=0.0s
+2026-10-18 05:50:23,794 INFO subscribed enu/+/+/up/telemetry/+
+2026-10-18 05:50:49,322 WARNING rx room-sensor-01 seq=21 enc=json bytes=188 delay=46.609s schema=ok seq_check=gap(14)
+2026-10-18 05:50:49,324 INFO rx room-sensor-01 seq=22 enc=json bytes=187 delay=41.609s schema=ok seq_check=ok
+2026-10-18 05:50:49,326 INFO rx room-sensor-01 seq=23 enc=json bytes=188 delay=36.615s schema=ok seq_check=ok
+2026-10-18 05:50:49,328 INFO rx room-sensor-01 seq=24 enc=json bytes=187 delay=31.613s schema=ok seq_check=ok
+2026-10-18 05:50:49,330 INFO rx room-sensor-01 seq=25 enc=json bytes=188 delay=26.618s schema=ok seq_check=ok
+2026-10-18 05:50:49,332 INFO rx room-sensor-01 seq=26 enc=json bytes=188 delay=21.619s schema=ok seq_check=ok
+2026-10-18 05:50:49,334 INFO rx room-sensor-01 seq=27 enc=json bytes=188 delay=16.621s schema=ok seq_check=ok
+2026-10-18 05:50:49,336 INFO rx room-sensor-01 seq=28 enc=json bytes=188 delay=11.623s schema=ok seq_check=ok
+2026-10-18 05:50:49,338 INFO rx room-sensor-01 seq=29 enc=json bytes=188 delay=6.626s schema=ok seq_check=ok
+2026-10-18 05:50:49,340 INFO rx room-sensor-01 seq=30 enc=json bytes=188 delay=1.627s schema=ok seq_check=ok
+2026-10-18 05:50:52,711 INFO rx room-sensor-01 seq=31 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:50:57,711 INFO rx room-sensor-01 seq=32 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:51:02,711 INFO rx room-sensor-01 seq=33 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:51:03,950 INFO summary(final) room-sensor-01: rx=19 valid=19 invalid=0 seq=1..33 missing=14 dup=0 late=0 max_delay=46.6s

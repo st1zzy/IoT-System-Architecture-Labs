@@ -1,0 +1,85 @@
+2026-10-18 05:42:06,979 INFO subscribed enu/+/+/up/telemetry/+
+2026-10-18 05:42:07,597 INFO rx room-sensor-01 seq=1 enc=json bytes=187 delay=0.021s schema=ok seq_check=ok
+2026-10-18 05:42:12,566 INFO rx room-sensor-01 seq=2 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:42:17,569 INFO rx room-sensor-01 seq=3 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:42:22,570 INFO rx room-sensor-01 seq=4 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:42:27,571 INFO rx room-sensor-01 seq=5 enc=json bytes=187 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:42:32,571 INFO rx room-sensor-01 seq=6 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:42:37,570 INFO rx room-sensor-01 seq=7 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:42:42,568 INFO rx room-sensor-01 seq=8 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:42:47,570 INFO rx room-sensor-01 seq=9 enc=json bytes=187 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:42:52,570 INFO rx room-sensor-01 seq=10 enc=json bytes=187 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:42:57,570 INFO rx room-sensor-01 seq=11 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:43:02,569 INFO rx room-sensor-01 seq=12 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:43:06,934 INFO summary(periodic) room-sensor-01: rx=12 valid=12 invalid=0 seq=1..12 missing=0 dup=0 late=0 max_delay=0.0s
+2026-10-18 05:43:07,569 INFO rx room-sensor-01 seq=13 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:43:12,567 INFO rx room-sensor-01 seq=14 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:43:17,570 INFO rx room-sensor-01 seq=15 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:43:22,569 INFO rx room-sensor-01 seq=16 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:43:27,569 INFO rx room-sensor-01 seq=17 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:43:32,570 INFO rx room-sensor-01 seq=18 enc=json bytes=187 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:43:37,570 INFO rx room-sensor-01 seq=19 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:43:42,568 INFO rx room-sensor-01 seq=20 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:43:47,569 INFO rx room-sensor-01 seq=21 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:43:52,569 INFO rx room-sensor-01 seq=22 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:43:57,570 INFO rx room-sensor-01 seq=23 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:44:02,569 INFO rx room-sensor-01 seq=24 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:44:06,938 INFO summary(periodic) room-sensor-01: rx=24 valid=24 invalid=0 seq=1..24 missing=0 dup=0 late=0 max_delay=0.0s
+2026-10-18 05:44:07,570 INFO rx room-sensor-01 seq=25 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:44:12,568 INFO rx room-sensor-01 seq=26 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:44:17,568 INFO rx room-sensor-01 seq=27 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:44:22,569 INFO rx room-sensor-01 seq=28 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:44:27,569 INFO rx room-sensor-01 seq=29 enc=json bytes=187 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:44:32,569 INFO rx room-sensor-01 seq=30 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:44:37,462 WARNING disconnected: [code:128] Unspecified error; retry in 2s
+2026-10-18 05:44:43,451 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:44:49,303 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:44:55,307 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:45:01,178 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:45:06,945 INFO summary(periodic) room-sensor-01: rx=30 valid=30 invalid=0 seq=1..30 missing=0 dup=0 late=0 max_delay=0.0s
+2026-10-18 05:45:07,183 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:45:13,039 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:45:19,043 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:45:25,041 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:45:30,888 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:45:36,882 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:45:42,880 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:45:48,884 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:45:54,850 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:46:00,720 WARNING disconnected: [Errno -2] Name or service not known; retry in 2s
+2026-10-18 05:46:06,725 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s
+2026-10-18 05:46:06,949 INFO summary(periodic) room-sensor-01: rx=30 valid=30 invalid=0 seq=1..30 missing=0 dup=0 late=0 max_delay=0.0s
+2026-10-18 05:46:08,733 INFO subscribed enu/+/+/up/telemetry/+
+2026-10-18 05:46:27,106 INFO rx room-sensor-01 seq=31 enc=json bytes=220 delay=109.539s schema=ok seq_check=ok
+2026-10-18 05:46:27,107 INFO rx room-sensor-01 seq=32 enc=json bytes=188 delay=104.543s schema=ok seq_check=ok
+2026-10-18 05:46:27,109 INFO rx room-sensor-01 seq=33 enc=json bytes=187 delay=99.540s schema=ok seq_check=ok
+2026-10-18 05:46:27,110 INFO rx room-sensor-01 seq=34 enc=json bytes=188 delay=94.544s schema=ok seq_check=ok
+2026-10-18 05:46:27,112 INFO rx room-sensor-01 seq=35 enc=json bytes=188 delay=89.545s schema=ok seq_check=ok
+2026-10-18 05:46:27,114 INFO rx room-sensor-01 seq=36 enc=json bytes=188 delay=84.544s schema=ok seq_check=ok
+2026-10-18 05:46:27,115 INFO rx room-sensor-01 seq=37 enc=json bytes=188 delay=79.547s schema=ok seq_check=ok
+2026-10-18 05:46:27,117 INFO rx room-sensor-01 seq=38 enc=json bytes=188 delay=74.550s schema=ok seq_check=ok
+2026-10-18 05:46:27,118 INFO rx room-sensor-01 seq=39 enc=json bytes=187 delay=69.547s schema=ok seq_check=ok
+2026-10-18 05:46:27,120 INFO rx room-sensor-01 seq=40 enc=json bytes=188 delay=64.549s schema=ok seq_check=ok
+2026-10-18 05:46:27,121 INFO rx room-sensor-01 seq=41 enc=json bytes=188 delay=59.553s schema=ok seq_check=ok
+2026-10-18 05:46:27,123 INFO rx room-sensor-01 seq=42 enc=json bytes=188 delay=54.554s schema=ok seq_check=ok
+2026-10-18 05:46:27,125 INFO rx room-sensor-01 seq=43 enc=json bytes=188 delay=49.553s schema=ok seq_check=ok
+2026-10-18 05:46:27,126 INFO rx room-sensor-01 seq=44 enc=json bytes=188 delay=44.558s schema=ok seq_check=ok
+2026-10-18 05:46:27,128 INFO rx room-sensor-01 seq=45 enc=json bytes=188 delay=39.557s schema=ok seq_check=ok
+2026-10-18 05:46:27,129 INFO rx room-sensor-01 seq=46 enc=json bytes=188 delay=34.559s schema=ok seq_check=ok
+2026-10-18 05:46:27,131 INFO rx room-sensor-01 seq=47 enc=json bytes=188 delay=29.564s schema=ok seq_check=ok
+2026-10-18 05:46:27,132 INFO rx room-sensor-01 seq=48 enc=json bytes=188 delay=24.565s schema=ok seq_check=ok
+2026-10-18 05:46:27,134 INFO rx room-sensor-01 seq=49 enc=json bytes=188 delay=19.563s schema=ok seq_check=ok
+2026-10-18 05:46:27,136 INFO rx room-sensor-01 seq=50 enc=json bytes=188 delay=14.568s schema=ok seq_check=ok
+2026-10-18 05:46:27,137 INFO rx room-sensor-01 seq=51 enc=json bytes=188 delay=9.567s schema=ok seq_check=ok
+2026-10-18 05:46:27,139 INFO rx room-sensor-01 seq=52 enc=json bytes=187 delay=4.568s schema=ok seq_check=ok
+2026-10-18 05:46:27,569 INFO rx room-sensor-01 seq=53 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:46:32,569 INFO rx room-sensor-01 seq=54 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:46:37,569 INFO rx room-sensor-01 seq=55 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:46:42,567 INFO rx room-sensor-01 seq=56 enc=json bytes=188 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:46:47,569 INFO rx room-sensor-01 seq=57 enc=json bytes=187 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:46:52,569 INFO rx room-sensor-01 seq=58 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:46:57,569 INFO rx room-sensor-01 seq=59 enc=json bytes=186 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:47:02,569 INFO rx room-sensor-01 seq=60 enc=json bytes=188 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:47:06,953 INFO summary(periodic) room-sensor-01: rx=60 valid=60 invalid=0 seq=1..60 missing=0 dup=0 late=0 max_delay=109.5s
+2026-10-18 05:47:07,570 INFO rx room-sensor-01 seq=61 enc=json bytes=187 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:47:11,313 INFO summary(final) room-sensor-01: rx=61 valid=61 invalid=0 seq=1..61 missing=0 dup=0 late=0 max_delay=109.5s

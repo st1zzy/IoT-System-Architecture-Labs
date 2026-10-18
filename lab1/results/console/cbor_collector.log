@@ -1,0 +1,15 @@
+2026-10-18 05:47:16,677 INFO subscribed enu/+/+/up/telemetry/+
+2026-10-18 05:47:17,181 INFO rx room-sensor-01 seq=1 enc=cbor bytes=160 delay=0.022s schema=ok seq_check=ok
+2026-10-18 05:47:22,157 INFO rx room-sensor-01 seq=2 enc=cbor bytes=160 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:47:27,158 INFO rx room-sensor-01 seq=3 enc=cbor bytes=160 delay=0.004s schema=ok seq_check=ok
+2026-10-18 05:47:32,158 INFO rx room-sensor-01 seq=4 enc=cbor bytes=160 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:47:37,158 INFO rx room-sensor-01 seq=5 enc=cbor bytes=160 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:47:42,155 INFO rx room-sensor-01 seq=6 enc=cbor bytes=160 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:47:47,157 INFO rx room-sensor-01 seq=7 enc=cbor bytes=160 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:47:52,157 INFO rx room-sensor-01 seq=8 enc=cbor bytes=160 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:47:57,156 INFO rx room-sensor-01 seq=9 enc=cbor bytes=160 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:48:02,157 INFO rx room-sensor-01 seq=10 enc=cbor bytes=160 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:48:07,157 INFO rx room-sensor-01 seq=11 enc=cbor bytes=160 delay=0.003s schema=ok seq_check=ok
+2026-10-18 05:48:12,155 INFO rx room-sensor-01 seq=12 enc=cbor bytes=160 delay=0.002s schema=ok seq_check=ok
+2026-10-18 05:48:16,644 INFO summary(periodic) room-sensor-01: rx=12 valid=12 invalid=0 seq=1..12 missing=0 dup=0 late=0 max_delay=0.0s
+2026-10-18 05:48:16,998 INFO summary(final) room-sensor-01: rx=12 valid=12 invalid=0 seq=1..12 missing=0 dup=0 late=0 max_delay=0.0s

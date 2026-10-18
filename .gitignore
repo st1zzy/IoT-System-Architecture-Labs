@@ -11,3 +11,6 @@ __pycache__/
 # Временные файлы Word
 ~$*.docx
 node_modules/
+
+# Постоянно работающий стенд (не эксперимент)
+*/results/collector/live/

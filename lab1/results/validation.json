@@ -1,0 +1,38 @@
+{
+  "n": 20000,
+  "boost": 10.0,
+  "schema_invalid": 0,
+  "with_quality": 4769,
+  "flags": {
+    "temperature": {
+      "nan": 86,
+      "out_of_range": 77,
+      "spike": 167,
+      "stuck": 1592
+    },
+    "humidity": {
+      "nan": 96,
+      "out_of_range": 108,
+      "spike": 175,
+      "stuck": 1461
+    },
+    "pressure": {
+      "nan": 99,
+      "out_of_range": 101,
+      "spike": 157,
+      "stuck": 1053
+    }
+  },
+  "negative": {
+    "нет поля seq": "'seq' is a required property",
+    "seq отрицательный": "-1 is less than the minimum of 0",
+    "ts строкой (ISO 8601)": "'2026-10-18T00:00:00Z' is not of type 'integer'",
+    "temperature строкой": "'21.5' is not of type 'number', 'null'",
+    "humidity = 150 %": "150.0 is greater than the maximum of 100",
+    "нет канала motion": "'motion' is a required property",
+    "неизвестное поле firmware": "Additional properties are not allowed ('firmware' was unexpected)",
+    "schema_version = 2.0": "'2.0' does not match '^1\\\\.[0-9]+$'",
+    "device_id с пробелом": "'room sensor' does not match '^[a-z0-9-]{3,32}$'",
+    "неизвестный флаг quality": "'broken' is not one of ['nan', 'out_of_range', 'spike', 'stuck']"
+  }
+}

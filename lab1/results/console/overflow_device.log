@@ -1,0 +1,44 @@
+2026-10-18 05:48:22,707 INFO device room-sensor-01: interval=5s qos=1 encoding=json buffer=10 (drop_oldest)
+2026-10-18 05:48:22,730 INFO connected to mosquitto:1883, buffered=1
+2026-10-18 05:48:22,734 INFO pub seq=1 enc=json bytes=186 (json=186 cbor=160) buf=0/10
+2026-10-18 05:48:27,712 INFO pub seq=2 enc=json bytes=186 (json=186 cbor=160) buf=0/10
+2026-10-18 05:48:32,712 INFO pub seq=3 enc=json bytes=186 (json=186 cbor=160) buf=0/10
+2026-10-18 05:48:37,710 INFO validation seq=4 flags={'humidity': ['spike']}
+2026-10-18 05:48:37,712 INFO pub seq=4 enc=json bytes=220 (json=220 cbor=185) buf=0/10
+2026-10-18 05:48:42,712 INFO pub seq=5 enc=json bytes=186 (json=186 cbor=160) buf=0/10
+2026-10-18 05:48:47,714 INFO pub seq=6 enc=json bytes=187 (json=187 cbor=160) buf=0/10
+2026-10-18 05:48:52,708 WARNING disconnected: [code:128] Unspecified error; retry in 1s, buffered=1/10
+2026-10-18 05:48:57,790 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 2s, buffered=2/10
+2026-10-18 05:49:03,379 WARNING disconnected: [Errno -2] Name or service not known; retry in 4s, buffered=3/10
+2026-10-18 05:49:11,077 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 8s, buffered=4/10
+2026-10-18 05:49:23,667 WARNING disconnected: [Errno -2] Name or service not known; retry in 16s, buffered=7/10
+2026-10-18 05:49:42,707 WARNING buffer full 10/10: dropped seq=7 (drop_oldest, dropped=1)
+2026-10-18 05:49:46,244 WARNING disconnected: [Errno -5] No address associated with hostname; retry in 30s, buffered=10/10
+2026-10-18 05:49:47,710 WARNING buffer full 10/10: dropped seq=8 (drop_oldest, dropped=2)
+2026-10-18 05:49:52,713 WARNING buffer full 10/10: dropped seq=9 (drop_oldest, dropped=3)
+2026-10-18 05:49:57,714 WARNING buffer full 10/10: dropped seq=10 (drop_oldest, dropped=4)
+2026-10-18 05:50:02,713 WARNING buffer full 10/10: dropped seq=11 (drop_oldest, dropped=5)
+2026-10-18 05:50:07,714 WARNING buffer full 10/10: dropped seq=12 (drop_oldest, dropped=6)
+2026-10-18 05:50:12,711 WARNING buffer full 10/10: dropped seq=13 (drop_oldest, dropped=7)
+2026-10-18 05:50:17,714 WARNING buffer full 10/10: dropped seq=14 (drop_oldest, dropped=8)
+2026-10-18 05:50:22,712 WARNING buffer full 10/10: dropped seq=15 (drop_oldest, dropped=9)
+2026-10-18 05:50:23,391 WARNING disconnected: [Errno -2] Name or service not known; retry in 30s, buffered=10/10
+2026-10-18 05:50:27,713 WARNING buffer full 10/10: dropped seq=16 (drop_oldest, dropped=10)
+2026-10-18 05:50:32,713 WARNING buffer full 10/10: dropped seq=17 (drop_oldest, dropped=11)
+2026-10-18 05:50:37,713 WARNING buffer full 10/10: dropped seq=18 (drop_oldest, dropped=12)
+2026-10-18 05:50:42,712 WARNING buffer full 10/10: dropped seq=19 (drop_oldest, dropped=13)
+2026-10-18 05:50:47,713 WARNING buffer full 10/10: dropped seq=20 (drop_oldest, dropped=14)
+2026-10-18 05:50:49,318 INFO connected to mosquitto:1883, buffered=10
+2026-10-18 05:50:49,322 INFO pub seq=21 enc=json bytes=188 (json=188 cbor=160) buf=9/10
+2026-10-18 05:50:49,323 INFO pub seq=22 enc=json bytes=187 (json=187 cbor=160) buf=8/10
+2026-10-18 05:50:49,326 INFO pub seq=23 enc=json bytes=188 (json=188 cbor=160) buf=7/10
+2026-10-18 05:50:49,327 INFO pub seq=24 enc=json bytes=187 (json=187 cbor=161) buf=6/10
+2026-10-18 05:50:49,330 INFO pub seq=25 enc=json bytes=188 (json=188 cbor=161) buf=5/10
+2026-10-18 05:50:49,332 INFO pub seq=26 enc=json bytes=188 (json=188 cbor=161) buf=4/10
+2026-10-18 05:50:49,334 INFO pub seq=27 enc=json bytes=188 (json=188 cbor=161) buf=3/10
+2026-10-18 05:50:49,336 INFO pub seq=28 enc=json bytes=188 (json=188 cbor=161) buf=2/10
+2026-10-18 05:50:49,338 INFO pub seq=29 enc=json bytes=188 (json=188 cbor=161) buf=1/10
+2026-10-18 05:50:49,340 INFO pub seq=30 enc=json bytes=188 (json=188 cbor=161) buf=0/10
+2026-10-18 05:50:52,711 INFO pub seq=31 enc=json bytes=188 (json=188 cbor=161) buf=0/10
+2026-10-18 05:50:57,711 INFO pub seq=32 enc=json bytes=188 (json=188 cbor=161) buf=0/10
+2026-10-18 05:51:02,711 INFO pub seq=33 enc=json bytes=188 (json=188 cbor=161) buf=0/10
