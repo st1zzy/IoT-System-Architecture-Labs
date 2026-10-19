@@ -1,0 +1,109 @@
+{
+  "load": {
+    "narrow_rows": 21024400,
+    "wide_rows": 5256100,
+    "narrow_s": 326.4205527469967,
+    "wide_s": 201.89273698499892,
+    "narrow_bytes": 1793744896,
+    "wide_bytes": 1059897344,
+    "chunks": 53
+  },
+  "queries_uncompressed": {
+    "last": {
+      "narrow": 5.899090996535961,
+      "wide": 5.524747000890784
+    },
+    "day_avg": {
+      "narrow": 16.234635993896518,
+      "wide": 26.623707002727315
+    },
+    "anomalies_month": {
+      "narrow": 49.56674099958036,
+      "wide": 113.57060400041519
+    },
+    "device_year": {
+      "narrow": 760.1152200004435,
+      "wide": 120.0076219975017
+    }
+  },
+  "compression": {
+    "telemetry": {
+      "before": 1793720320,
+      "after": 136495104,
+      "ratio": "13.14127955827631736886328172",
+      "seconds": 64.34663548899698,
+      "segmentby": "device_id, metric_id"
+    },
+    "telemetry_wide": {
+      "before": 1059872768,
+      "after": 88039424,
+      "ratio": "12.03861542756117986414813436",
+      "seconds": 29.24317438399885,
+      "segmentby": "device_id"
+    }
+  },
+  "queries_compressed": {
+    "last": {
+      "narrow": 1.093613995180931,
+      "wide": 1.618914000573568
+    },
+    "day_avg": {
+      "narrow": 8.334885998920072,
+      "wide": 25.806568999541923
+    },
+    "anomalies_month": {
+      "narrow": 21.729481995862443,
+      "wide": 99.45606200199109
+    },
+    "device_year": {
+      "narrow": 15.234713006066158,
+      "wide": 61.15954300184967
+    }
+  },
+  "cagg": {
+    "telemetry_1h": {
+      "bucket": "1 hour",
+      "rows": 3504400,
+      "bytes": 424861696,
+      "refresh_s": 138.91938183699676
+    },
+    "telemetry_1d": {
+      "bucket": "1 day",
+      "rows": 146400,
+      "bytes": 18702336,
+      "refresh_s": 13.115766459995939
+    },
+    "queries": {
+      "day_avg": {
+        "raw": 4.731984001409728,
+        "cagg": 5.424959002994001
+      },
+      "device_year": {
+        "raw": 20.83169500110671,
+        "cagg": 4.465188001631759
+      },
+      "fleet_year_daily": {
+        "raw": 310.453685997345,
+        "cagg": 28.73352300230181
+      }
+    }
+  },
+  "cold": {
+    "rows": 3744800,
+    "parquet_bytes": 8107099,
+    "pg_compressed_bytes_full_chunks": 22437888,
+    "raw_estimate_bytes": 319496199.0135652
+  },
+  "retention": {
+    "job": 1002,
+    "chunks_before": 53,
+    "chunks_after": 44,
+    "oldest_before": "2025-10-19T05:13:00+00:00",
+    "oldest_after": "2025-12-18T00:03:00+00:00",
+    "rows_after": 17580800
+  },
+  "final_sizes": {
+    "narrow": 115163136,
+    "wide": 89366528
+  }
+}

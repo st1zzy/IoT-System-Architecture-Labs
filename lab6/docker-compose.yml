@@ -1,0 +1,58 @@
+# Lab 6 — Time-Series Database: TimescaleDB, компрессия, continuous aggregates, retention, MinIO, Grafana
+name: lab6
+
+services:
+  timescale:
+    image: timescale/timescaledb:2.17.2-pg16
+    container_name: lab6-timescale
+    environment:
+      POSTGRES_PASSWORD: iot           # учебный стенд: доступ только из сети стенда и localhost
+      POSTGRES_DB: iot
+    command: ["postgres", "-c", "shared_buffers=512MB", "-c", "max_wal_size=4GB", "-c", "timescaledb.telemetry_level=off"]
+    ports:
+      - "5432:5432"
+    volumes:
+      - tsdata:/var/lib/postgresql/data
+    shm_size: 512mb
+
+  minio:
+    # официальные образы minio/minio больше не публикуются на Docker Hub — сборка Bitnami того же релиза
+    image: bitnamilegacy/minio:2024.10.13
+    container_name: lab6-minio
+    environment:
+      MINIO_ROOT_USER: lab6
+      MINIO_ROOT_PASSWORD: lab6-minio-secret
+    ports:
+      - "9001:9001"
+    volumes:
+      - miniodata:/bitnami/minio/data
+
+  grafana:
+    image: grafana/grafana:11.2.2
+    container_name: lab6-grafana
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on: [timescale]
+
+  client:
+    build: ./client
+    container_name: lab6-client
+    environment:
+      PG_DSN: postgresql://postgres:iot@lab6-timescale:5432/iot
+      MINIO_ENDPOINT: lab6-minio:9000
+      MINIO_USER: lab6
+      MINIO_PASSWORD: lab6-minio-secret
+    volumes:
+      - ./tools:/lab/tools:ro
+      - ./results:/lab/results
+    depends_on: [timescale, minio]
+
+volumes:
+  tsdata:
+  miniodata:

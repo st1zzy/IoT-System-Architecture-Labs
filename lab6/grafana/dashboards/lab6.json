@@ -1,0 +1,128 @@
+{
+  "uid": "lab6-tsdb",
+  "title": "Lab 6 — телеметрия (TimescaleDB)",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "time": {
+    "from": "now-30d",
+    "to": "now"
+  },
+  "refresh": "",
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "dev-042: температура, среднее за час (CAGG telemetry_1h)",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "timescale"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "custom": {
+            "lineWidth": 1
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "SELECT bucket AS time, avg_v AS \"среднее\", max_v AS \"максимум\" FROM telemetry_1h WHERE device_id = 'dev-042' AND metric_id = 1 AND $__timeFilter(bucket) ORDER BY 1"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "Парк: средняя температура по суткам (CAGG telemetry_1d)",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "timescale"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "SELECT bucket AS time, sum(avg_v * n) / sum(n) AS \"температура\" FROM telemetry_1d WHERE metric_id = 1 AND $__timeFilter(bucket) GROUP BY 1 ORDER BY 1"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "table",
+      "title": "Последние значения (10 устройств)",
+      "gridPos": {
+        "x": 0,
+        "y": 9,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "SELECT d.device_id AS \"устройство\", l.ts AS \"время\", max(l.value) FILTER (WHERE l.metric_id = 1) AS \"°C\", max(l.value) FILTER (WHERE l.metric_id = 2) AS \"%RH\", max(l.value) FILTER (WHERE l.metric_id = 3) AS \"гПа\" FROM devices d CROSS JOIN LATERAL (SELECT ts, metric_id, value FROM telemetry t WHERE t.device_id = d.device_id AND t.ts > now() - interval '1 hour' ORDER BY ts DESC LIMIT 4) l WHERE d.device_id <= 'dev-010' GROUP BY 1, 2 ORDER BY 1, 2 DESC"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "barchart",
+      "title": "Аномалии температуры (> 32 °C) по суткам",
+      "gridPos": {
+        "x": 12,
+        "y": 9,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "timescale"
+      },
+      "options": {
+        "xTickLabelRotation": -45,
+        "showValue": "never"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "SELECT to_char(time_bucket('1 day', ts), 'MM-DD') AS \"сутки\", count(*) AS \"аномалий\" FROM telemetry WHERE metric_id = 1 AND value > 32 AND $__timeFilter(ts) GROUP BY time_bucket('1 day', ts) ORDER BY time_bucket('1 day', ts)"
+        }
+      ]
+    }
+  ]
+}
