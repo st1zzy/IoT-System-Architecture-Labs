@@ -20,6 +20,7 @@ node labS1.js ../labS1
 # Lab 3: графики строит ../lab3/tools/plot_qos.py, затем
 uv run --no-project --with pillow python make_figs_lab3.py ../lab3
 node lab3.js ../lab3
+# Lab 4, 5: make_figs_lab4.py / make_figs_lab5.py, затем node lab4.js ../lab4 / node lab5.js ../lab5
 ```
 
 - `lib.js` — общее оформление: титульный лист, заголовки, абзацы, таблицы, рисунки, вопросы.

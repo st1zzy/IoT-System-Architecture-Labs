@@ -1,0 +1,46 @@
+# Lab 5 — Telemetry Pipeline
+#
+#  [loadgen × N устройств] ──MQTT QoS 1──▶ [mosquitto] ──▶ [ingest: validate → enrich → batch → SQLite]
+#                                                              │ /metrics, /stats :8000
+#                                                         [prometheus :9090]
+name: lab5
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab5-mosquitto
+    volumes:
+      - ./mosquitto/config:/mosquitto/config:ro
+
+  ingest:
+    build: ./ingest
+    container_name: lab5-ingest
+    environment:
+      MAX_BATCH: ${MAX_BATCH:-500}
+      MAX_DELAY: ${MAX_DELAY:-2.0}
+      BACKPRESSURE: ${BACKPRESSURE:-0}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ingest-data:/data           # том Docker, а не папка Windows: честная стоимость fsync
+    depends_on: [mosquitto]
+
+  loadgen:
+    build: ./ingest                 # тот же образ (paho-mqtt), скрипты из tools/
+    container_name: lab5-loadgen
+    command: ["sleep", "infinity"]
+    working_dir: /lab
+    volumes:
+      - ./tools:/lab/tools:ro
+    depends_on: [mosquitto]
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: lab5-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+volumes:
+  ingest-data:
