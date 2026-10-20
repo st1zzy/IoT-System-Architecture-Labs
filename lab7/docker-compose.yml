@@ -1,0 +1,94 @@
+# Lab 7 — IoT Gateway: протокольная трансляция и store-and-forward
+#
+#  сеть south (LAN объекта)                         сеть wan («облако»)
+#  [modbus-sim :5020] ──Modbus TCP──┐               ┌──────────────────────────────────────────┐
+#  [legacy × 10] ─MQTT─▶ [south] ───┼──▶ [gateway] ─┼─MQTT QoS 1─▶ [north] ──▶ [ingest] ──▶ [db]  │
+#                                   │  buffer SQLite└──────────────────────────────────────────┘
+#  Обрыв WAN: tc netem loss 100 % на WAN-интерфейсе шлюза (tools/wan.sh) или docker network disconnect.
+name: lab7
+
+x-py: &py
+  build: ./py
+  image: lab7-py
+  restart: unless-stopped
+
+services:
+  modbus:
+    <<: *py
+    container_name: lab7-modbus
+    command: ["python", "/src/sim.py"]
+    volumes: ["./modbus-sim:/src:ro"]
+    networks: [south]
+
+  south:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab7-south
+    volumes: ["./mosquitto-south:/mosquitto/config:ro"]
+    networks: [south]
+
+  legacy:
+    <<: *py
+    container_name: lab7-legacy
+    command: ["python", "/src/devices.py"]
+    volumes: ["./legacy:/src:ro"]
+    networks: [south]
+    depends_on: [south]
+
+  gateway:
+    <<: *py
+    container_name: lab7-gateway
+    command: ["python", "/app/gateway.py"]
+    cap_add: [NET_ADMIN]                 # tc netem на собственном WAN-интерфейсе
+    environment:
+      BUFFER_MAX: ${BUFFER_MAX:-10000}
+      BATCH: ${BATCH:-20}
+      BACKFILL_RATE: ${BACKFILL_RATE:-200}
+      DB_MODE: ${DB_MODE:-abs}
+      DB_SCALE: ${DB_SCALE:-1.0}
+      ACK_MODE: ${ACK_MODE:-puback}
+      RAW_LOG: ${RAW_LOG:-0}
+    volumes:
+      - ./gateway:/app:ro
+      - ./tools/wan.sh:/usr/local/bin/wan:ro
+      - gwdata:/data                     # буфер на томе Docker: переживает перезапуск и «отключение питания»
+    ports: ["8081:8081"]
+    networks:
+      south: {}
+      wan: {ipv4_address: 172.28.2.10}
+    depends_on: [modbus, south, north]
+
+  north:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab7-north
+    volumes: ["./mosquitto-north:/mosquitto/config:ro"]
+    networks:
+      wan: {ipv4_address: 172.28.2.2}
+
+  db:
+    image: timescale/timescaledb:2.17.2-pg16
+    container_name: lab7-db
+    environment:
+      POSTGRES_PASSWORD: iot             # учебный стенд, только внутренняя сеть
+      POSTGRES_DB: iot
+    command: ["postgres", "-c", "timescaledb.telemetry_level=off"]
+    volumes: ["dbdata:/var/lib/postgresql/data"]
+    networks: [wan]
+
+  ingest:
+    <<: *py
+    container_name: lab7-ingest
+    command: ["python", "/src/ingest.py"]
+    volumes: ["./ingest:/src:ro"]
+    ports: ["8082:8082"]
+    networks: [wan]
+    depends_on: [north, db]
+
+networks:
+  south:
+    ipam: {config: [{subnet: 172.28.1.0/24}]}
+  wan:
+    ipam: {config: [{subnet: 172.28.2.0/24}]}
+
+volumes:
+  gwdata:
+  dbdata:

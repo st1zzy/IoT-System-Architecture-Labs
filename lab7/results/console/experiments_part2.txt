@@ -1,0 +1,38 @@
+11:52:10 === limited_raw
+11:53:53 limited_raw-1: WAN eth0: down (loss 100% → 172.28.2.2)
+11:54:54 limited_raw-1: перегрев насоса 1 (во время обрыва)
+11:57:54 limited_raw-1: WAN eth0: up, в буфере 9640 записей
+11:58:49 limited_raw-1: ресинхронизация 55 с
+11:59:25 limited_raw: expected=15482, received_unique=15482, missing=0, dups=1, dropped_by_gateway=0
+11:59:25 === unlimited
+12:00:32 unlimited-1: WAN eth0: down (loss 100% → 172.28.2.2)
+12:01:33 unlimited-1: перегрев насоса 1 (во время обрыва)
+12:04:33 unlimited-1: WAN eth0: up, в буфере 9620 записей
+12:04:35 unlimited-1: ресинхронизация 2 с
+12:05:11 unlimited: expected=13302, received_unique=13302, missing=0, dups=0, dropped_by_gateway=0
+12:05:11 === sendmode
+12:06:17 sendmode-1: WAN eth0: down (loss 100% → 172.28.2.2)
+12:07:17 sendmode-1: перегрев насоса 1 (во время обрыва)
+12:11:17 sendmode-1: WAN eth0: up, в буфере 1067 записей
+12:11:27 sendmode-1: ресинхронизация 10 с
+12:12:58 sendmode-2: WAN eth0: down (loss 100% → 172.28.2.2)
+12:13:58 sendmode-2: перегрев насоса 1 (во время обрыва)
+12:17:58 sendmode-2: WAN eth0: up, в буфере 991 записей
+12:18:04 sendmode-2: ресинхронизация 6 с
+12:19:34 sendmode-3: WAN eth0: down (loss 100% → 172.28.2.2)
+12:20:35 sendmode-3: перегрев насоса 1 (во время обрыва)
+12:24:35 sendmode-3: WAN eth0: up, в буфере 1036 записей
+12:24:41 sendmode-3: ресинхронизация 6 с
+12:25:17 sendmode: expected=4219, received_unique=4061, missing=158, dups=0, dropped_by_gateway=0
+12:25:17 === crash
+12:26:23 crash: WAN eth0: down (loss 100% → 172.28.2.2)
+12:28:24 crash: kill -9 шлюза, в буфере было 426
+12:28:37 crash: шлюз запущен, в буфере 28 (WAN после рестарта контейнера восстановлен)
+12:28:43 crash: expected=632, received_unique=632, missing=0, dups=0, dropped_by_gateway=0
+12:28:43 === overflow
+12:29:19 overflow: WAN eth1: down (loss 100% → 172.28.2.2)
+12:29:39 overflow: перегрев насоса 1 (во время обрыва)
+12:34:19 overflow: WAN eth1: up, в буфере 1000 записей
+12:34:27 overflow: ресинхронизация 7 с
+12:35:03 overflow: expected=1385, received_unique=1246, missing=139, dups=0, dropped_by_gateway=139
+12:35:08 готово

@@ -1,0 +1,13 @@
+$ docker exec lab7-gateway wan down
+WAN eth1: down (loss 100% → 172.28.2.2)
+$ curl -s localhost:8081/stats  (буфер перед отключением питания)
+"buffer": 110 "last_seq": 82221 
+$ docker kill --signal KILL lab7-gateway
+lab7-gateway
+$ docker start lab7-gateway
+lab7-gateway
+$ docker logs lab7-gateway | tail
+2026-10-20 07:36:26,992 WARNING north: timed out, повтор через 4 с
+2026-10-20 07:36:38,615 INFO буфер /data/buffer.db: 112 записей после старта, ёмкость 10000
+2026-10-20 07:36:38,615 INFO gw-01: BUFFER_MAX=10000 BATCH=20 RATE=200 DB=abs×1 ACK=puback
+2026-10-20 07:36:38,627 INFO north: подключено, в буфере 113 записей

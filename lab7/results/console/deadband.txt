@@ -1,0 +1,11 @@
+Сырой поток: 14420 значений, 40 тегов, 366 с (39.4 значений/с)
+режим         опубл.    доля  экономия   МБ/сут   ошибка восстановления: max (RMSE) по тегам
+без фильтра    14420  100.0%      0.0%    410.2   bearing_temp 0.00 (0.00); current 0.00 (0.00); flow 0.00 (0.00); humidity 0.00 (0.00); pressure 0.00 (0.00); running 0.00 (0.00); temperature 0.00 (0.00)
+abs ×0.5        4152   28.8%     71.2%    118.1   bearing_temp 0.20 (0.11); current 0.10 (0.06); flow 1.00 (0.38); humidity 0.40 (0.19); pressure 0.02 (0.01); running 0.00 (0.00); temperature 0.10 (0.05)
+abs ×1          1256    8.7%     91.3%     35.7   bearing_temp 0.40 (0.21); current 0.30 (0.12); flow 1.90 (0.88); humidity 0.90 (0.44); pressure 0.05 (0.02); running 0.00 (0.00); temperature 0.20 (0.10)
+abs ×2           491    3.4%     96.6%     14.0   bearing_temp 0.90 (0.35); current 0.60 (0.24); flow 4.00 (1.80); humidity 1.90 (0.71); pressure 0.10 (0.04); running 0.00 (0.00); temperature 0.40 (0.19)
+abs ×4           327    2.3%     97.7%      9.3   bearing_temp 1.90 (0.66); current 0.80 (0.29); flow 7.90 (3.38); humidity 3.60 (0.86); pressure 0.13 (0.05); running 0.00 (0.00); temperature 0.80 (0.28)
+pct ×0.5        4728   32.8%     67.2%    134.5   bearing_temp 0.40 (0.11); current 0.00 (0.00); flow 0.70 (0.24); humidity 0.40 (0.19); pressure 0.01 (0.01); running 0.00 (0.00); temperature 0.10 (0.07)
+pct ×1          1850   12.8%     87.2%     52.6   bearing_temp 0.80 (0.21); current 0.20 (0.06); flow 1.50 (0.57); humidity 0.90 (0.41); pressure 0.03 (0.02); running 0.00 (0.00); temperature 0.20 (0.11)
+pct ×2           596    4.1%     95.9%     17.0   bearing_temp 1.80 (0.36); current 0.30 (0.14); flow 3.00 (1.18); humidity 1.70 (0.64); pressure 0.07 (0.03); running 0.00 (0.00); temperature 0.40 (0.20)
+pct ×5           313    2.2%     97.8%      8.9   bearing_temp 4.30 (0.78); current 0.80 (0.29); flow 7.00 (3.08); humidity 3.60 (0.86); pressure 0.13 (0.05); running 0.00 (0.00); temperature 1.10 (0.37)

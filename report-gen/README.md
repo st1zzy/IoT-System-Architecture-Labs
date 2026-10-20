@@ -22,6 +22,7 @@ uv run --no-project --with pillow python make_figs_lab3.py ../lab3
 node lab3.js ../lab3
 # Lab 4, 5: make_figs_lab4.py / make_figs_lab5.py, затем node lab4.js ../lab4 / node lab5.js ../lab5
 # Lab 6: графики — ../lab6/tools/plots.py, рисунок — make_figs_lab6.py ../lab6, отчёт — node lab6.js ../lab6
+# Lab 7: графики — ../lab7/tools/analyze.py, рисунки — make_figs_lab7.py ../lab7, отчёт — node lab7.js ../lab7
 ```
 
 - `lib.js` — общее оформление: титульный лист, заголовки, абзацы, таблицы, рисунки, вопросы.

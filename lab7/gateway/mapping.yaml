@@ -1,0 +1,34 @@
+# Каноническая модель данных шлюза gw-01: источник → тег → масштаб → единицы → метаданные актива.
+# deadband_abs — абсолютный порог в единицах тега, deadband_pct — относительный порог, % от последнего
+# опубликованного значения. Дискретные теги (status) публикуются при любом изменении.
+
+gateway: gw-01
+site: site1
+heartbeat_s: 60          # опубликовать значение, даже если оно не менялось, не реже раза в минуту
+
+modbus:
+  host: lab7-modbus
+  port: 5020
+  unit: 1
+  poll_s: 1.0
+  # 4 насоса × 5 регистров; тег = <asset>/<tag>
+  assets: [pump-01, pump-02, pump-03, pump-04]
+  registers:
+    - {offset: 0, tag: bearing_temp, scale: 0.1,  signed: true,  unit: "°C",    deadband_abs: 0.5,  deadband_pct: 1.0}
+    - {offset: 1, tag: pressure,     scale: 0.01, signed: false, unit: "bar",   deadband_abs: 0.05, deadband_pct: 1.0}
+    - {offset: 2, tag: flow,         scale: 0.1,  signed: false, unit: "m3/h",  deadband_abs: 2.0,  deadband_pct: 1.0}
+    - {offset: 3, tag: current,      scale: 0.1,  signed: false, unit: "A",     deadband_abs: 0.3,  deadband_pct: 1.0}
+    - {offset: 4, tag: running,      scale: 1,    signed: false, unit: "bool",  discrete: true}
+
+legacy_mqtt:
+  host: lab7-south
+  topic: legacy/+/state
+  ts_unit: s              # устройства присылают время в секундах
+  fields:
+    - {field: t,  tag: temperature, scale: 0.1, unit: "°C", deadband_abs: 0.2, deadband_pct: 1.0}
+    - {field: rh, tag: humidity,    scale: 0.1, unit: "%",  deadband_abs: 1.0, deadband_pct: 2.0}
+  clock_skew_ms: 2000     # |device_ts − время шлюза| > 2 с → флаг качества clock_skew
+
+rules:
+  # локальное правило: работает без облака, публикуется немедленно, минуя батчинг и ограничитель
+  - {name: bearing_overheat, tag: bearing_temp, above: 80.0, clear_below: 75.0, severity: critical}

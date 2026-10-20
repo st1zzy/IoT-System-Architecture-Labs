@@ -1,0 +1,318 @@
+{
+  "main": {
+    "expected": 4962,
+    "received_unique": 4962,
+    "missing": 0,
+    "dups": 0,
+    "dropped_by_gateway": 0,
+    "missing_seqs": [],
+    "cycles": [
+      {
+        "label": "main-1",
+        "buffer_at_up": 1110,
+        "resync_s": 10.207351922988892,
+        "detect_s": 14.323654890060425,
+        "reconnect_s": 4.901716709136963,
+        "peak_records_s": 200,
+        "mean_records_s": 111.2108590877985,
+        "backfilled": 1098,
+        "max_delay_s": 304.31,
+        "alarm": {
+          "raised_dts": 1792477393934,
+          "arrived_after_up_s": 4.197444915771484,
+          "normal_records_before": 0,
+          "delay_s": 180.306
+        }
+      },
+      {
+        "label": "main-2",
+        "buffer_at_up": 1125,
+        "resync_s": 6.091608047485352,
+        "detect_s": 13.319377422332764,
+        "reconnect_s": 1.0156073570251465,
+        "peak_records_s": 200,
+        "mean_records_s": 185.4971803361304,
+        "backfilled": 1119,
+        "max_delay_s": 300.716,
+        "alarm": {
+          "raised_dts": 1792477854934,
+          "arrived_after_up_s": 0.4802584648132324,
+          "normal_records_before": 0,
+          "delay_s": 176.708
+        }
+      },
+      {
+        "label": "main-3",
+        "buffer_at_up": 1064,
+        "resync_s": 9.170794248580933,
+        "detect_s": 12.545598030090332,
+        "reconnect_s": 3.7625300884246826,
+        "peak_records_s": 200,
+        "mean_records_s": 117.65621506094507,
+        "backfilled": 1057,
+        "max_delay_s": 303.829,
+        "alarm": {
+          "raised_dts": 1792478311934,
+          "arrived_after_up_s": 3.6236953735351562,
+          "normal_records_before": 0,
+          "delay_s": 179.825
+        }
+      }
+    ],
+    "cpu_backfill_max": {
+      "lab7-north": 0.34,
+      "lab7-ingest": 1.32,
+      "lab7-db": 3.98
+    }
+  },
+  "limited_raw": {
+    "expected": 15482,
+    "received_unique": 15482,
+    "missing": 0,
+    "dups": 1,
+    "dropped_by_gateway": 0,
+    "missing_seqs": [],
+    "cycles": [
+      {
+        "label": "limited_raw-1",
+        "buffer_at_up": 9640,
+        "resync_s": 55.382479190826416,
+        "detect_s": 13.635456085205078,
+        "reconnect_s": 6.307249307632446,
+        "peak_records_s": 220,
+        "mean_records_s": 182.6195409848901,
+        "backfilled": 9640,
+        "max_delay_s": 246.425,
+        "alarm": {
+          "raised_dts": 1792479297625,
+          "arrived_after_up_s": 5.751304626464844,
+          "normal_records_before": 0,
+          "delay_s": 182.418
+        }
+      }
+    ],
+    "cpu_backfill_max": {
+      "lab7-north": 0.76,
+      "lab7-ingest": 3.03,
+      "lab7-db": 12.38
+    }
+  },
+  "unlimited": {
+    "expected": 13302,
+    "received_unique": 13302,
+    "missing": 0,
+    "dups": 0,
+    "dropped_by_gateway": 0,
+    "missing_seqs": [],
+    "cycles": [
+      {
+        "label": "unlimited-1",
+        "buffer_at_up": 9620,
+        "resync_s": 2.0270168781280518,
+        "detect_s": 17.63989496231079,
+        "reconnect_s": 1.6154775619506836,
+        "peak_records_s": 5340,
+        "mean_records_s": 4573.024477780161,
+        "backfilled": 9620,
+        "max_delay_s": 241.277,
+        "alarm": {
+          "raised_dts": 1792479697452,
+          "arrived_after_up_s": 0.8556413650512695,
+          "normal_records_before": 0,
+          "delay_s": 176.805
+        }
+      }
+    ],
+    "cpu_backfill_max": {
+      "lab7-north": 4.07,
+      "lab7-ingest": 20.5,
+      "lab7-db": 64.76
+    }
+  },
+  "sendmode": {
+    "expected": 4219,
+    "received_unique": 4061,
+    "missing": 158,
+    "dups": 0,
+    "dropped_by_gateway": 0,
+    "missing_seqs": [
+      75739,
+      75740,
+      75741,
+      75742,
+      75743,
+      75744,
+      75745,
+      75746,
+      75747,
+      75748,
+      75749,
+      75750,
+      75751,
+      75752,
+      75753,
+      75754,
+      75755,
+      75756,
+      75757,
+      75758,
+      75759,
+      75760,
+      75761,
+      75762,
+      75763,
+      75764,
+      75765,
+      75766,
+      75767,
+      75768
+    ],
+    "cycles": [
+      {
+        "label": "sendmode-1",
+        "buffer_at_up": 1067,
+        "resync_s": 10.2105712890625,
+        "detect_s": 12.615327596664429,
+        "reconnect_s": 5.016260385513306,
+        "peak_records_s": 200,
+        "mean_records_s": 107.24288966746765,
+        "backfilled": 1067,
+        "max_delay_s": 293.895,
+        "alarm": {
+          "raised_dts": 1792480041338,
+          "arrived_after_up_s": 4.273997068405151,
+          "normal_records_before": 0,
+          "delay_s": 240.554
+        }
+      },
+      {
+        "label": "sendmode-2",
+        "buffer_at_up": 991,
+        "resync_s": 6.153648376464844,
+        "detect_s": 17.060275077819824,
+        "reconnect_s": 1.337507724761963,
+        "peak_records_s": 200,
+        "mean_records_s": 163.68319131345802,
+        "backfilled": 992,
+        "max_delay_s": 285.233,
+        "alarm": {
+          "raised_dts": 1792480442338,
+          "arrived_after_up_s": 0.64658522605896,
+          "normal_records_before": 0,
+          "delay_s": 236.892
+        }
+      },
+      {
+        "label": "sendmode-3",
+        "buffer_at_up": 1036,
+        "resync_s": 6.1181724071502686,
+        "detect_s": 15.751691341400146,
+        "reconnect_s": 1.3344166278839111,
+        "peak_records_s": 200,
+        "mean_records_s": 169.49678339902556,
+        "backfilled": 1033,
+        "max_delay_s": 286.331,
+        "alarm": {
+          "raised_dts": 1792480839338,
+          "arrived_after_up_s": 0.9740204811096191,
+          "normal_records_before": 0,
+          "delay_s": 236.988
+        }
+      }
+    ],
+    "cpu_backfill_max": {
+      "lab7-north": 0.39,
+      "lab7-ingest": 1.64,
+      "lab7-db": 4.48
+    }
+  },
+  "overflow": {
+    "expected": 1385,
+    "received_unique": 1246,
+    "missing": 139,
+    "dups": 0,
+    "dropped_by_gateway": 139,
+    "missing_seqs": [
+      80656,
+      80657,
+      80658,
+      80659,
+      80660,
+      80661,
+      80662,
+      80663,
+      80664,
+      80665,
+      80666,
+      80667,
+      80668,
+      80669,
+      80670,
+      80671,
+      80672,
+      80673,
+      80674,
+      80675,
+      80676,
+      80677,
+      80678,
+      80679,
+      80680,
+      80681,
+      80682,
+      80683,
+      80684,
+      80685
+    ],
+    "cycles": [
+      {
+        "label": "overflow",
+        "buffer_at_up": 1000,
+        "resync_s": 7.175273180007935,
+        "detect_s": 19.22248911857605,
+        "reconnect_s": 2.371314287185669,
+        "peak_records_s": 200,
+        "mean_records_s": 140.79237607465495,
+        "backfilled": 996,
+        "max_delay_s": 263.188,
+        "alarm": {
+          "raised_dts": 1792481383636,
+          "arrived_after_up_s": 1.3860139846801758,
+          "normal_records_before": 0,
+          "delay_s": 277.542
+        }
+      }
+    ],
+    "cpu_backfill_max": {
+      "lab7-north": 0.32,
+      "lab7-ingest": 1.39,
+      "lab7-db": 4.22
+    }
+  },
+  "latency_online": {
+    "normal_p50": 0.8,
+    "normal_p95": 1.718,
+    "normal_max": 1.758,
+    "alarm_delays": [
+      0.002
+    ],
+    "n": 1560
+  },
+  "crash": {
+    "expected": 632,
+    "received_unique": 632,
+    "missing": 0,
+    "dups": 0,
+    "dropped_by_gateway": 0,
+    "events": {
+      "down": 1792481183.7786224,
+      "buffer_before_kill": 426,
+      "seq_before_kill": 80431,
+      "kill": 1792481303.9302316,
+      "start": 1792481314.7415552,
+      "buffer_after_start": 28,
+      "resync_s": 0.014960765838623047
+    },
+    "gateway_log": []
+  }
+}
