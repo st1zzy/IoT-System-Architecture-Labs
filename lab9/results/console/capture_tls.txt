@@ -1,0 +1,11 @@
+18   0.511740   172.20.0.4 → 172.20.0.3   TLSv1.3 1552 Client Hello (SNI=lab9-broker)
+   20   0.512347   172.20.0.3 → 172.20.0.4   TLSv1.3 1906 Server Hello, Change Cipher Spec, Application Data, Application Data, Application Data, Application Data, Application Data
+   22   0.513153   172.20.0.4 → 172.20.0.3   TLSv1.3 1642 Change Cipher Spec, Application Data, Application Data, Application Data
+   24   0.513270   172.20.0.4 → 172.20.0.3   TLSv1.3 116 Application Data
+   25   0.513995   172.20.0.3 → 172.20.0.4   TLSv1.3 791 Application Data
+   26   0.514211   172.20.0.3 → 172.20.0.4   TLSv1.3 791 Application Data
+   28   0.514290   172.20.0.3 → 172.20.0.4   TLSv1.3 105 Application Data
+   29   0.514627   172.20.0.4 → 172.20.0.3   TLSv1.3 186 Application Data
+   30   0.514686   172.20.0.3 → 172.20.0.4   TLSv1.3 99 Application Data
+   32   1.015502   172.20.0.4 → 172.20.0.3   TLSv1.3 96 Application Data
+   34   1.015820   172.20.0.3 → 172.20.0.4   TLSv1.3 96 Application Data

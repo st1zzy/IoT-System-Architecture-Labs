@@ -1,0 +1,34 @@
+{
+ "checks": [
+  {
+   "check": "dev-001 → свой топик",
+   "expected": "PUBACK Success, доставлено",
+   "actual": "PUBACK Success, доставлено: True",
+   "pass": true
+  },
+  {
+   "check": "dev-001 → топик dev-002",
+   "expected": "отказ Not authorized",
+   "actual": "PUBACK Not authorized, доставлено: False",
+   "pass": true
+  },
+  {
+   "check": "подмена client_id: cert dev-001, client_id dev-002",
+   "expected": "отказ — имя берётся из сертификата",
+   "actual": "CONNACK Success, PUBACK Not authorized, доставлено: False",
+   "pass": true
+  },
+  {
+   "check": "dev-001 читает команды dev-002",
+   "expected": "не доставляется",
+   "actual": "получено 0",
+   "pass": true
+  },
+  {
+   "check": "слабый брокер: анонимный клиент с client_id dev-002",
+   "expected": "подмена удаётся (антипаттерн)",
+   "actual": "PUBACK Success, доставлено: True",
+   "pass": true
+  }
+ ]
+}

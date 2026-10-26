@@ -1,0 +1,5 @@
+# Антипаттерн: права привязаны к client_id, который клиент выбирает сам
+pattern write site/%c/telemetry
+pattern read site/%c/cmd
+topic read site/+/telemetry
+topic write site/+/cmd

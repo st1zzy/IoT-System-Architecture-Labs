@@ -1,0 +1,10 @@
+# ACL по идентичности из сертификата (%u = CN, т.к. use_identity_as_username true)
+pattern write site/%u/telemetry
+pattern write site/%u/status
+pattern read site/%u/cmd
+
+# сервис приёма: читает телеметрию всех устройств и отправляет команды
+user svc-ingest
+topic read site/+/telemetry
+topic read site/+/status
+topic write site/+/cmd

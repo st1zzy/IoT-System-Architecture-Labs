@@ -1,0 +1,54 @@
+{
+ "checks": [
+  {
+   "check": "цепочка broker",
+   "expected": "OK",
+   "actual": "OK",
+   "pass": true
+  },
+  {
+   "check": "цепочка dev-001",
+   "expected": "OK",
+   "actual": "OK",
+   "pass": true
+  },
+  {
+   "check": "цепочка dev-002",
+   "expected": "OK",
+   "actual": "OK",
+   "pass": true
+  },
+  {
+   "check": "цепочка dev-003",
+   "expected": "OK",
+   "actual": "OK",
+   "pass": true
+  },
+  {
+   "check": "цепочка svc-ingest",
+   "expected": "OK",
+   "actual": "OK",
+   "pass": true
+  },
+  {
+   "check": "цепочка rogue (CN=dev-001, чужой CA)",
+   "expected": "ошибка",
+   "actual": "error /pki/certs/rogue.crt: verification failed",
+   "pass": true
+  },
+  {
+   "check": "Root CA: basicConstraints",
+   "expected": "CA:TRUE с pathlen",
+   "actual": "CA:TRUE, pathlen:1",
+   "pass": true
+  },
+  {
+   "check": "Intermediate CA: basicConstraints",
+   "expected": "CA:TRUE с pathlen",
+   "actual": "CA:TRUE, pathlen:0",
+   "pass": true
+  }
+ ],
+ "dev001": "subject=CN=dev-001, O=ENU IoT Lab\nissuer=CN=ENU IoT Lab Devices CA, O=ENU IoT Lab\nnotBefore=Oct 26 19:53:59 2026 GMT\nnotAfter=Oct 26 19:53:59 2027 GMT\nX509v3 Extended Key Usage: \n    TLS Web Client Authentication",
+ "chain": "subject=CN=ENU IoT Lab Devices CA, O=ENU IoT Lab\nissuer=O=ENU IoT Lab, CN=ENU IoT Lab Root CA\n\nsubject=O=ENU IoT Lab, CN=ENU IoT Lab Root CA\nissuer=O=ENU IoT Lab, CN=ENU IoT Lab Root CA"
+}

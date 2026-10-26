@@ -1,0 +1,104 @@
+{
+ "events": {
+  "decision": 1793044828.5792513,
+  "crl_ready": 1793044828.817243,
+  "sighup": 1793044833.8892612,
+  "restart": 1793044849.2895305
+ },
+ "probe_phases": {
+  "до CRL": {
+   "ok": 23,
+   "rejected": 0,
+   "errors": []
+  },
+  "CRL выпущена": {
+   "ok": 19,
+   "rejected": 0,
+   "errors": []
+  },
+  "после SIGHUP": {
+   "ok": 0,
+   "rejected": 58,
+   "errors": [
+    "SSLError: [SSL: SSLV3_ALERT_CERTIFICATE_REVOKED] ssl/tls alert certifi",
+    "gaierror: [Errno -2] Name or service not known"
+   ]
+  },
+  "после перезапуска": {
+   "ok": 0,
+   "rejected": 113,
+   "errors": [
+    "SSLError: [SSL: SSLV3_ALERT_CERTIFICATE_REVOKED] ssl/tls alert certifi"
+   ]
+  }
+ },
+ "first_reject_after_decision_s": 5.447638750076294,
+ "hold_pubacks": {
+  "до CRL": 28,
+  "CRL выпущена": 11,
+  "после SIGHUP": 30,
+  "после перезапуска": 0
+ },
+ "hold_disconnects": [
+  {
+   "t": 1793044848.9587684,
+   "ev": "disconnect",
+   "rc": "Unspecified error"
+  },
+  {
+   "t": 1793044849.9638035,
+   "ev": "disconnect",
+   "rc": "Unspecified error"
+  },
+  {
+   "t": 1793044851.9682257,
+   "ev": "disconnect",
+   "rc": "Unspecified error"
+  }
+ ],
+ "hold_reconnects": 0,
+ "revoke_out": "",
+ "crl": "Certificate Revocation List (CRL):\n        Version 2 (0x1)\n        Signature Algorithm: ecdsa-with-SHA256\n        Issuer: CN=ENU IoT Lab Devices CA, O=ENU IoT Lab\n        Last Update: Oct 26 20:00:28 2026 GMT\n        Next Update: Oct 27 20:00:28 2026 GMT\n        CRL extensions:\n            X509v3 CRL Number: \n                4097\nRevoked Certificates:\n    Serial Number: 1003\n        Revocation Date: Oct 26 20:00:28 2026 GMT\n        CRL entry extensions:\n            X509v3 CRL Reason Code: \n                Key Compromise\n    Signature Algorithm: ecdsa-with-SHA256\n    Signature Value:\n        30:45:02:20:57:33:2b:f5:f7:bb:1c:29:eb:28:7b:56:42:cb:\n        e7:13:72:66:eb:68:11:11:b9:dc:9e:03:fc:96:0d:b6:10:70:\n        02:21:00:e1:a5:b3:52:ee:7e:6a:51:e6:f1:e8:ae:5f:34:83:\n        77:dd:da:ad:64:31:78:e2:60:85:5f:bb:48:19:de:05:e1",
+ "broker_log": [
+  "2026-10-26T20:00:14: New client connected from 172.20.0.4:49841 as dev-003 (p5, c1, k30, u'dev-003').",
+  "2026-10-26T20:00:22: New client connected from 172.20.0.4:36144 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:22: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:23: New client connected from 172.20.0.4:36148 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:23: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:23: New client connected from 172.20.0.4:36164 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:23: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:23: New client connected from 172.20.0.4:36174 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:23: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:23: New client connected from 172.20.0.4:36182 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:23: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:24: New client connected from 172.20.0.4:36186 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:24: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:24: New client connected from 172.20.0.4:36198 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:24: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:24: New client connected from 172.20.0.4:36206 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:24: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:25: New client connected from 172.20.0.4:36216 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:25: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:25: New client connected from 172.20.0.4:36226 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:25: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:25: New client connected from 172.20.0.4:36228 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:25: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:25: New client connected from 172.20.0.4:36242 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:25: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:26: New client connected from 172.20.0.4:36258 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:26: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:26: New client connected from 172.20.0.4:36266 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:26: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:26: New client connected from 172.20.0.4:36282 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:26: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:26: New client connected from 172.20.0.4:36294 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:26: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:27: New client connected from 172.20.0.4:36298 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:27: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:27: New client connected from 172.20.0.4:44034 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:27: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:27: New client connected from 172.20.0.4:44046 as dev-003-probe (p2, c1, k60, u'dev-003').",
+  "2026-10-26T20:00:27: Client dev-003-probe disconnected.",
+  "2026-10-26T20:00:27: New client connected from 172.20.0.4:44062 as dev-003-probe (p2, c1, k60, u'dev-003')."
+ ]
+}

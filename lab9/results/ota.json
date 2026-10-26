@@ -1,0 +1,64 @@
+{
+ "checks": [
+  {
+   "case": "(а) образ изменён на 1 бит после подписи",
+   "expected": "отклонён",
+   "accepted": false,
+   "reason": "SHA-256 образа не совпадает с подписанным манифестом",
+   "version_before": "1.3.2",
+   "version_after": "1.3.2",
+   "verify_ms": 13.53524399928574,
+   "pass": true
+  },
+  {
+   "case": "(б) манифест изменён (версия 9.9.9) без подписи",
+   "expected": "отклонён",
+   "accepted": false,
+   "reason": "подпись манифеста неверна",
+   "version_before": "1.3.2",
+   "version_after": "1.3.2",
+   "verify_ms": 6.453447000239976,
+   "pass": true
+  },
+  {
+   "case": "(в) подпись чужим ключом",
+   "expected": "отклонён",
+   "accepted": false,
+   "reason": "подпись манифеста неверна",
+   "version_before": "1.3.2",
+   "version_after": "1.3.2",
+   "verify_ms": 5.62479399923177,
+   "pass": true
+  },
+  {
+   "case": "(г) откат на старую версию 1.3.0 с верной подписью",
+   "expected": "отклонён",
+   "accepted": false,
+   "reason": "версия 1.3.0 не новее установленной 1.3.2 (anti-rollback)",
+   "version_before": "1.3.2",
+   "version_after": "1.3.2",
+   "verify_ms": 9.13276000028418,
+   "pass": true
+  },
+  {
+   "case": "(д) корректное обновление 1.4.0",
+   "expected": "принят",
+   "accepted": true,
+   "reason": "установлена версия 1.4.0",
+   "version_before": "1.3.2",
+   "version_after": "1.4.0",
+   "verify_ms": 9.549763000904932,
+   "pass": true
+  },
+  {
+   "case": "(е) повторная установка того же пакета 1.4.0",
+   "expected": "отклонён",
+   "accepted": false,
+   "reason": "версия 1.4.0 не новее установленной 1.4.0 (anti-rollback)",
+   "version_before": "1.4.0",
+   "version_after": "1.4.0",
+   "verify_ms": 9.28178699905402,
+   "pass": true
+  }
+ ]
+}

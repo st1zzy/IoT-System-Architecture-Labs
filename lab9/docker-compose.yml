@@ -1,0 +1,41 @@
+# Lab 9 — IoT Security: PKI, mTLS, ACL по CN, отзыв (CRL), подписанное OTA, replay
+#
+#  [Root CA] → [Intermediate CA] → broker, dev-001..003, svc-ingest   (tools/pki.sh, том ./pki)
+#  [client: устройства, атакующий, замеры] ══mTLS TLS 1.3══▶ [broker :8883 / :8884]
+#                                          ───plain─────────▶ [weak :1883]  (сравнение)
+name: lab9
+
+services:
+  pki:
+    image: alpine:3.20
+    container_name: lab9-pki
+    entrypoint: ["sh", "-c", "apk add --no-cache openssl >/dev/null && sh /tools/pki.sh"]
+    volumes:
+      - ./pki:/pki
+      - ./tools:/tools:ro
+
+  broker:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab9-broker
+    volumes:
+      - ./mosquitto/secure:/mosquitto/config:ro
+      - ./pki:/pki:ro
+    depends_on:
+      pki:
+        condition: service_completed_successfully
+
+  weak:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab9-weak
+    volumes: ["./mosquitto/weak:/mosquitto/config:ro"]
+
+  client:
+    build: ./client
+    container_name: lab9-client
+    cap_add: [NET_ADMIN, NET_RAW]
+    volumes:
+      - ./tools:/lab/tools:ro
+      - ./results:/lab/results
+      - ./ota:/lab/ota
+      - ./pki:/pki                 # клиент выступает и оператором CA (отзыв сертификата)
+    depends_on: [broker, weak]

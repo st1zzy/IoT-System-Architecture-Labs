@@ -1,0 +1,3 @@
+2026-10-26T19:59:14: OpenSSL Error[0]: error:0A000119:SSL routines::decryption failed or bad record mac
+2026-10-26T19:59:14: OpenSSL Error[1]: error:0A000139:SSL routines::record layer failure
+2026-10-26T19:59:14: Client <unknown> disconnected: Protocol error.

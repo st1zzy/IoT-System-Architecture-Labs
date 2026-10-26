@@ -21,6 +21,7 @@
 | Lab 6 | Time-Series Database | [lab6](lab6) | [Lab6_Жанайдаров_Амирлан.docx](lab6/Lab6_Жанайдаров_Амирлан.docx) |
 | Lab 7 | IoT Gateway | [lab7](lab7) | [Lab7_Жанайдаров_Амирлан.docx](lab7/Lab7_Жанайдаров_Амирлан.docx) |
 | Lab 8 | Edge Processing | [lab8](lab8) | [Lab8_Жанайдаров_Амирлан.docx](lab8/Lab8_Жанайдаров_Амирлан.docx) |
+| Lab 9 | IoT Security — PKI, mTLS, ACL, отзыв, подписанное OTA | [lab9](lab9) | [Lab9_Жанайдаров_Амирлан.docx](lab9/Lab9_Жанайдаров_Амирлан.docx) |
 
 ## Требования
 

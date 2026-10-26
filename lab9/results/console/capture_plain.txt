@@ -1,0 +1,5 @@
+4   0.000123   172.20.0.4 → 172.20.0.2   MQTT 94 Connect Command
+    6   0.000270   172.20.0.2 → 172.20.0.4   MQTT 83 Connect Ack
+    8   0.000906   172.20.0.4 → 172.20.0.2   MQTT 164 Publish Message (id=1) [site/dev-001/telemetry]
+    9   0.000969   172.20.0.2 → 172.20.0.4   MQTT 77 Publish Ack (id=1)
+   11   0.501721   172.20.0.4 → 172.20.0.2   MQTT 74 Disconnect Req

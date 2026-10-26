@@ -1,0 +1,6 @@
+5. ACL по CN сертификата и попытка выдать себя за другое устройство
+  [OK] dev-001 → свой топик: ожидалось «PUBACK Success, доставлено» → PUBACK Success, доставлено: True
+  [OK] dev-001 → топик dev-002: ожидалось «отказ Not authorized» → PUBACK Not authorized, доставлено: False
+  [OK] подмена client_id: cert dev-001, client_id dev-002: ожидалось «отказ — имя берётся из сертификата» → CONNACK Success, PUBACK Not authorized, доставлено: False
+  [OK] dev-001 читает команды dev-002: ожидалось «не доставляется» → получено 0
+  [OK] слабый брокер: анонимный клиент с client_id dev-002: ожидалось «подмена удаётся (антипаттерн)» → PUBACK Success, доставлено: True

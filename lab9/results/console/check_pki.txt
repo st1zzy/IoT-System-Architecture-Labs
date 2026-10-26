@@ -1,0 +1,15 @@
+1. Иерархия PKI
+  [OK] цепочка broker: ожидалось «OK» → OK
+  [OK] цепочка dev-001: ожидалось «OK» → OK
+  [OK] цепочка dev-002: ожидалось «OK» → OK
+  [OK] цепочка dev-003: ожидалось «OK» → OK
+  [OK] цепочка svc-ingest: ожидалось «OK» → OK
+  [OK] цепочка rogue (CN=dev-001, чужой CA): ожидалось «ошибка» → error /pki/certs/rogue.crt: verification failed
+  [OK] Root CA: basicConstraints: ожидалось «CA:TRUE с pathlen» → CA:TRUE, pathlen:1
+  [OK] Intermediate CA: basicConstraints: ожидалось «CA:TRUE с pathlen» → CA:TRUE, pathlen:0
+     subject=CN=dev-001, O=ENU IoT Lab
+     issuer=CN=ENU IoT Lab Devices CA, O=ENU IoT Lab
+     notBefore=Oct 26 19:53:59 2026 GMT
+     notAfter=Oct 26 19:53:59 2027 GMT
+     X509v3 Extended Key Usage: 
+         TLS Web Client Authentication

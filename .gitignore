@@ -21,3 +21,8 @@ node_modules/
 # Lab 4: пароли генерируются при запуске
 lab4/secrets/
 lab4/broker-a/config/passwd
+
+# Lab 9: PKI (закрытые ключи CA и устройств) генерируется скриптом и не хранится в Git
+lab9/pki/
+lab9/ota/keys/
+lab9/ota/out/

@@ -1,0 +1,20 @@
+{
+ "checks": [
+  {
+   "check": "секрет в открытом трафике :1883",
+   "expected": "читается (topic и payload)",
+   "actual": "найден в pcap 1 раз(а)",
+   "pass": true
+  },
+  {
+   "check": "секрет в TLS-трафике :8883",
+   "expected": "не читается",
+   "actual": "не найден",
+   "pass": true
+  }
+ ],
+ "plain_mqtt": "1\t\t\n2\t\t\n3\tsite/dev-001/telemetry\t7b22646576223a226465762d303031222c2274656d7065726174757265223a32312e35332c22736563726574223a2256414c56452d4b45592d34373131227d\n4\t\t\n14",
+ "tls_records": "22\t1\t1475\n22,20\t2\t122,1,23,68,1419,97,69\n20\t\t1,1385,95,69\n\t\t39\n\t\t714\n\t\t714\n\t\t28\n\t\t109\n\t\t22\n\t\t19\n\t\t19",
+ "sni": "lab9-broker",
+ "tls_frames": 21
+}

@@ -1,0 +1,16 @@
+2026-10-26T20:00:33: New client connected from 172.20.0.4:44240 as dev-003-probe (p2, c1, k60, u'dev-003').
+2026-10-26T20:00:33: Client dev-003-probe disconnected.
+2026-10-26T20:00:33: Reloading config.
+2026-10-26T20:00:34: New connection from 172.20.0.4:44244 on port 8883.
+2026-10-26T20:00:34: OpenSSL Error[0]: error:0A000086:SSL routines::certificate verify failed
+2026-10-26T20:00:34: Client <unknown> disconnected: Protocol error.
+2026-10-26T20:00:34: New connection from 172.20.0.4:44248 on port 8883.
+2026-10-26T20:00:34: OpenSSL Error[0]: error:0A000086:SSL routines::certificate verify failed
+2026-10-26T20:00:34: Client <unknown> disconnected: Protocol error.
+...
+2026-10-26T20:00:48: mosquitto version 2.0.20 terminating
+2026-10-26T20:00:49: mosquitto version 2.0.20 starting
+2026-10-26T20:00:49: Config loaded from /mosquitto/config/mosquitto.conf.
+2026-10-26T20:00:49: Opening ipv4 listen socket on port 8883.
+2026-10-26T20:00:49: Opening ipv4 listen socket on port 8884.
+2026-10-26T20:00:49: mosquitto version 2.0.20 running
