@@ -1,0 +1,31 @@
+seed 1 edge: recall 1.000 precision 1.000 (алармов 60, верных 60) | stuck: 20/20 (медиана 14.0 с), drift: 20/20 (медиана 47.5 с), spike: 20/20 (медиана 0.0 с)
+seed 1 agg : recall 0.917 precision 0.786 (алармов 70, верных 55) | stuck: 19/20 (медиана 75 с), drift: 20/20 (медиана 68.5 с), spike: 16/20 (медиана 19.0 с)
+     пропущен: {'dev': 'dev-008', 'metric': 'vibration', 'type': 'spike', 'start': 244, 'end': 245, 'sign': 1, 'mag': 10.9}
+     пропущен: {'dev': 'dev-155', 'metric': 'temperature', 'type': 'stuck', 'start': 316, 'end': 406, 'sign': -1, 'mag': 11.63}
+     пропущен: {'dev': 'dev-100', 'metric': 'pressure', 'type': 'spike', 'start': 370, 'end': 371, 'sign': -1, 'mag': 11.29}
+     пропущен: {'dev': 'dev-143', 'metric': 'temperature', 'type': 'spike', 'start': 422, 'end': 423, 'sign': -1, 'mag': 14.74}
+seed 2 edge: recall 1.000 precision 0.984 (алармов 61, верных 60) | stuck: 20/20 (медиана 14.0 с), spike: 20/20 (медиана 0.0 с), drift: 20/20 (медиана 43.5 с)
+seed 2 agg : recall 0.817 precision 0.742 (алармов 66, верных 49) | stuck: 17/20 (медиана 82 с), spike: 12/20 (медиана 17.5 с), drift: 20/20 (медиана 84.5 с)
+     пропущен: {'dev': 'dev-060', 'metric': 'humidity', 'type': 'spike', 'start': 132, 'end': 133, 'sign': -1, 'mag': 10.28}
+     пропущен: {'dev': 'dev-006', 'metric': 'vibration', 'type': 'spike', 'start': 185, 'end': 186, 'sign': 1, 'mag': 11.41}
+     пропущен: {'dev': 'dev-064', 'metric': 'temperature', 'type': 'spike', 'start': 187, 'end': 188, 'sign': -1, 'mag': 9.19}
+     пропущен: {'dev': 'dev-098', 'metric': 'vibration', 'type': 'stuck', 'start': 202, 'end': 292, 'sign': -1, 'mag': 11.58}
+seed 3 edge: recall 1.000 precision 0.984 (алармов 61, верных 60) | stuck: 20/20 (медиана 14.0 с), spike: 20/20 (медиана 0.0 с), drift: 20/20 (медиана 46.5 с)
+seed 3 agg : recall 0.750 precision 0.714 (алармов 63, верных 45) | stuck: 14/20 (медиана 73.5 с), spike: 11/20 (медиана 19 с), drift: 20/20 (медиана 78.5 с)
+     пропущен: {'dev': 'dev-070', 'metric': 'humidity', 'type': 'spike', 'start': 123, 'end': 124, 'sign': 1, 'mag': 12.4}
+     пропущен: {'dev': 'dev-133', 'metric': 'vibration', 'type': 'stuck', 'start': 127, 'end': 217, 'sign': -1, 'mag': 9.12}
+     пропущен: {'dev': 'dev-105', 'metric': 'humidity', 'type': 'stuck', 'start': 130, 'end': 220, 'sign': 1, 'mag': 10.99}
+     пропущен: {'dev': 'dev-106', 'metric': 'temperature', 'type': 'spike', 'start': 142, 'end': 143, 'sign': -1, 'mag': 10.64}
+seed 4 edge: recall 0.983 precision 0.983 (алармов 60, верных 59) | spike: 19/20 (медиана 0 с), drift: 20/20 (медиана 43.0 с), stuck: 20/20 (медиана 14.0 с)
+     пропущен: {'dev': 'dev-021', 'metric': 'pressure', 'type': 'spike', 'start': 465, 'end': 466, 'sign': 1, 'mag': 8.13}
+seed 4 agg : recall 0.800 precision 0.727 (алармов 66, верных 48) | spike: 12/20 (медиана 18.5 с), drift: 20/20 (медиана 76.0 с), stuck: 16/20 (медиана 68.0 с)
+     пропущен: {'dev': 'dev-099', 'metric': 'humidity', 'type': 'spike', 'start': 121, 'end': 122, 'sign': -1, 'mag': 14.46}
+     пропущен: {'dev': 'dev-105', 'metric': 'vibration', 'type': 'spike', 'start': 138, 'end': 139, 'sign': -1, 'mag': 10.95}
+     пропущен: {'dev': 'dev-065', 'metric': 'current', 'type': 'spike', 'start': 191, 'end': 192, 'sign': -1, 'mag': 10.54}
+     пропущен: {'dev': 'dev-041', 'metric': 'humidity', 'type': 'stuck', 'start': 196, 'end': 286, 'sign': 1, 'mag': 11.46}
+seed 5 edge: recall 1.000 precision 1.000 (алармов 60, верных 60) | drift: 20/20 (медиана 44.0 с), stuck: 20/20 (медиана 14.0 с), spike: 20/20 (медиана 0.0 с)
+seed 5 agg : recall 0.750 precision 0.714 (алармов 63, верных 45) | drift: 20/20 (медиана 83.5 с), stuck: 17/20 (медиана 66 с), spike: 8/20 (медиана 13.0 с)
+     пропущен: {'dev': 'dev-098', 'metric': 'pressure', 'type': 'spike', 'start': 131, 'end': 132, 'sign': 1, 'mag': 10.9}
+     пропущен: {'dev': 'dev-085', 'metric': 'humidity', 'type': 'spike', 'start': 186, 'end': 187, 'sign': -1, 'mag': 12.41}
+     пропущен: {'dev': 'dev-186', 'metric': 'vibration', 'type': 'spike', 'start': 207, 'end': 208, 'sign': 1, 'mag': 10.12}
+     пропущен: {'dev': 'dev-026', 'metric': 'current', 'type': 'spike', 'start': 247, 'end': 248, 'sign': -1, 'mag': 13.12}

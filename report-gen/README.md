@@ -23,6 +23,7 @@ node lab3.js ../lab3
 # Lab 4, 5: make_figs_lab4.py / make_figs_lab5.py, затем node lab4.js ../lab4 / node lab5.js ../lab5
 # Lab 6: графики — ../lab6/tools/plots.py, рисунок — make_figs_lab6.py ../lab6, отчёт — node lab6.js ../lab6
 # Lab 7: графики — ../lab7/tools/analyze.py, рисунки — make_figs_lab7.py ../lab7, отчёт — node lab7.js ../lab7
+# Lab 8: графики — ../lab8/tools/analyze.py, рисунки — make_figs_lab8.py ../lab8, отчёт — node lab8.js ../lab8
 ```
 
 - `lib.js` — общее оформление: титульный лист, заголовки, абзацы, таблицы, рисунки, вопросы.

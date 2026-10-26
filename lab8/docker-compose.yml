@@ -1,0 +1,88 @@
+# Lab 8 — Edge Processing
+#
+#  сеть site (объект)                                     сеть wan («облако»)
+#  [sim: 200 устр. × 5 метрик, 1 Гц] ─▶ [local] ─▶ [edge-agent] ─MQTT (только результаты)─▶ [cloud] ─▶ [cloud-svc] ─▶ [db]
+#                     ◀── команда cooling_on (без облака) ──┘
+#  WAN: tools/wan.sh в edge-агенте — задержка/обрыв только на трафике к облачному брокеру 172.29.2.2
+name: lab8
+
+x-py: &py
+  build: ./py
+  image: lab8-py
+  restart: unless-stopped
+  volumes:
+    - ./common:/common:ro
+
+services:
+  local:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab8-local
+    volumes: ["./mosquitto:/mosquitto/config:ro"]
+    networks: [site]
+
+  sim:
+    <<: *py
+    container_name: lab8-sim
+    command: ["python", "/src/sim.py"]
+    environment:
+      SEED: ${SEED:-11}
+      DURATION: ${DURATION:-600}
+      ANOMALIES: ${ANOMALIES:-60}
+    volumes: ["./common:/common:ro", "./sim:/src:ro"]
+    ports: ["8090:8090"]
+    networks: [site]
+    depends_on: [local]
+
+  edge:
+    <<: *py
+    container_name: lab8-edge
+    command: ["python", "/src/agent.py"]
+    cap_add: [NET_ADMIN]
+    environment:
+      EDGE_MODE: ${EDGE_MODE:-edge}
+    volumes:
+      - ./common:/common:ro
+      - ./edge:/src:ro
+      - ./tools/wan.sh:/usr/local/bin/wan:ro
+      - edgedata:/data
+    ports: ["8091:8091"]
+    networks:
+      site: {}
+      wan: {ipv4_address: 172.29.2.10}
+    depends_on: [local, cloud]
+
+  cloud:
+    image: eclipse-mosquitto:2.0.20
+    container_name: lab8-cloud
+    volumes: ["./mosquitto:/mosquitto/config:ro"]
+    networks:
+      wan: {ipv4_address: 172.29.2.2}
+
+  db:
+    image: timescale/timescaledb:2.17.2-pg16
+    container_name: lab8-db
+    environment:
+      POSTGRES_PASSWORD: iot             # учебный стенд, только внутренняя сеть
+      POSTGRES_DB: iot
+    command: ["postgres", "-c", "timescaledb.telemetry_level=off"]
+    volumes: ["dbdata:/var/lib/postgresql/data"]
+    networks: [wan]
+
+  cloud-svc:
+    <<: *py
+    container_name: lab8-cloud-svc
+    command: ["python", "/src/cloud.py"]
+    volumes: ["./common:/common:ro", "./cloud:/src:ro"]
+    ports: ["8092:8092"]
+    networks: [wan]
+    depends_on: [cloud, db]
+
+networks:
+  site:
+    ipam: {config: [{subnet: 172.29.1.0/24}]}
+  wan:
+    ipam: {config: [{subnet: 172.29.2.0/24}]}
+
+volumes:
+  edgedata:
+  dbdata:
