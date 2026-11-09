@@ -1,0 +1,4 @@
+backlog 3,000,000 messages in 8 partitions
+N=1: steady 52,845 msg/s, speedup 1.00x (ideal 1x, efficiency 100%); ingest-1 76%, timescale 71%
+N=2: steady 63,336 msg/s, speedup 1.20x (ideal 2x, efficiency 60%); ingest-1 51%, ingest-2 52%, timescale 87%
+N=4: steady 88,894 msg/s, speedup 1.68x (ideal 4x, efficiency 42%); ingest-1 63%, ingest-2 76%, ingest-3 76%, ingest-4 76%, redpanda 19%, timescale 202%

@@ -1,0 +1,4 @@
+2026-11-09T07:24:46.996372+00:00 [warning] clientid: bridge-99567987a763, msg: check_oom_shutdown, shutdown: #{max => 1000,reason => mailbox_overflow,value => 1143}
+2026-11-09T07:24:48.107795+00:00 [warning] clientid: bridge-b92fdeb95b29, msg: check_oom_shutdown, shutdown: #{max => 1000,reason => mailbox_overflow,value => 2204}
+2026-11-09T07:24:47.478691+00:00 [warning] clientid: bridge-7dd708f759bb, msg: check_oom_shutdown, shutdown: #{max => 1000,reason => mailbox_overflow,value => 1572}
+2026-11-09T07:24:47.648032+00:00 [warning] clientid: bridge-71b85ccad328, msg: check_oom_shutdown, shutdown: #{max => 1000,reason => mailbox_overflow,value => 1626}

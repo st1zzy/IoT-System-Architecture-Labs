@@ -1,0 +1,24 @@
+EMQX_API_KEY__BOOTSTRAP_FILE [api_key.bootstrap_file]: /opt/emqx/etc/lab10_api_key.conf
+EMQX_FORCE_SHUTDOWN__MAX_MAILBOX_SIZE [force_shutdown.max_mailbox_size]: 10000
+EMQX_RPC__PORT_DISCOVERY [rpc.port_discovery]: manual
+EMQX_LOG__CONSOLE__LEVEL [log.console.level]: warning
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds]: [...]
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.2]: emqx@emqx2.lab10.io
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.1]: emqx@emqx1.lab10.io
+EMQX_CLUSTER__DISCOVERY_STRATEGY [cluster.discovery_strategy]: static
+EMQX_NODE__COOKIE [node.cookie]: ******
+EMQX_NODE__NAME [node.name]: emqx@emqx1.lab10.io
+2026-11-09T07:40:27.327832+00:00 [warning] msg: cluster_config_fetch_failures, peer_nodes: ['emqx@emqx2.lab10.io'], self_node: 'emqx@emqx1.lab10.io', booting_nodes: [{error,#{node => 'emqx@emqx2.lab10.io',wall_clock => {2860,74},msg => "init_conf_load_not_done",release => "v5.8.0"}}], failed_nodes: []
+2026-11-09T07:40:27.450452+00:00 [warning] msg: cluster_routing_schema_discovery_failed, reason: Could not determine configured routing storage schema in peer nodes., responses: [{'emqx@emqx2.lab10.io',unknown,starting}]
+Listener tcp:default on 0.0.0.0:1883 started.
+Listener ssl:default on 0.0.0.0:8883 started.
+Listener ws:default on 0.0.0.0:8083 started.
+Listener wss:default on 0.0.0.0:8084 started.
+Listener http:dashboard on :18083 started.
+EMQX 5.8.0 is running now!
+2026-11-09T07:41:49.486651+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 75">>, name: runq_overload
+2026-11-09T07:42:16.470594+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:43:32.508981+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 90">>, name: runq_overload
+2026-11-09T07:43:45.496605+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:45:20.561907+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 83">>, name: runq_overload
+2026-11-09T07:45:37.542260+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload

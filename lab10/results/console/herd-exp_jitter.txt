@@ -1,0 +1,14 @@
+[herd-exp_jitter] clients=10000 rate=0.1/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=61373 ok=19976 fail=41396 connack p50/p99=7.1/4695.4 ms
+  messages: generated=100000 sent=69426 acked=68849 dropped_offline=30574 lost_inflight=577 inflight_left=0 buffer_left=0
+  disconnects=10000 devices_disconnected=10000 reconnects=9976
+-- herd-exp_jitter: stored 68789 of acked 68849 (generated 100000), duplicates 0
+   e2e latency p50/p95/p99/max = 98/180/284/631 ms
+   steady window: p50/p99 e2e 98/294 ms; device→bridge 2/189, kafka 35/77, consumer→db 52/109; ≤1 s: 100.00 %
+   throughput steady 691 msg/s (offered 1000), max 1299
+   emqx: received 68855 delivered 68799 queue_full 0 no_subscribers 60
+   peak CPU: bridge-1 27%, bridge-2 30%, bridge-3 26%, bridge-4 24%, emqx1 111%, emqx2 118%, grafana 6%, ingest-1 17%, ingest-2 17%, loadgen 318%, nginx 99%, redpanda 101%, timescale 47%
+   steady CPU: bridge-1 13%, bridge-2 13%, bridge-3 13%, bridge-4 13%, emqx1 55%, emqx2 55%, ingest-1 11%, ingest-2 11%, loadgen 101%, nginx 55%, redpanda 57%, timescale 10%
+   fds: {'lab10-emqx1': 5101, 'lab10-emqx2': 4497, 'lab10-emqx3': None}
+   kafka lag max 184
+   event: перезапуск NGINX: все соединения рвутся разом at +15.0s

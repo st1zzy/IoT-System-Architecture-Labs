@@ -1,0 +1,132 @@
+
+=== single-1k: 1000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.6, 'conns': 1, 'cpu': {'emqx1': 2.21}}
+[single-1k] clients=1000 rate=0.2/s procs=1 policy=exp_jitter buffer=False
+  connect: attempts=1000 ok=1000 fail=0 connack p50/p99=66.9/746.4 ms
+  messages: generated=11982 sent=11982 acked=11982 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- single-1k: stored 11982 of acked 11982 (generated 11982), duplicates 0
+   e2e latency p50/p95/p99/max = 55/102/111/273 ms
+   throughput steady 197 msg/s (offered 200), max 229
+   emqx: received 11982 delivered 11982 queue_full 0 no_subscribers 0
+   peak CPU: emqx1 99%, ingest-mqtt-1 16%, loadgen 65%, timescale 16%
+   steady CPU: emqx1 15%, ingest-mqtt-1 8%, loadgen 9%
+   fds: {'lab10-emqx1': 1100, 'lab10-emqx2': None}
+
+
+=== single-5k: 5000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.3, 'conns': 1, 'cpu': {'emqx1': 0.9}}
+[single-5k] clients=5000 rate=0.2/s procs=2 policy=exp_jitter buffer=False
+  connect: attempts=5000 ok=5000 fail=0 connack p50/p99=3.0/53.2 ms
+  messages: generated=60000 sent=60000 acked=60000 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- single-5k: stored 53631 of acked 60000 (generated 60000), duplicates 0
+   e2e latency p50/p95/p99/max = 66/465/4172/4437 ms
+   throughput steady 888 msg/s (offered 1000), max 1903
+   emqx: received 60000 delivered 53631 queue_full 3333 no_subscribers 249
+   peak CPU: emqx1 108%, grafana 10%, ingest-mqtt-1 75%, loadgen 99%, timescale 31%
+   steady CPU: emqx1 69%, ingest-mqtt-1 34%, loadgen 50%, timescale 10%
+   fds: {'lab10-emqx1': 5098, 'lab10-emqx2': None}
+
+
+=== single-10k: 10000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.8, 'conns': 1, 'cpu': {'emqx1': 4.83}}
+[single-10k] clients=10000 rate=0.2/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=5.7/4438.2 ms
+  messages: generated=119410 sent=119410 acked=97241 dropped_offline=0 lost_inflight=0 inflight_left=22169 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- single-10k: stored 9217 of acked 97241 (generated 119410), duplicates 0
+   e2e latency p50/p95/p99/max = 362/7408/7502/13645 ms
+   throughput steady 279 msg/s (offered 2000), max 2315
+   emqx: received 119410 delivered 9242 queue_full 24405 no_subscribers 24600
+   peak CPU: emqx1 113%, grafana 20%, ingest-mqtt-1 54%, loadgen 322%, timescale 20%
+   steady CPU: emqx1 103%, ingest-mqtt-1 12%, loadgen 138%, timescale 10%
+   fds: {'lab10-emqx1': 10098, 'lab10-emqx2': None}
+
+
+=== cluster-10k: 10000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.9, 'conns': 1, 'cpu': {'emqx2': 0.93, 'emqx1': 0.46}}
+[cluster-10k] clients=10000 rate=0.2/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=165.7/1537.7 ms
+  messages: generated=119929 sent=119929 acked=119929 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- cluster-10k: stored 51785 of acked 119929 (generated 119929), duplicates 0
+   e2e latency p50/p95/p99/max = 720/2852/3646/4761 ms
+   throughput steady 854 msg/s (offered 2000), max 3272
+   emqx: received 119929 delivered 51788 queue_full 34815 no_subscribers 13398
+   peak CPU: emqx1 119%, emqx2 114%, ingest-mqtt-1 83%, loadgen 299%, nginx 146%, timescale 42%
+   steady CPU: emqx1 100%, emqx2 88%, ingest-mqtt-1 41%, loadgen 115%, nginx 97%, timescale 12%
+   fds: {'lab10-emqx1': 5100, 'lab10-emqx2': 5100}
+
+
+=== cluster-20k: 20000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 7.0, 'conns': 1, 'cpu': {'emqx2': 1.07, 'emqx1': 1.54}}
+[cluster-20k] clients=20000 rate=0.2/s procs=8 policy=exp_jitter buffer=False
+  connect: attempts=37657 ok=16342 fail=20797 connack p50/p99=105.7/5662.2 ms
+  messages: generated=195979 sent=195979 acked=150218 dropped_offline=0 lost_inflight=0 inflight_left=45761 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- cluster-20k: stored 825 of acked 150218 (generated 195979), duplicates 0
+   e2e latency p50/p95/p99/max = 6582/15213/15351/17923 ms
+   throughput steady 0 msg/s (offered 4000), max 663
+   emqx: received 195979 delivered 835 queue_full 0 no_subscribers 116154
+   peak CPU: emqx1 121%, emqx2 116%, grafana 12%, ingest-mqtt-1 26%, loadgen 1016%, nginx 210%, timescale 18%
+   steady CPU: emqx1 71%, emqx2 78%, loadgen 769%, nginx 158%
+   fds: {'lab10-emqx1': 8337, 'lab10-emqx2': 8322}
+
+
+=== kafka-10k-c1: 10000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.5, 'conns': 4, 'cpu': {'emqx2': 0.68, 'emqx1': 0.39}}
+[kafka-10k-c1] clients=10000 rate=0.2/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=6.8/474.6 ms
+  messages: generated=120000 sent=120000 acked=120000 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- kafka-10k-c1: stored 111834 of acked 120000 (generated 120000), duplicates 0
+   e2e latency p50/p95/p99/max = 185/3118/3848/4324 ms
+   throughput steady 1878 msg/s (offered 2000), max 4521
+   emqx: received 120000 delivered 111834 queue_full 8166 no_subscribers 0
+   peak CPU: bridge-1 55%, bridge-2 55%, bridge-3 67%, bridge-4 66%, emqx1 104%, emqx2 126%, grafana 6%, ingest-1 32%, loadgen 161%, nginx 118%, redpanda 127%, timescale 52%
+   steady CPU: bridge-1 34%, bridge-2 31%, bridge-3 35%, bridge-4 34%, emqx1 85%, emqx2 87%, ingest-1 28%, loadgen 104%, nginx 94%, redpanda 84%, timescale 14%
+   fds: {'lab10-emqx1': 5100, 'lab10-emqx2': 5100}
+   kafka lag max 1421
+
+
+=== kafka-10k-c2: 10000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.4, 'conns': 4, 'cpu': {'emqx2': 0.71, 'emqx1': 0.22}}
+[kafka-10k-c2] clients=10000 rate=0.2/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=4.0/145.0 ms
+  messages: generated=120000 sent=120000 acked=120000 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- kafka-10k-c2: stored 110675 of acked 120000 (generated 120000), duplicates 0
+   e2e latency p50/p95/p99/max = 132/967/1516/4159 ms
+   throughput steady 1811 msg/s (offered 2000), max 5025
+   emqx: received 120000 delivered 110689 queue_full 0 no_subscribers 834
+   peak CPU: bridge-1 57%, bridge-2 54%, bridge-3 55%, bridge-4 58%, emqx1 106%, emqx2 105%, grafana 6%, ingest-1 24%, ingest-2 22%, loadgen 205%, nginx 124%, prometheus 5%, redpanda 131%, timescale 60%
+   steady CPU: bridge-1 32%, bridge-2 32%, bridge-3 32%, bridge-4 32%, emqx1 87%, emqx2 85%, ingest-1 18%, ingest-2 18%, loadgen 110%, nginx 94%, redpanda 90%, timescale 19%
+   fds: {'lab10-emqx1': 5099, 'lab10-emqx2': 5101}
+   kafka lag max 506
+
+
+=== kafka-20k-c2: 20000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 2.1, 'conns': 4, 'cpu': {}}
+Traceback (most recent call last):
+  File "C:\Users\st1zzy\Desktop\мага\Архитектура IoT систем и технологии передачи данных\IoT-System-Architecture-Labs\lab10\tools\run_experiments.py", line 471, in <module>
+    main(sys.argv[1:] or ["single", "cluster", "kafka", "drain", "failover", "herd"])
+  File "C:\Users\st1zzy\Desktop\мага\Архитектура IoT систем и технологии передачи данных\IoT-System-Architecture-Labs\lab10\tools\run_experiments.py", line 385, in main
+    run(f"kafka-{clients // 1000}k-c{n_ing}", clients, kafka=True)
+  File "C:\Users\st1zzy\Desktop\мага\Архитектура IoT систем и технологии передачи данных\IoT-System-Architecture-Labs\lab10\tools\run_experiments.py", line 218, in run
+    psql("TRUNCATE telemetry")
+  File "C:\Users\st1zzy\Desktop\мага\Архитектура IoT систем и технологии передачи данных\IoT-System-Architecture-Labs\lab10\tools\run_experiments.py", line 48, in psql
+    return sh("docker", "exec", "lab10-timescale", "psql", "-U", "postgres", "-d", "iot", "-At", "-F", "|", "-c", sql)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\st1zzy\Desktop\мага\Архитектура IoT систем и технологии передачи данных\IoT-System-Architecture-Labs\lab10\tools\run_experiments.py", line 35, in sh
+    raise RuntimeError(f"{' '.join(cmd)} → {r.returncode}\n{r.stdout}\n{r.stderr}")
+RuntimeError: docker exec lab10-timescale psql -U postgres -d iot -At -F | -c TRUNCATE telemetry → 3221225794
+
+

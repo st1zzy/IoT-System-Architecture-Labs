@@ -1,0 +1,5 @@
+paho-mqtt==2.1.0
+confluent-kafka==2.6.1
+psycopg[binary]==3.2.3
+uvloop==0.21.0
+prometheus-client==0.21.0

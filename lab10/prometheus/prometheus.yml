@@ -1,0 +1,25 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: emqx
+    metrics_path: /api/v5/prometheus/stats
+    static_configs:
+      - targets: ["emqx1:18083", "emqx2:18083"]
+
+  - job_name: ingest
+    dns_sd_configs:                 # все реплики сервиса (docker compose --scale)
+      - names: ["ingest", "ingest-mqtt"]
+        type: A
+        port: 8000
+
+  - job_name: bridge
+    dns_sd_configs:
+      - names: ["bridge"]
+        type: A
+        port: 8001
+
+  - job_name: redpanda
+    metrics_path: /public_metrics
+    static_configs:
+      - targets: ["redpanda:9644"]

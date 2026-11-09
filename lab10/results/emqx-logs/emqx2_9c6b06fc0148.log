@@ -1,0 +1,23 @@
+EMQX_API_KEY__BOOTSTRAP_FILE [api_key.bootstrap_file]: /opt/emqx/etc/lab10_api_key.conf
+EMQX_FORCE_SHUTDOWN__MAX_MAILBOX_SIZE [force_shutdown.max_mailbox_size]: 10000
+EMQX_RPC__PORT_DISCOVERY [rpc.port_discovery]: manual
+EMQX_LOG__CONSOLE__LEVEL [log.console.level]: warning
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds]: [...]
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.2]: emqx@emqx2.lab10.io
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.1]: emqx@emqx1.lab10.io
+EMQX_CLUSTER__DISCOVERY_STRATEGY [cluster.discovery_strategy]: static
+EMQX_NODE__COOKIE [node.cookie]: ******
+EMQX_NODE__NAME [node.name]: emqx@emqx2.lab10.io
+2026-11-09T07:40:27.391127+00:00 [warning] msg: cluster_config_fetch_failures, peer_nodes: ['emqx@emqx1.lab10.io'], self_node: 'emqx@emqx2.lab10.io', booting_nodes: [{error,#{node => 'emqx@emqx1.lab10.io',wall_clock => {2988,137},msg => "emqx_config_handler_not_ready",release => "v5.8.0"}}], failed_nodes: []
+Listener tcp:default on 0.0.0.0:1883 started.
+Listener ssl:default on 0.0.0.0:8883 started.
+Listener ws:default on 0.0.0.0:8083 started.
+Listener wss:default on 0.0.0.0:8084 started.
+Listener http:dashboard on :18083 started.
+EMQX 5.8.0 is running now!
+2026-11-09T07:41:49.545677+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx2.lab10.io': 102">>, name: runq_overload
+2026-11-09T07:42:15.514754+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:43:32.645406+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx2.lab10.io': 77">>, name: runq_overload
+2026-11-09T07:43:45.603969+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:45:20.714403+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx2.lab10.io': 96">>, name: runq_overload
+2026-11-09T07:45:33.657986+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload

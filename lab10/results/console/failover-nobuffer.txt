@@ -1,0 +1,13 @@
+[failover-nobuffer] clients=5000 rate=0.2/s procs=2 policy=exp_jitter buffer=False
+  connect: attempts=7501 ok=7500 fail=1 connack p50/p99=55.0/1523.5 ms
+  messages: generated=60000 sent=59134 acked=59040 dropped_offline=866 lost_inflight=94 inflight_left=0 buffer_left=0
+  disconnects=2500 devices_disconnected=2500 reconnects=2500
+-- failover-nobuffer: stored 59040 of acked 59040 (generated 60000), duplicates 0
+   e2e latency p50/p95/p99/max = 109/342/637/910 ms
+   throughput steady 972 msg/s (offered 1000), max 1255
+   emqx: received 48936 delivered 48936 queue_full 0 no_subscribers 0
+   peak CPU: bridge-1 32%, bridge-2 23%, bridge-3 21%, bridge-4 23%, emqx1 108%, emqx2 75%, ingest-1 17%, ingest-2 16%, loadgen 104%, nginx 75%, redpanda 79%, timescale 38%
+   steady CPU: bridge-1 14%, bridge-2 15%, bridge-3 14%, bridge-4 16%, emqx1 70%, emqx2 47%, ingest-1 11%, ingest-2 11%, loadgen 44%, nginx 50%, redpanda 58%, timescale 11%
+   fds: {'lab10-emqx1': 2601, 'lab10-emqx2': 2601}
+   kafka lag max 174
+   event: kill -9 узла emqx2 at +20.0s

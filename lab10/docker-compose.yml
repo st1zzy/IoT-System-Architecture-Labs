@@ -1,0 +1,212 @@
+# Lab 10 — Scalable IoT Architecture
+#
+#  [loadgen: 1 000–20 000 MQTT-клиентов]
+#              │
+#        [nginx L4 :1883]
+#         ├──▶ [emqx1] ─┐  кластер EMQX (static seeds), по 1 vCPU на узел — «маленькая VM»
+#         └──▶ [emqx2] ─┘
+#              │ $share/bridge/telemetry/#
+#        [bridge ×4] ──▶ [redpanda: topic telemetry, 8 партиций, ключ = device_id]
+#                               │ consumer group "ingest"
+#                        [ingest × N, по 1 vCPU] ──▶ [timescale]
+#        [ingest-mqtt]  — базовый вариант без Kafka: подписка прямо на брокер
+#        [prometheus :9090] → [grafana :3000]
+name: lab10
+
+x-py: &py
+  build: ./app
+  image: lab10-py
+  volumes:
+    - ./app:/app:ro
+  ulimits:
+    nofile: { soft: 1048576, hard: 1048576 }
+
+x-emqx: &emqx
+  image: emqx/emqx:5.8.0
+  ulimits:
+    nofile: { soft: 1048576, hard: 1048576 }
+  cpus: ${EMQX_CPUS:-1.0}
+  mem_limit: 1536m
+  volumes:
+    - ./emqx/api_key.conf:/opt/emqx/etc/lab10_api_key.conf:ro
+  healthcheck:
+    # проверка портов MQTT и API; «emqx ctl status» поднимает отдельную Erlang VM и каждые 5 с
+    # съедает до целого ядра из квоты узла — это искажало бы замеры
+    test: ["CMD", "bash", "-c", "</dev/tcp/127.0.0.1/1883 && </dev/tcp/127.0.0.1/18083"]
+    interval: 5s
+    timeout: 10s
+    retries: 30
+
+x-emqx-env: &emqx-env
+  EMQX_NODE__COOKIE: lab10-cluster-cookie
+  EMQX_CLUSTER__DISCOVERY_STRATEGY: static
+  EMQX_CLUSTER__STATIC__SEEDS: "${EMQX_SEEDS:-[emqx@emqx1.lab10.io,emqx@emqx2.lab10.io]}"
+  EMQX_API_KEY__BOOTSTRAP_FILE: /opt/emqx/etc/lab10_api_key.conf
+  EMQX_MQTT__SHARED_SUBSCRIPTION_STRATEGY: local   # сообщение — подписчику группы на том же узле
+  EMQX_LOG__CONSOLE__LEVEL: warning
+  # Erlang VM видит все 16 ядер хоста и запускает 16 планировщиков с активным ожиданием —
+  # внутри квоты cpus=1 они сжигают её впустую. На настоящей VM с 1 vCPU был бы 1 планировщик.
+  ERL_FLAGS: "+S 1:1 +sbwt none +sbwtdcpu none +sbwtdio none"
+  # Лимиты сессии подписчика: по умолчанию 1000 / 32 / 1000 (значения EMQX 5.8).
+  # Этап «tuned» поднимает их для серверных подписчиков (мостов), принимающих тысячи сообщений/с.
+  EMQX_MQTT__MAX_MQUEUE_LEN: ${EMQX_MQUEUE:-1000}
+  EMQX_MQTT__MAX_INFLIGHT: ${EMQX_INFLIGHT:-32}
+  EMQX_FORCE_SHUTDOWN__MAX_MAILBOX_SIZE: ${EMQX_MAILBOX:-1000}
+
+services:
+  emqx1:
+    <<: *emqx
+    container_name: lab10-emqx1
+    hostname: emqx1.lab10.io
+    environment:
+      <<: *emqx-env
+      EMQX_NODE__NAME: emqx@emqx1.lab10.io
+    ports: ["18083:18083"]
+    networks:
+      default:
+        aliases: [emqx1.lab10.io]
+
+  emqx2:
+    <<: *emqx
+    container_name: lab10-emqx2
+    hostname: emqx2.lab10.io
+    environment:
+      <<: *emqx-env
+      EMQX_NODE__NAME: emqx@emqx2.lab10.io
+    ports: ["18084:18083"]
+    networks:
+      default:
+        aliases: [emqx2.lab10.io]
+
+  emqx3:                            # третий узел — только в этапе «three» (профиль)
+    <<: *emqx
+    profiles: [three]
+    container_name: lab10-emqx3
+    hostname: emqx3.lab10.io
+    environment:
+      <<: *emqx-env
+      EMQX_NODE__NAME: emqx@emqx3.lab10.io
+    ports: ["18085:18083"]
+    networks:
+      default:
+        aliases: [emqx3.lab10.io]
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: lab10-nginx
+    cpus: 2.0
+    ulimits:
+      nofile: { soft: 1048576, hard: 1048576 }
+    volumes:
+      - ${NGINX_CONF:-./nginx/nginx.conf}:/etc/nginx/nginx.conf:ro
+    ports: ["1883:1883"]
+    depends_on: [emqx1, emqx2]
+
+  redpanda:
+    image: redpandadata/redpanda:v24.2.7
+    container_name: lab10-redpanda
+    command:
+      - redpanda
+      - start
+      - --smp=1
+      - --memory=1G
+      - --overprovisioned
+      - --mode=dev-container
+      - --kafka-addr=PLAINTEXT://0.0.0.0:9092
+      - --advertise-kafka-addr=PLAINTEXT://redpanda:9092
+    cpus: 2.0
+    healthcheck:
+      test: ["CMD", "rpk", "cluster", "health", "--exit-when-healthy"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+
+  redpanda-init:
+    image: redpandadata/redpanda:v24.2.7
+    container_name: lab10-redpanda-init
+    entrypoint: ["sh", "-c"]
+    command:
+      - >
+        rpk -X brokers=redpanda:9092 topic create telemetry -p 8 -r 1 ;
+        rpk -X brokers=redpanda:9092 topic create telemetry.dlq -p 1 -r 1 ;
+        rpk -X brokers=redpanda:9092 topic list
+    depends_on:
+      redpanda: { condition: service_healthy }
+
+  bridge:
+    <<: *py
+    command: ["python", "-u", "/app/bridge.py"]
+    environment:
+      MQTT_HOST: nginx
+      KAFKA: redpanda:9092
+    depends_on: [nginx, redpanda]
+
+  ingest:
+    <<: *py
+    command: ["python", "-u", "/app/ingest.py"]
+    cpus: ${INGEST_CPUS:-1.0}
+    environment:
+      MODE: kafka
+      KAFKA: redpanda:9092
+      PG_DSN: postgresql://postgres:iot@timescale:5432/iot
+    depends_on: [timescale, redpanda]
+
+  ingest-mqtt:
+    <<: *py
+    command: ["python", "-u", "/app/ingest.py"]
+    cpus: ${INGEST_CPUS:-1.0}
+    environment:
+      MODE: mqtt
+      MQTT_HOST: ${INGEST_MQTT_HOST:-emqx1}
+      MQTT_TOPIC: ${INGEST_MQTT_TOPIC:-$$share/ingest/telemetry/#}
+      PG_DSN: postgresql://postgres:iot@timescale:5432/iot
+    depends_on: [timescale]
+
+  timescale:
+    image: timescale/timescaledb:2.17.2-pg16
+    container_name: lab10-timescale
+    environment:
+      POSTGRES_PASSWORD: iot           # учебный стенд: доступ только из сети стенда
+      POSTGRES_DB: iot
+    command: ["postgres", "-c", "shared_buffers=512MB", "-c", "max_wal_size=4GB",
+              "-c", "synchronous_commit=off", "-c", "timescaledb.telemetry_level=off"]
+    cpus: 4.0
+    shm_size: 512mb
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/10-init.sql:ro
+      - tsdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "iot"]
+      interval: 3s
+      retries: 30
+
+  loadgen:
+    <<: *py
+    container_name: lab10-loadgen
+    command: ["sleep", "infinity"]
+    working_dir: /lab
+    volumes:
+      - ./app:/app:ro
+      - ./results:/lab/results
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: lab10-prometheus
+    ports: ["9090:9090"]
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+  grafana:
+    image: grafana/grafana:11.2.2
+    container_name: lab10-grafana
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    ports: ["3000:3000"]
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on: [prometheus]
+
+volumes:
+  tsdata:

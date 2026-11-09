@@ -1,0 +1,30 @@
+EMQX_API_KEY__BOOTSTRAP_FILE [api_key.bootstrap_file]: /opt/emqx/etc/lab10_api_key.conf
+EMQX_FORCE_SHUTDOWN__MAX_MAILBOX_SIZE [force_shutdown.max_mailbox_size]: 10000
+EMQX_RPC__PORT_DISCOVERY [rpc.port_discovery]: manual
+EMQX_LOG__CONSOLE__LEVEL [log.console.level]: warning
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds]: [...]
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.2]: emqx@emqx2.lab10.io
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.1]: emqx@emqx1.lab10.io
+EMQX_CLUSTER__DISCOVERY_STRATEGY [cluster.discovery_strategy]: static
+EMQX_NODE__COOKIE [node.cookie]: ******
+EMQX_NODE__NAME [node.name]: emqx@emqx1.lab10.io
+2026-11-09T07:26:14.201778+00:00 [warning] msg: cluster_config_fetch_failures, peer_nodes: ['emqx@emqx2.lab10.io'], self_node: 'emqx@emqx1.lab10.io', booting_nodes: [{error,#{node => 'emqx@emqx2.lab10.io',wall_clock => {3582,61},msg => "init_conf_load_not_done",release => "v5.8.0"}}], failed_nodes: []
+2026-11-09T07:26:14.323203+00:00 [warning] msg: cluster_routing_schema_discovery_failed, reason: Could not determine configured routing storage schema in peer nodes., responses: [{'emqx@emqx2.lab10.io',unknown,starting}]
+Listener tcp:default on 0.0.0.0:1883 started.
+Listener ssl:default on 0.0.0.0:8883 started.
+Listener ws:default on 0.0.0.0:8083 started.
+Listener wss:default on 0.0.0.0:8084 started.
+Listener http:dashboard on :18083 started.
+EMQX 5.8.0 is running now!
+2026-11-09T07:26:50.359220+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 76">>, name: runq_overload
+2026-11-09T07:27:03.332391+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:28:01.376119+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 44">>, name: runq_overload
+2026-11-09T07:28:17.367781+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:29:41.427195+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 296">>, name: runq_overload
+2026-11-09T07:29:51.222329+00:00 [warning] clientid: bridge-b92fdeb95b29, msg: dropped_msg_due_to_mqueue_is_full, peername: 172.20.0.9:57266, topic: telemetry/tuned-20k-c2-03383, queue: #{len => 10000,dropped => 1,store_qos0 => true,max_len => 10000}, payload: <<"{\"r\":\"tuned-20k-c2\",\"d\":\"tuned-20k-c2-03383\",\"s\":1,\"t\":1794209381145,\"temp\":25.83,\"hum\":45.2,\"bat\":3.541}">>
+2026-11-09T07:30:08.115223+00:00 [error] Process:            <0.3256.0> on node 'emqx@emqx1.lab10.io', Context:            maximum heap size reached, Max Heap Size:      6291456, Total Heap Size:    7047630, Kill:               true, Error Logger:       true, Message Queue Len:  0, GC Info:            [{old_heap_block_size,2487399},{heap_block_size,4560232},{mbuf_size,3867},{recent_size,944717},{stack_size,30},{old_heap_size,0},{heap_size,2068965},{bin_vheap_size,189647},{bin_vheap_block_size,195460},{bin_old_vheap_size,0},{bin_old_vheap_block_size,75110}]
+2026-11-09T07:30:14.302627+00:00 [warning] msg: log_events_throttled_during_last_period, period: 1 minutes, 0 seconds, dropped: #{dropped_msg_due_to_mqueue_is_full => 18427}
+2026-11-09T07:30:14.543490+00:00 [warning] clientid: bridge-b92fdeb95b29, msg: dropped_msg_due_to_mqueue_is_full, peername: 172.20.0.9:57266, topic: telemetry/tuned-20k-c2-06292, queue: #{len => 10000,dropped => 1,store_qos0 => true,max_len => 10000}, payload: <<"{\"r\":\"tuned-20k-c2\",\"d\":\"tuned-20k-c2-06292\",\"s\":4,\"t\":1794209396825,\"temp\":23.04,\"hum\":50.7,\"bat\":3.687}">>
+2026-11-09T07:30:33.490879+00:00 [error] Process:            <0.3257.0> on node 'emqx@emqx1.lab10.io', Context:            maximum heap size reached, Max Heap Size:      6291456, Total Heap Size:    7545374, Kill:               true, Error Logger:       true, Message Queue Len:  0, GC Info:            [{old_heap_block_size,2984878},{heap_block_size,4560232},{mbuf_size,870},{recent_size,1191063},{stack_size,25},{old_heap_size,0},{heap_size,2072227},{bin_vheap_size,183987},{bin_vheap_block_size,266335},{bin_old_vheap_size,0},{bin_old_vheap_block_size,121527}]
+2026-11-09T07:30:33.845249+00:00 [error] Process:            <0.78677.0> on node 'emqx@emqx1.lab10.io', Context:            maximum heap size reached, Max Heap Size:      6291456, Total Heap Size:    7545905, Kill:               true, Error Logger:       true, Message Queue Len:  0, GC Info:            [{old_heap_block_size,2984878},{heap_block_size,4560232},{mbuf_size,3852},{recent_size,944241},{stack_size,25},{old_heap_size,0},{heap_size,2069776},{bin_vheap_size,143725},{bin_vheap_block_size,257380},{bin_old_vheap_size,0},{bin_old_vheap_block_size,121527}]
+2026-11-09T07:30:42.446629+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload

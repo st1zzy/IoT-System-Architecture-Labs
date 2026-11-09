@@ -1,0 +1,11 @@
+[cluster-10k] clients=10000 rate=0.2/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=165.7/1537.7 ms
+  messages: generated=119929 sent=119929 acked=119929 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+-- cluster-10k: stored 51785 of acked 119929 (generated 119929), duplicates 0
+   e2e latency p50/p95/p99/max = 720/2852/3646/4761 ms
+   throughput steady 854 msg/s (offered 2000), max 3272
+   emqx: received 119929 delivered 51788 queue_full 34815 no_subscribers 13398
+   peak CPU: emqx1 119%, emqx2 114%, ingest-mqtt-1 83%, loadgen 299%, nginx 146%, timescale 42%
+   steady CPU: emqx1 100%, emqx2 88%, ingest-mqtt-1 41%, loadgen 115%, nginx 97%, timescale 12%
+   fds: {'lab10-emqx1': 5100, 'lab10-emqx2': 5100}

@@ -1,0 +1,28 @@
+EMQX_API_KEY__BOOTSTRAP_FILE [api_key.bootstrap_file]: /opt/emqx/etc/lab10_api_key.conf
+EMQX_RPC__PORT_DISCOVERY [rpc.port_discovery]: manual
+EMQX_LOG__CONSOLE__LEVEL [log.console.level]: warning
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds]: [...]
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.2]: emqx@emqx2.lab10.io
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.1]: emqx@emqx1.lab10.io
+EMQX_CLUSTER__DISCOVERY_STRATEGY [cluster.discovery_strategy]: static
+EMQX_NODE__COOKIE [node.cookie]: ******
+EMQX_NODE__NAME [node.name]: emqx@emqx1.lab10.io
+2026-11-09T07:20:37.455849+00:00 [warning] msg: cluster_config_fetch_failures, peer_nodes: ['emqx@emqx2.lab10.io'], self_node: 'emqx@emqx1.lab10.io', booting_nodes: [{error,#{node => 'emqx@emqx2.lab10.io',wall_clock => {3226,107},msg => "init_conf_load_not_done",release => "v5.8.0"}}], failed_nodes: []
+Listener tcp:default on 0.0.0.0:1883 started.
+Listener ssl:default on 0.0.0.0:8883 started.
+Listener ws:default on 0.0.0.0:8083 started.
+Listener wss:default on 0.0.0.0:8084 started.
+Listener http:dashboard on :18083 started.
+EMQX 5.8.0 is running now!
+2026-11-09T07:21:47.587162+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 432">>, name: runq_overload
+2026-11-09T07:21:48.681391+00:00 [warning] clientid: bridge-99567987a763, msg: dropped_msg_due_to_mqueue_is_full, peername: 172.20.0.9:60260, topic: telemetry/kafka-10k-c1-05805, queue: #{len => 1000,dropped => 1,store_qos0 => true,max_len => 1000}, payload: <<"{\"r\":\"kafka-10k-c1\",\"d\":\"kafka-10k-c1-05805\",\"s\":0,\"t\":1794208905408,\"temp\":25.67,\"hum\":46.8,\"bat\":3.436}">>
+2026-11-09T07:22:37.527756+00:00 [warning] msg: log_events_throttled_during_last_period, period: 1 minutes, 0 seconds, dropped: #{dropped_msg_due_to_mqueue_is_full => 3923}
+2026-11-09T07:22:43.206885+00:00 [warning] clientid: bridge-99567987a763, msg: dropped_msg_due_to_mqueue_is_full, peername: 172.20.0.9:60260, topic: telemetry/kafka-10k-c1-07798, queue: #{len => 1000,dropped => 1,store_qos0 => true,max_len => 1000}, payload: <<"{\"r\":\"kafka-10k-c1\",\"d\":\"kafka-10k-c1-07798\",\"s\":11,\"t\":1794208960681,\"temp\":21.75,\"hum\":50.9,\"bat\":4.199}">>
+2026-11-09T07:22:52.588972+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:23:37.522491+00:00 [warning] msg: log_events_throttled_during_last_period, period: 1 minutes, 0 seconds, dropped: #{dropped_msg_due_to_mqueue_is_full => 518}
+2026-11-09T07:24:46.996372+00:00 [warning] clientid: bridge-99567987a763, msg: check_oom_shutdown, peername: 172.20.0.9:60260, shutdown: #{max => 1000,reason => mailbox_overflow,value => 1143}, incoming_bytes: 14342, incoming_pubs: 101, policy: #{max_heap_size => 4194304,enable => true,max_mailbox_size => 1000}
+2026-11-09T07:24:47.723495+00:00 [error] supervisor: {esockd_connection_sup,<0.3279.0>}, errorContext: connection_shutdown, reason: #{max => 1000,reason => mailbox_overflow,value => 1143}, offender: [{pid,<0.3279.0>},{name,connection},{mfargs,{emqx_connection,start_link,[#{listener => {tcp,default},limiter => #{connection => #{initial => 0,rate => infinity,burst => 0}},zone => default,enable_authn => true}]}}]
+2026-11-09T07:24:48.107795+00:00 [warning] clientid: bridge-b92fdeb95b29, msg: check_oom_shutdown, peername: 172.20.0.9:58044, shutdown: #{max => 1000,reason => mailbox_overflow,value => 2204}, incoming_bytes: 14342, incoming_pubs: 101, policy: #{max_heap_size => 4194304,enable => true,max_mailbox_size => 1000}
+2026-11-09T07:24:48.288224+00:00 [error] supervisor: {esockd_connection_sup,<0.3287.0>}, errorContext: connection_shutdown, reason: #{max => 1000,reason => mailbox_overflow,value => 2204}, offender: [{pid,<0.3287.0>},{name,connection},{mfargs,{emqx_connection,start_link,[#{listener => {tcp,default},limiter => #{connection => #{initial => 0,rate => infinity,burst => 0}},zone => default,enable_authn => true}]}}]
+2026-11-09T07:24:48.669282+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 10">>, name: runq_overload
+2026-11-09T07:25:01.672122+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload

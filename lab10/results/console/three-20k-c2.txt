@@ -1,0 +1,13 @@
+[three-20k-c2] clients=20000 rate=0.2/s procs=8 policy=exp_jitter buffer=False
+  connect: attempts=20000 ok=20000 fail=0 connack p50/p99=5.2/478.3 ms
+  messages: generated=240000 sent=240000 acked=240000 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+-- three-20k-c2: stored 240000 of acked 240000 (generated 240000), duplicates 0
+   e2e latency p50/p95/p99/max = 220/6575/8975/9782 ms
+   steady window: p50/p99 e2e 215/9112 ms; device→bridge 75/8988, kafka 50/134, consumer→db 61/161; ≤1 s: 71.06 %
+   throughput steady 3379 msg/s (offered 4000), max 16173
+   emqx: received 240000 delivered 240000 queue_full 0 no_subscribers 0
+   peak CPU: bridge-1 88%, bridge-2 65%, bridge-3 93%, bridge-4 59%, bridge-5 100%, bridge-6 59%, emqx1 107%, emqx2 104%, emqx3 107%, ingest-1 30%, ingest-2 29%, loadgen 765%, nginx 145%, redpanda 132%, timescale 50%
+   steady CPU: bridge-1 35%, bridge-2 36%, bridge-3 31%, bridge-4 32%, bridge-5 32%, bridge-6 33%, emqx1 96%, emqx2 96%, emqx3 96%, ingest-1 20%, ingest-2 20%, loadgen 198%, nginx 132%, redpanda 98%, timescale 21%
+   fds: {'lab10-emqx1': 6768, 'lab10-emqx2': 6767, 'lab10-emqx3': 6767}
+   kafka lag max 1914

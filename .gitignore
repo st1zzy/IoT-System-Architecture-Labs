@@ -26,3 +26,7 @@ lab4/broker-a/config/passwd
 lab9/pki/
 lab9/ota/keys/
 lab9/ota/out/
+
+# Lab 10: черновые прогоны калибровки стенда (ошибки методики, описаны в отчёте)
+lab10/results/_aborted*/
+lab10/results/_herd_short/

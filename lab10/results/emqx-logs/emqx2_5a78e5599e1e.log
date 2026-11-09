@@ -1,0 +1,26 @@
+EMQX_API_KEY__BOOTSTRAP_FILE [api_key.bootstrap_file]: /opt/emqx/etc/lab10_api_key.conf
+EMQX_FORCE_SHUTDOWN__MAX_MAILBOX_SIZE [force_shutdown.max_mailbox_size]: 10000
+EMQX_RPC__PORT_DISCOVERY [rpc.port_discovery]: manual
+EMQX_LOG__CONSOLE__LEVEL [log.console.level]: warning
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds]: [...]
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.2]: emqx@emqx2.lab10.io
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.1]: emqx@emqx1.lab10.io
+EMQX_CLUSTER__DISCOVERY_STRATEGY [cluster.discovery_strategy]: static
+EMQX_NODE__COOKIE [node.cookie]: ******
+EMQX_NODE__NAME [node.name]: emqx@emqx2.lab10.io
+2026-11-09T07:26:14.258212+00:00 [warning] msg: cluster_config_fetch_failures, peer_nodes: ['emqx@emqx1.lab10.io'], self_node: 'emqx@emqx2.lab10.io', booting_nodes: [{error,#{node => 'emqx@emqx1.lab10.io',wall_clock => {3723,117},msg => "emqx_config_handler_not_ready",release => "v5.8.0"}}], failed_nodes: []
+Listener tcp:default on 0.0.0.0:1883 started.
+Listener ssl:default on 0.0.0.0:8883 started.
+Listener ws:default on 0.0.0.0:8083 started.
+Listener wss:default on 0.0.0.0:8084 started.
+Listener http:dashboard on :18083 started.
+EMQX 5.8.0 is running now!
+2026-11-09T07:28:02.408234+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx2.lab10.io': 219">>, name: runq_overload
+2026-11-09T07:28:15.373934+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:29:40.454904+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx2.lab10.io': 451">>, name: runq_overload
+2026-11-09T07:29:51.079920+00:00 [warning] clientid: bridge-99567987a763, msg: dropped_msg_due_to_mqueue_is_full, peername: 172.20.0.9:40786, topic: telemetry/tuned-20k-c2-00146, queue: #{len => 10000,dropped => 1,store_qos0 => true,max_len => 10000}, payload: <<"{\"r\":\"tuned-20k-c2\",\"d\":\"tuned-20k-c2-00146\",\"s\":1,\"t\":1794209380556,\"temp\":19.22,\"hum\":44.9,\"bat\":3.428}">>
+2026-11-09T07:30:08.952155+00:00 [error] Process:            <0.3251.0> on node 'emqx@emqx2.lab10.io', Context:            maximum heap size reached, Max Heap Size:      6291456, Total Heap Size:    7546351, Kill:               true, Error Logger:       true, Message Queue Len:  1, GC Info:            [{old_heap_block_size,2984878},{heap_block_size,4560232},{mbuf_size,4804},{recent_size,928739},{stack_size,18},{old_heap_size,0},{heap_size,2069270},{bin_vheap_size,149244},{bin_vheap_block_size,286895},{bin_old_vheap_size,0},{bin_old_vheap_block_size,46422}]
+2026-11-09T07:30:14.342371+00:00 [warning] msg: log_events_throttled_during_last_period, period: 1 minutes, 0 seconds, dropped: #{dropped_msg_due_to_mqueue_is_full => 17364}
+2026-11-09T07:30:18.637685+00:00 [warning] clientid: bridge-99567987a763, msg: dropped_msg_due_to_mqueue_is_full, peername: 172.20.0.9:40786, topic: telemetry/tuned-20k-c2-05772, queue: #{len => 10000,dropped => 1,store_qos0 => true,max_len => 10000}, payload: <<"{\"r\":\"tuned-20k-c2\",\"d\":\"tuned-20k-c2-05772\",\"s\":7,\"t\":1794209408620,\"temp\":19.81,\"hum\":57.2,\"bat\":4.198}">>
+2026-11-09T07:30:27.371337+00:00 [error] Process:            <0.3252.0> on node 'emqx@emqx2.lab10.io', Context:            maximum heap size reached, Max Heap Size:      6291456, Total Heap Size:    9060466, Kill:               true, Error Logger:       true, Message Queue Len:  0, GC Info:            [{old_heap_block_size,3581853},{heap_block_size,5472277},{mbuf_size,6362},{recent_size,915593},{stack_size,23},{old_heap_size,0},{heap_size,2487370},{bin_vheap_size,169370},{bin_vheap_block_size,196630},{bin_old_vheap_size,0},{bin_old_vheap_block_size,159073}]
+2026-11-09T07:30:43.441701+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload

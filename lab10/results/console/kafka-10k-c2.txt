@@ -1,0 +1,12 @@
+[kafka-10k-c2] clients=10000 rate=0.2/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=4.0/145.0 ms
+  messages: generated=120000 sent=120000 acked=120000 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+-- kafka-10k-c2: stored 110675 of acked 120000 (generated 120000), duplicates 0
+   e2e latency p50/p95/p99/max = 132/967/1516/4159 ms
+   throughput steady 1811 msg/s (offered 2000), max 5025
+   emqx: received 120000 delivered 110689 queue_full 0 no_subscribers 834
+   peak CPU: bridge-1 57%, bridge-2 54%, bridge-3 55%, bridge-4 58%, emqx1 106%, emqx2 105%, grafana 6%, ingest-1 24%, ingest-2 22%, loadgen 205%, nginx 124%, prometheus 5%, redpanda 131%, timescale 60%
+   steady CPU: bridge-1 32%, bridge-2 32%, bridge-3 32%, bridge-4 32%, emqx1 87%, emqx2 85%, ingest-1 18%, ingest-2 18%, loadgen 110%, nginx 94%, redpanda 90%, timescale 19%
+   fds: {'lab10-emqx1': 5099, 'lab10-emqx2': 5101}
+   kafka lag max 506

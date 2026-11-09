@@ -1,0 +1,14 @@
+[herd-exp] clients=10000 rate=0.1/s procs=4 policy=exp buffer=False
+  connect: attempts=56201 ok=18997 fail=36742 connack p50/p99=24.6/4991.6 ms
+  messages: generated=100000 sent=58262 acked=57494 dropped_offline=41738 lost_inflight=768 inflight_left=0 buffer_left=0
+  disconnects=10000 devices_disconnected=10000 reconnects=8997
+-- herd-exp: stored 57464 of acked 57494 (generated 100000), duplicates 0
+   e2e latency p50/p95/p99/max = 103/315/874/1220 ms
+   steady window: p50/p99 e2e 105/881 ms; device→bridge 2/744, kafka 34/69, consumer→db 52/110; ≤1 s: 99.80 %
+   throughput steady 563 msg/s (offered 1000), max 1739
+   emqx: received 57528 delivered 57504 queue_full 0 no_subscribers 30
+   peak CPU: bridge-1 17%, bridge-2 19%, bridge-3 34%, bridge-4 20%, emqx1 105%, emqx2 105%, ingest-1 15%, ingest-2 15%, loadgen 524%, nginx 129%, redpanda 85%, timescale 32%
+   steady CPU: bridge-1 8%, bridge-2 7%, bridge-3 8%, bridge-4 8%, emqx1 36%, emqx2 36%, ingest-1 6%, ingest-2 6%, loadgen 115%, nginx 40%, redpanda 38%, timescale 7%
+   fds: {'lab10-emqx1': 4924, 'lab10-emqx2': 4000, 'lab10-emqx3': None}
+   kafka lag max 195
+   event: перезапуск NGINX: все соединения рвутся разом at +15.0s

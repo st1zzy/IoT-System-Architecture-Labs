@@ -1,0 +1,11 @@
+[single-1k] clients=1000 rate=0.2/s procs=1 policy=exp_jitter buffer=False
+  connect: attempts=1000 ok=1000 fail=0 connack p50/p99=66.9/746.4 ms
+  messages: generated=11982 sent=11982 acked=11982 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+-- single-1k: stored 11982 of acked 11982 (generated 11982), duplicates 0
+   e2e latency p50/p95/p99/max = 55/102/111/273 ms
+   throughput steady 197 msg/s (offered 200), max 229
+   emqx: received 11982 delivered 11982 queue_full 0 no_subscribers 0
+   peak CPU: emqx1 99%, ingest-mqtt-1 16%, loadgen 65%, timescale 16%
+   steady CPU: emqx1 15%, ingest-mqtt-1 8%, loadgen 9%
+   fds: {'lab10-emqx1': 1100, 'lab10-emqx2': None}

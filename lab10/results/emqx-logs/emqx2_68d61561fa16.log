@@ -1,0 +1,31 @@
+EMQX_API_KEY__BOOTSTRAP_FILE [api_key.bootstrap_file]: /opt/emqx/etc/lab10_api_key.conf
+EMQX_RPC__PORT_DISCOVERY [rpc.port_discovery]: manual
+EMQX_LOG__CONSOLE__LEVEL [log.console.level]: warning
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds]: [...]
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.2]: emqx@emqx2.lab10.io
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.1]: emqx@emqx1.lab10.io
+EMQX_CLUSTER__DISCOVERY_STRATEGY [cluster.discovery_strategy]: static
+EMQX_NODE__COOKIE [node.cookie]: ******
+EMQX_NODE__NAME [node.name]: emqx@emqx2.lab10.io
+2026-11-09T07:20:37.397020+00:00 [warning] msg: cluster_config_fetch_failures, peer_nodes: ['emqx@emqx1.lab10.io'], self_node: 'emqx@emqx2.lab10.io', booting_nodes: [{error,#{node => 'emqx@emqx1.lab10.io',wall_clock => {2981,48},msg => "init_conf_load_not_done",release => "v5.8.0"}}], failed_nodes: []
+2026-11-09T07:20:37.512117+00:00 [warning] msg: cluster_routing_schema_discovery_failed, reason: Could not determine configured routing storage schema in peer nodes., responses: [{'emqx@emqx1.lab10.io',unknown,starting}]
+Listener tcp:default on 0.0.0.0:1883 started.
+Listener ssl:default on 0.0.0.0:8883 started.
+Listener ws:default on 0.0.0.0:8083 started.
+Listener wss:default on 0.0.0.0:8084 started.
+Listener http:dashboard on :18083 started.
+EMQX 5.8.0 is running now!
+2026-11-09T07:21:48.969000+00:00 [warning] clientid: bridge-71b85ccad328, msg: dropped_msg_due_to_mqueue_is_full, peername: 172.20.0.9:38026, topic: telemetry/kafka-10k-c1-03296, queue: #{len => 1000,dropped => 1,store_qos0 => true,max_len => 1000}, payload: <<"{\"r\":\"kafka-10k-c1\",\"d\":\"kafka-10k-c1-03296\",\"s\":0,\"t\":1794208905727,\"temp\":23.03,\"hum\":35.1,\"bat\":3.804}">>
+2026-11-09T07:21:50.554281+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx2.lab10.io': 23">>, name: runq_overload
+2026-11-09T07:22:32.558662+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:22:37.480034+00:00 [warning] msg: log_events_throttled_during_last_period, period: 1 minutes, 0 seconds, dropped: #{dropped_msg_due_to_mqueue_is_full => 2958}
+2026-11-09T07:22:42.674998+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx2.lab10.io': 472">>, name: runq_overload
+2026-11-09T07:22:43.144113+00:00 [warning] clientid: bridge-71b85ccad328, msg: dropped_msg_due_to_mqueue_is_full, peername: 172.20.0.9:38026, topic: telemetry/kafka-10k-c1-05904, queue: #{len => 1000,dropped => 1,store_qos0 => true,max_len => 1000}, payload: <<"{\"r\":\"kafka-10k-c1\",\"d\":\"kafka-10k-c1-05904\",\"s\":11,\"t\":1794208960315,\"temp\":25.92,\"hum\":42.3,\"bat\":3.522}">>
+2026-11-09T07:22:55.567469+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:23:37.477510+00:00 [warning] msg: log_events_throttled_during_last_period, period: 1 minutes, 0 seconds, dropped: #{dropped_msg_due_to_mqueue_is_full => 763}
+2026-11-09T07:24:02.635771+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx2.lab10.io': 53">>, name: runq_overload
+2026-11-09T07:24:31.628284+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:24:47.478691+00:00 [warning] clientid: bridge-7dd708f759bb, msg: check_oom_shutdown, peername: 172.20.0.9:38028, shutdown: #{max => 1000,reason => mailbox_overflow,value => 1572}, incoming_bytes: 14342, incoming_pubs: 101, policy: #{max_heap_size => 4194304,enable => true,max_mailbox_size => 1000}
+2026-11-09T07:24:47.648032+00:00 [warning] clientid: bridge-71b85ccad328, msg: check_oom_shutdown, peername: 172.20.0.9:38026, shutdown: #{max => 1000,reason => mailbox_overflow,value => 1626}, incoming_bytes: 1180, incoming_pubs: 0, policy: #{max_heap_size => 4194304,enable => true,max_mailbox_size => 1000}
+2026-11-09T07:24:47.992845+00:00 [error] supervisor: {esockd_connection_sup,<0.3286.0>}, errorContext: connection_shutdown, reason: #{max => 1000,reason => mailbox_overflow,value => 1572}, offender: [{pid,<0.3286.0>},{name,connection},{mfargs,{emqx_connection,start_link,[#{listener => {tcp,default},limiter => #{connection => #{initial => 0,rate => infinity,burst => 0}},zone => default,enable_authn => true}]}}]
+2026-11-09T07:24:48.247031+00:00 [error] supervisor: {esockd_connection_sup,<0.3283.0>}, errorContext: connection_shutdown, reason: #{max => 1000,reason => mailbox_overflow,value => 1626}, offender: [{pid,<0.3283.0>},{name,connection},{mfargs,{emqx_connection,start_link,[#{listener => {tcp,default},limiter => #{connection => #{initial => 0,rate => infinity,burst => 0}},zone => default,enable_authn => true}]}}]

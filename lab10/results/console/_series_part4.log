@@ -1,0 +1,16 @@
+=== tuned-10k-c2b: 10000 клиентов, 0.2/с, 60 с ===
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=3.7/61.7 ms
+-- tuned-10k-c2b: stored 120000 of acked 120000 (generated 120000), duplicates 0
+   e2e latency p50/p95/p99/max = 103/189/263/546 ms
+   steady window: p50/p99 e2e 102/267 ms; device→bridge 3/156, kafka 36/78, consumer→db 53/113; ≤1 s: 100.00 %
+   throughput steady 1982 msg/s (offered 2000), max 2421
+   emqx: received 120000 delivered 120000 queue_full 0 no_subscribers 0
+   steady CPU: bridge-1 29%, bridge-2 29%, bridge-3 30%, bridge-4 29%, emqx1 71%, emqx2 71%, ingest-1 18%, ingest-2 17%, loadgen 80%, nginx 84%, redpanda 86%, timescale 13%
+=== three-10k-c2b: 10000 клиентов, 0.2/с, 60 с ===
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=3.9/41.2 ms
+-- three-10k-c2b: stored 120000 of acked 120000 (generated 120000), duplicates 0
+   e2e latency p50/p95/p99/max = 108/213/300/1112 ms
+   steady window: p50/p99 e2e 107/274 ms; device→bridge 3/132, kafka 39/101, consumer→db 54/115; ≤1 s: 100.00 %
+   throughput steady 1990 msg/s (offered 2000), max 2320
+   emqx: received 120000 delivered 120000 queue_full 0 no_subscribers 0
+   steady CPU: bridge-1 22%, bridge-2 22%, bridge-3 22%, bridge-4 21%, bridge-5 23%, bridge-6 22%, emqx1 57%, emqx2 59%, emqx3 55%, ingest-1 19%, ingest-2 19%, loadgen 85%, nginx 81%, redpanda 87%, timescale 14%

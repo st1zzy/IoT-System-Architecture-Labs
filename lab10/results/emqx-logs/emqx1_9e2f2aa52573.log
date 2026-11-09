@@ -1,0 +1,29 @@
+EMQX_API_KEY__BOOTSTRAP_FILE [api_key.bootstrap_file]: /opt/emqx/etc/lab10_api_key.conf
+EMQX_FORCE_SHUTDOWN__MAX_MAILBOX_SIZE [force_shutdown.max_mailbox_size]: 10000
+EMQX_RPC__PORT_DISCOVERY [rpc.port_discovery]: manual
+EMQX_LOG__CONSOLE__LEVEL [log.console.level]: warning
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds]: [...]
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.2]: emqx@emqx2.lab10.io
+EMQX_CLUSTER__STATIC__SEEDS [cluster.static.seeds.1]: emqx@emqx1.lab10.io
+EMQX_CLUSTER__DISCOVERY_STRATEGY [cluster.discovery_strategy]: static
+EMQX_NODE__COOKIE [node.cookie]: ******
+EMQX_NODE__NAME [node.name]: emqx@emqx1.lab10.io
+Listener tcp:default on 0.0.0.0:1883 started.
+Listener ssl:default on 0.0.0.0:8883 started.
+Listener ws:default on 0.0.0.0:8083 started.
+Listener wss:default on 0.0.0.0:8084 started.
+Listener http:dashboard on :18083 started.
+EMQX 5.8.0 is running now!
+2026-11-09T07:36:47.050489+00:00 [error] clientid: failover-nobuffer-03995, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:44404, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:36:47.050959+00:00 [error] clientid: failover-nobuffer-04113, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:44374, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:36:47.051151+00:00 [error] clientid: failover-nobuffer-03977, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:44390, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:38:46.140598+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 18">>, name: runq_overload
+2026-11-09T07:38:51.584513+00:00 [error] clientid: failover-buffer-04654, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:43964, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:38:51.584973+00:00 [error] clientid: failover-buffer-03696, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:43936, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:38:51.585406+00:00 [error] clientid: failover-buffer-04942, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:43946, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:38:51.585675+00:00 [error] clientid: failover-buffer-04442, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:43948, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:38:51.586626+00:00 [error] clientid: failover-buffer-02536, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:44076, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:38:51.588251+00:00 [error] clientid: failover-buffer-04972, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:44062, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:38:51.591492+00:00 [error] clientid: failover-buffer-04642, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:44058, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:38:51.665346+00:00 [error] clientid: failover-buffer-03590, msg: failed_to_kick_session_on_remote_node, peername: 172.20.0.9:44556, error: error, node: 'emqx@emqx2.lab10.io', reason: {badrpc,nodedown}, action: discard
+2026-11-09T07:39:41.171267+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload

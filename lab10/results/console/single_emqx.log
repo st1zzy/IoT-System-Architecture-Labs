@@ -1,0 +1,6 @@
+2026-11-09T07:12:47.895819+00:00 [warning] clientid: ingest-7404f2f10679, msg: dropped_msg_due_to_mqueue_is_full, topic: telemetry/single-5k-01193, queue: #{len => 1000,dropped => 1,store_qos0 => true
+2026-11-09T07:12:51.170527+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 35">>, name: runq_overload
+2026-11-09T07:12:57.028036+00:00 [warning] msg: log_events_throttled_during_last_period, period: 1 minutes, 0 seconds, dropped: #{dropped_msg_due_to_mqueue_is_full => 3332}
+2026-11-09T07:12:58.863356+00:00 [warning] clientid: ingest-7404f2f10679, msg: check_oom_shutdown, shutdown: #{max => 1000,reason => mailbox_overflow,value => 1405}, incoming_bytes: 13433, incoming_pu
+2026-11-09T07:13:10.148772+00:00 [warning] msg: alarm_is_deactivated, name: runq_overload
+2026-11-09T07:13:53.203834+00:00 [warning] msg: alarm_is_activated, message: <<"VM is overloaded on node: 'emqx@emqx1.lab10.io': 80">>, name: runq_overload

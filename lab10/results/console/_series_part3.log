@@ -1,0 +1,158 @@
+
+=== tuned-10k-c2: 10000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 5.9, 'conns': 4, 'cpu': {'emqx1': 6.31, 'emqx2': 1.88}}
+[tuned-10k-c2] clients=10000 rate=0.2/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=136.1/648.1 ms
+  messages: generated=119999 sent=119999 acked=119999 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- tuned-10k-c2: stored 119999 of acked 119999 (generated 119999), duplicates 0
+   e2e latency p50/p95/p99/max = 1029/9617/10705/11784 ms
+   steady window: p50/p99 e2e 2371/10803 ms; device→bridge -/-, kafka -/-, consumer→db 58/136; ≤1 s: 39.73 %
+   throughput steady 1878 msg/s (offered 2000), max 6136
+   emqx: received 119999 delivered 119999 queue_full 0 no_subscribers 0
+   peak CPU: bridge-1 68%, bridge-2 72%, bridge-3 68%, bridge-4 73%, emqx1 119%, emqx2 130%, ingest-1 27%, ingest-2 28%, loadgen 279%, nginx 173%, redpanda 105%, timescale 81%
+   steady CPU: bridge-1 33%, bridge-2 33%, bridge-3 34%, bridge-4 33%, emqx1 96%, emqx2 101%, ingest-1 17%, ingest-2 17%, loadgen 124%, nginx 115%, redpanda 79%, timescale 32%
+   fds: {'lab10-emqx1': 5101, 'lab10-emqx2': 5101, 'lab10-emqx3': None}
+   kafka lag max 1376
+
+
+=== tuned-20k-c2: 20000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.0, 'conns': 4, 'cpu': {'emqx1': 0.85, 'emqx2': 0.32}}
+[tuned-20k-c2] clients=20000 rate=0.2/s procs=8 policy=exp_jitter buffer=False
+  connect: attempts=20000 ok=20000 fail=0 connack p50/p99=9.3/1839.4 ms
+  messages: generated=239817 sent=239817 acked=239817 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- tuned-20k-c2: stored 38960 of acked 239817 (generated 239817), duplicates 0
+   e2e latency p50/p95/p99/max = 6573/16868/22790/22947 ms
+   steady window: p50/p99 e2e 8081/22815 ms; device→bridge -/-, kafka -/-, consumer→db 56/119; ≤1 s: 17.97 %
+   throughput steady 307 msg/s (offered 4000), max 7847
+   emqx: received 239817 delivered 39204 queue_full 31404 no_subscribers 0
+   peak CPU: bridge-1 42%, bridge-2 35%, bridge-3 42%, bridge-4 29%, emqx1 111%, emqx2 114%, ingest-1 15%, ingest-2 16%, loadgen 835%, nginx 161%, redpanda 69%, timescale 24%
+   steady CPU: bridge-1 8%, bridge-3 5%, emqx1 102%, emqx2 104%, ingest-1 5%, ingest-2 6%, loadgen 209%, nginx 132%, redpanda 27%, timescale 6%
+   fds: {'lab10-emqx1': 10100, 'lab10-emqx2': 10100, 'lab10-emqx3': None}
+   kafka lag max 672
+
+
+=== drain: наполнение Kafka ===
+produced 3000000 messages in 13.0s (230,111 msg/s)
+backlog in topic: 3000000
+drain N=1: 3000000 rows (3000000 distinct), first row after 2.1s, done in 54.6s; steady 52,845 rows/s; CPU: ingest-1 76%, timescale 71%
+drain N=2: 3000000 rows (3000000 distinct), first row after 2.5s, done in 46.9s; steady 63,336 rows/s; CPU: ingest-1 51%, ingest-2 52%, timescale 87%
+drain N=4: 3000000 rows (3000000 distinct), first row after 2.5s, done in 37.0s; steady 88,894 rows/s; CPU: ingest-1 63%, ingest-2 76%, ingest-3 76%, ingest-4 76%, redpanda 19%, timescale 202%
+N=1: steady 52,845 msg/s, speedup 1.00x (ideal 1x, efficiency 100%); ingest-1 76%, timescale 71%
+N=2: steady 63,336 msg/s, speedup 1.20x (ideal 2x, efficiency 60%); ingest-1 51%, ingest-2 52%, timescale 87%
+N=4: steady 88,894 msg/s, speedup 1.68x (ideal 4x, efficiency 42%); ingest-1 63%, ingest-2 76%, ingest-3 76%, ingest-4 76%, redpanda 19%, timescale 202%
+
+=== herd-immediate: 10000 клиентов, 0.1/с, 100 с ===
+   idle check: {'wait_s': 6.0, 'conns': 4, 'cpu': {'emqx1': 0.24, 'emqx2': 0.21}}
+[herd-immediate] clients=10000 rate=0.1/s procs=4 policy=immediate buffer=False
+  connect: attempts=153544 ok=13009 fail=139252 connack p50/p99=58.9/6613.9 ms
+  messages: generated=99999 sent=32909 acked=32043 dropped_offline=67090 lost_inflight=866 inflight_left=0 buffer_left=0
+  disconnects=10000 devices_disconnected=10000 reconnects=3009
+
+-- herd-immediate: stored 32045 of acked 32043 (generated 99999), duplicates 0
+   e2e latency p50/p95/p99/max = 149/1293/5023/8056 ms
+   steady window: p50/p99 e2e 166/5059 ms; device→bridge 55/4933, kafka 40/92, consumer→db 54/118; ≤1 s: 87.59 %
+   throughput steady 301 msg/s (offered 1000), max 2045
+   emqx: received 32104 delivered 32104 queue_full 0 no_subscribers 0
+   peak CPU: bridge-1 28%, bridge-2 25%, bridge-3 26%, bridge-4 25%, emqx1 107%, emqx2 108%, ingest-1 18%, ingest-2 18%, loadgen 627%, nginx 211%, prometheus 5%, redpanda 113%, timescale 33%
+   steady CPU: bridge-3 5%, emqx1 39%, emqx2 46%, loadgen 411%, nginx 73%, redpanda 23%, timescale 9%
+   fds: {'lab10-emqx1': 4872, 'lab10-emqx2': 4248, 'lab10-emqx3': None}
+   kafka lag max 269
+   event: перезапуск NGINX: все соединения рвутся разом at +15.0s
+
+
+=== herd-exp: 10000 клиентов, 0.1/с, 100 с ===
+   idle check: {'wait_s': 5.8, 'conns': 4, 'cpu': {'emqx1': 0.25, 'emqx2': 0.22}}
+[herd-exp] clients=10000 rate=0.1/s procs=4 policy=exp buffer=False
+  connect: attempts=56201 ok=18997 fail=36742 connack p50/p99=24.6/4991.6 ms
+  messages: generated=100000 sent=58262 acked=57494 dropped_offline=41738 lost_inflight=768 inflight_left=0 buffer_left=0
+  disconnects=10000 devices_disconnected=10000 reconnects=8997
+
+-- herd-exp: stored 57464 of acked 57494 (generated 100000), duplicates 0
+   e2e latency p50/p95/p99/max = 103/315/874/1220 ms
+   steady window: p50/p99 e2e 105/881 ms; device→bridge 2/744, kafka 34/69, consumer→db 52/110; ≤1 s: 99.80 %
+   throughput steady 563 msg/s (offered 1000), max 1739
+   emqx: received 57528 delivered 57504 queue_full 0 no_subscribers 30
+   peak CPU: bridge-1 17%, bridge-2 19%, bridge-3 34%, bridge-4 20%, emqx1 105%, emqx2 105%, ingest-1 15%, ingest-2 15%, loadgen 524%, nginx 129%, redpanda 85%, timescale 32%
+   steady CPU: bridge-1 8%, bridge-2 7%, bridge-3 8%, bridge-4 8%, emqx1 36%, emqx2 36%, ingest-1 6%, ingest-2 6%, loadgen 115%, nginx 40%, redpanda 38%, timescale 7%
+   fds: {'lab10-emqx1': 4924, 'lab10-emqx2': 4000, 'lab10-emqx3': None}
+   kafka lag max 195
+   event: перезапуск NGINX: все соединения рвутся разом at +15.0s
+
+
+=== herd-exp_jitter: 10000 клиентов, 0.1/с, 100 с ===
+   idle check: {'wait_s': 6.3, 'conns': 4, 'cpu': {'emqx1': 0.49, 'emqx2': 0.26}}
+[herd-exp_jitter] clients=10000 rate=0.1/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=61373 ok=19976 fail=41396 connack p50/p99=7.1/4695.4 ms
+  messages: generated=100000 sent=69426 acked=68849 dropped_offline=30574 lost_inflight=577 inflight_left=0 buffer_left=0
+  disconnects=10000 devices_disconnected=10000 reconnects=9976
+
+-- herd-exp_jitter: stored 68789 of acked 68849 (generated 100000), duplicates 0
+   e2e latency p50/p95/p99/max = 98/180/284/631 ms
+   steady window: p50/p99 e2e 98/294 ms; device→bridge 2/189, kafka 35/77, consumer→db 52/109; ≤1 s: 100.00 %
+   throughput steady 691 msg/s (offered 1000), max 1299
+   emqx: received 68855 delivered 68799 queue_full 0 no_subscribers 60
+   peak CPU: bridge-1 27%, bridge-2 30%, bridge-3 26%, bridge-4 24%, emqx1 111%, emqx2 118%, grafana 6%, ingest-1 17%, ingest-2 17%, loadgen 318%, nginx 99%, redpanda 101%, timescale 47%
+   steady CPU: bridge-1 13%, bridge-2 13%, bridge-3 13%, bridge-4 13%, emqx1 55%, emqx2 55%, ingest-1 11%, ingest-2 11%, loadgen 101%, nginx 55%, redpanda 57%, timescale 10%
+   fds: {'lab10-emqx1': 5101, 'lab10-emqx2': 4497, 'lab10-emqx3': None}
+   kafka lag max 184
+   event: перезапуск NGINX: все соединения рвутся разом at +15.0s
+
+
+=== herd-exp_jitter10: 10000 клиентов, 0.1/с, 100 с ===
+   idle check: {'wait_s': 6.5, 'conns': 4, 'cpu': {'emqx1': 0.28, 'emqx2': 0.26}}
+[herd-exp_jitter10] clients=10000 rate=0.1/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=26046 ok=19994 fail=6052 connack p50/p99=7.0/4698.0 ms
+  messages: generated=100000 sent=83603 acked=83053 dropped_offline=16397 lost_inflight=550 inflight_left=0 buffer_left=0
+  disconnects=10000 devices_disconnected=10000 reconnects=9994
+
+-- herd-exp_jitter10: stored 83053 of acked 83053 (generated 100000), duplicates 0
+   e2e latency p50/p95/p99/max = 93/167/271/1087 ms
+   steady window: p50/p99 e2e 93/222 ms; device→bridge 2/110, kafka 34/68, consumer→db 52/109; ≤1 s: 100.00 %
+   throughput steady 831 msg/s (offered 1000), max 1486
+   emqx: received 83055 delivered 83055 queue_full 0 no_subscribers 0
+   peak CPU: bridge-1 24%, bridge-2 21%, bridge-3 21%, bridge-4 22%, emqx1 103%, emqx2 104%, grafana 6%, ingest-1 16%, ingest-2 18%, loadgen 185%, nginx 85%, redpanda 83%, timescale 47%
+   steady CPU: bridge-1 14%, bridge-2 14%, bridge-3 14%, bridge-4 14%, emqx1 48%, emqx2 48%, ingest-1 11%, ingest-2 11%, loadgen 64%, nginx 48%, redpanda 54%, timescale 10%
+   fds: {'lab10-emqx1': 5037, 'lab10-emqx2': 4245, 'lab10-emqx3': None}
+   kafka lag max 155
+   event: перезапуск NGINX: все соединения рвутся разом at +15.0s
+
+
+=== three-10k-c2: 10000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.5, 'conns': 6, 'cpu': {'emqx1': 3.27, 'emqx2': 0.37, 'emqx3': 0.32}}
+[three-10k-c2] clients=10000 rate=0.2/s procs=4 policy=exp_jitter buffer=False
+  connect: attempts=10000 ok=10000 fail=0 connack p50/p99=5.1/106.4 ms
+  messages: generated=120000 sent=120000 acked=120000 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- three-10k-c2: stored 120000 of acked 120000 (generated 120000), duplicates 0
+   e2e latency p50/p95/p99/max = 113/224/326/982 ms
+   steady window: p50/p99 e2e 113/298 ms; device→bridge 4/166, kafka 41/102, consumer→db 54/117; ≤1 s: 100.00 %
+   throughput steady 1996 msg/s (offered 2000), max 2390
+   emqx: received 120000 delivered 120000 queue_full 0 no_subscribers 0
+   peak CPU: bridge-1 30%, bridge-2 32%, bridge-3 28%, bridge-4 30%, bridge-5 32%, bridge-6 30%, emqx1 97%, emqx2 94%, emqx3 95%, grafana 12%, ingest-1 21%, ingest-2 22%, loadgen 143%, nginx 119%, redpanda 121%, timescale 51%
+   steady CPU: bridge-1 23%, bridge-2 23%, bridge-3 23%, bridge-4 23%, bridge-5 23%, bridge-6 22%, emqx1 65%, emqx2 62%, emqx3 62%, ingest-1 18%, ingest-2 18%, loadgen 90%, nginx 91%, redpanda 91%, timescale 15%
+   fds: {'lab10-emqx1': 3437, 'lab10-emqx2': 3435, 'lab10-emqx3': 3433}
+   kafka lag max 537
+
+
+=== three-20k-c2: 20000 клиентов, 0.2/с, 60 с ===
+   idle check: {'wait_s': 6.4, 'conns': 6, 'cpu': {'emqx1': 0.26, 'emqx2': 0.35, 'emqx3': 0.34}}
+[three-20k-c2] clients=20000 rate=0.2/s procs=8 policy=exp_jitter buffer=False
+  connect: attempts=20000 ok=20000 fail=0 connack p50/p99=5.2/478.3 ms
+  messages: generated=240000 sent=240000 acked=240000 dropped_offline=0 lost_inflight=0 inflight_left=0 buffer_left=0
+  disconnects=0 devices_disconnected=0 reconnects=0
+
+-- three-20k-c2: stored 240000 of acked 240000 (generated 240000), duplicates 0
+   e2e latency p50/p95/p99/max = 220/6575/8975/9782 ms
+   steady window: p50/p99 e2e 215/9112 ms; device→bridge 75/8988, kafka 50/134, consumer→db 61/161; ≤1 s: 71.06 %
+   throughput steady 3379 msg/s (offered 4000), max 16173
+   emqx: received 240000 delivered 240000 queue_full 0 no_subscribers 0
+   peak CPU: bridge-1 88%, bridge-2 65%, bridge-3 93%, bridge-4 59%, bridge-5 100%, bridge-6 59%, emqx1 107%, emqx2 104%, emqx3 107%, ingest-1 30%, ingest-2 29%, loadgen 765%, nginx 145%, redpanda 132%, timescale 50%
+   steady CPU: bridge-1 35%, bridge-2 36%, bridge-3 31%, bridge-4 32%, bridge-5 32%, bridge-6 33%, emqx1 96%, emqx2 96%, emqx3 96%, ingest-1 20%, ingest-2 20%, loadgen 198%, nginx 132%, redpanda 98%, timescale 21%
+   fds: {'lab10-emqx1': 6768, 'lab10-emqx2': 6767, 'lab10-emqx3': 6767}
+   kafka lag max 1914
+

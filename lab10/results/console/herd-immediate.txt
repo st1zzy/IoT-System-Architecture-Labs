@@ -1,0 +1,14 @@
+[herd-immediate] clients=10000 rate=0.1/s procs=4 policy=immediate buffer=False
+  connect: attempts=153544 ok=13009 fail=139252 connack p50/p99=58.9/6613.9 ms
+  messages: generated=99999 sent=32909 acked=32043 dropped_offline=67090 lost_inflight=866 inflight_left=0 buffer_left=0
+  disconnects=10000 devices_disconnected=10000 reconnects=3009
+-- herd-immediate: stored 32045 of acked 32043 (generated 99999), duplicates 0
+   e2e latency p50/p95/p99/max = 149/1293/5023/8056 ms
+   steady window: p50/p99 e2e 166/5059 ms; device→bridge 55/4933, kafka 40/92, consumer→db 54/118; ≤1 s: 87.59 %
+   throughput steady 301 msg/s (offered 1000), max 2045
+   emqx: received 32104 delivered 32104 queue_full 0 no_subscribers 0
+   peak CPU: bridge-1 28%, bridge-2 25%, bridge-3 26%, bridge-4 25%, emqx1 107%, emqx2 108%, ingest-1 18%, ingest-2 18%, loadgen 627%, nginx 211%, prometheus 5%, redpanda 113%, timescale 33%
+   steady CPU: bridge-3 5%, emqx1 39%, emqx2 46%, loadgen 411%, nginx 73%, redpanda 23%, timescale 9%
+   fds: {'lab10-emqx1': 4872, 'lab10-emqx2': 4248, 'lab10-emqx3': None}
+   kafka lag max 269
+   event: перезапуск NGINX: все соединения рвутся разом at +15.0s
